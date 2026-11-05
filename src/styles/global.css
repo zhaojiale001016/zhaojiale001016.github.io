@@ -222,6 +222,16 @@ img { max-width: 100%; display: block; }
 .about-hero { display: flex; gap: 24px; align-items: center; margin-bottom: 12px; }
 .about-hero .avatar { width: 84px; height: 84px; border-radius: 8px; border: 1px solid var(--line-strong); box-shadow: var(--shadow); }
 
+/* ===== Pager ===== */
+.pager {
+  display: flex; justify-content: space-between; align-items: center;
+  margin: 32px 0 8px; padding-top: 18px; border-top: 1px dashed var(--line-strong);
+  font-size: .85rem;
+}
+.pager a { color: var(--green); font-weight: 700; }
+.pager a:hover { text-decoration: underline; }
+.pager .cur { color: var(--ink-3); }
+
 /* ===== Footer ===== */
 .site-footer {
   border-top: 1px solid var(--line); background: var(--panel);

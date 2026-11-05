@@ -10,63 +10,123 @@ export async function getStaticPaths() {
     params: { slug: post.id },
     props: {
       post,
-      prev: posts[i + 1] ?? null, // 更早一篇
-      next: posts[i - 1] ?? null, // 更新一篇
+      prev: posts[i + 1] ?? null,
+      next: posts[i - 1] ?? null,
     },
   }));
 }
 
 const { post, prev, next } = Astro.props;
-const { Content } = await render(post);
+const { Content, headings } = await render(post);
+const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
 const fmt = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
 ---
 
 <Base title={post.data.title} description={post.data.description} cover={post.data.cover}>
-  <article class="article">
-    <div class="article-head">
-      <span class="path">➜ ~/posts $ cat ./{post.id}.md</span>
-      <h1>{post.data.title}</h1>
-      <div class="meta" style="margin-top: 16px; margin-bottom: 0;">
-        <a class="cat" href={`/categories/${encodeURIComponent(post.data.category)}`}>{post.data.category}</a>
-        <time>{fmt(post.data.pubDate)}</time>
-        <span>约 {minutes} 分钟读完</span>
+  <div class="article-layout">
+    <article class="article">
+      <div class="article-head">
+        <span class="path">➜ ~/posts $ cat ./{post.id}.md</span>
+        <h1>{post.data.title}</h1>
+        <div class="meta" style="margin-top: 16px; margin-bottom: 0;">
+          <a class="cat" href={`/categories/${encodeURIComponent(post.data.category)}`}>{post.data.category}</a>
+          <time>{fmt(post.data.pubDate)}</time>
+          <span>约 {minutes} 分钟读完</span>
+        </div>
       </div>
-    </div>
-    {post.data.cover && <img class="cover" src={post.data.cover} alt={post.data.title} />}
-    <div class="prose">
-      <Content />
-    </div>
-    {post.data.tags.length > 0 && (
-      <div class="article-tags">
-        {post.data.tags.map((t) => (
-          <a href={`/tags/${encodeURIComponent(t)}`}>{t}</a>
-        ))}
+      {post.data.cover && <img class="cover" src={post.data.cover} alt={post.data.title} />}
+      <div class="prose">
+        <Content />
       </div>
-    )}
+      {post.data.tags.length > 0 && (
+        <div class="article-tags">
+          {post.data.tags.map((t) => (
+            <a href={`/tags/${encodeURIComponent(t)}`}>{t}</a>
+          ))}
+        </div>
+      )}
 
-    <nav class="post-nav">
-      {prev ? (
-        <a class="pn" href={`/posts/${prev.id}`}>
-          <span class="dir">← older</span>
-          <span class="t">{prev.data.title}</span>
-        </a>
-      ) : <span />}
-      {next ? (
-        <a class="pn right" href={`/posts/${next.id}`}>
-          <span class="dir">newer →</span>
-          <span class="t">{next.data.title}</span>
-        </a>
-      ) : <span />}
-    </nav>
-  </article>
+      <nav class="post-nav">
+        {prev ? (
+          <a class="pn" href={`/posts/${prev.id}`}>
+            <span class="dir">← older</span>
+            <span class="t">{prev.data.title}</span>
+          </a>
+        ) : <span />}
+        {next ? (
+          <a class="pn right" href={`/posts/${next.id}`}>
+            <span class="dir">newer →</span>
+            <span class="t">{next.data.title}</span>
+          </a>
+        ) : <span />}
+      </nav>
+
+      <section class="comments">
+        <div class="section-head" style="margin: 0 0 18px;">
+          <h2>comments</h2>
+        </div>
+        <script
+          src="https://giscus.app/client.js"
+          data-repo="zhaojiale001016/zhaojiale001016.github.io"
+          data-repo-id="R_kgDOVjsqow"
+          data-category="General"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="light"
+          data-lang="zh-CN"
+          crossorigin="anonymous"
+          async
+        ></script>
+      </section>
+    </article>
+
+    {toc.length > 0 && (
+      <aside class="toc">
+        <div class="toc-title">$ cat ./toc</div>
+        <nav id="toc-nav">
+          {toc.map((h) => (
+            <a href={`#${h.slug}`} class={h.depth === 3 ? 'lv3' : ''} data-slug={h.slug}>{h.text}</a>
+          ))}
+        </nav>
+      </aside>
+    )}
+  </div>
 </Base>
 
 <style>
+  .article-layout {
+    max-width: 1080px; margin: 0 auto;
+    display: grid; grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 32px; padding: 0 24px;
+  }
+  .article { padding: 48px 0 80px; max-width: 800px; }
+  .toc {
+    position: sticky; top: 88px; align-self: start;
+    margin-top: 48px; padding: 18px;
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: var(--radius); font-size: .8rem;
+    max-height: calc(100vh - 120px); overflow-y: auto;
+  }
+  .toc-title { color: var(--green); font-weight: 700; margin-bottom: 10px; font-size: .78rem; }
+  .toc nav a {
+    display: block; padding: 4px 0 4px 12px; color: var(--ink-2);
+    border-left: 2px solid var(--line); line-height: 1.5;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .toc nav a.lv3 { padding-left: 26px; font-size: .76rem; }
+  .toc nav a:hover { color: var(--green); }
+  .toc nav a.active { color: var(--green); border-left-color: var(--green); font-weight: 700; }
+  .comments {
+    margin-top: 48px; background: var(--paper);
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
+  }
   .post-nav {
-    display: flex; justify-content: space-between; gap: 16px;
-    margin-top: 40px;
+    display: flex; justify-content: space-between; gap: 16px; margin-top: 40px;
   }
   .pn {
     flex: 1; max-width: 48%;
@@ -83,4 +143,28 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
   .article-tags a::before { content: "#"; }
   .article-tags a:hover { color: var(--green); }
   .meta a.cat:hover { text-decoration: underline; }
+  @media (max-width: 960px) {
+    .article-layout { grid-template-columns: 1fr; }
+    .toc { display: none; }
+  }
 </style>
+
+<script>
+  const links = document.querySelectorAll('#toc-nav a');
+  if (links.length) {
+    const map = new Map();
+    links.forEach((l) => {
+      const el = document.getElementById(l.dataset.slug);
+      if (el) map.set(el, l);
+    });
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          links.forEach((l) => l.classList.remove('active'));
+          map.get(e.target)?.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px' });
+    map.forEach((_, el) => io.observe(el));
+  }
+</script>

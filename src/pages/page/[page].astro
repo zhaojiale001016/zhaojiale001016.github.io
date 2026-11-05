@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths({ paginate }: { paginate: Function }) {
+  const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+  );
+  // 首页展示 featured + 前 8 篇，分页从第 9 篇开始接续
+  return paginate(posts.slice(1), { pageSize: 8 });
+}
+
+const { page } = Astro.props as any;
+const fmt = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+---
+
+<Base title={`page ${page.currentPage}`}>
+  <div class="wrap" style="padding-top: 44px;">
+    <div class="section-head">
+      <h2>posts.log</h2>
+      <a class="more" href="/archives">cat archives →</a>
+    </div>
+
+    <div class="grid">
+      {page.data.map((p: any) => (
+        <article class="card">
+          {p.data.cover && (
+            <a href={`/posts/${p.id}`}><img class="cover" src={p.data.cover} alt={p.data.title} loading="lazy" /></a>
+          )}
+          <div class="body">
+            <div class="meta">
+              <span class="cat">{p.data.category}</span>
+              <time>{fmt(p.data.pubDate)}</time>
+            </div>
+            <h3><a href={`/posts/${p.id}`}>{p.data.title}</a></h3>
+            <p class="desc">{p.data.description}</p>
+            {p.data.tags.length > 0 && (
+              <div class="tags">{p.data.tags.slice(0, 3).map((t: string) => <a href={`/tags/${encodeURIComponent(t)}`}><span>{t}</span></a>)}</div>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <nav class="pager">
+      {page.url.prev ? <a href={page.url.prev}>← newer</a> : <a href="/">← home</a>}
+      <span class="cur">page {page.currentPage} / {page.lastPage}</span>
+      {page.url.next ? <a href={page.url.next}>older →</a> : <span />}
+    </nav>
+  </div>
+</Base>
