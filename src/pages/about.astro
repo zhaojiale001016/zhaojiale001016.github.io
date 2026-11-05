@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="about">
+  <div class="wrap" style="padding-top: 44px; padding-bottom: 56px; max-width: 820px;">
+    <div class="term">
+      <div class="term-bar">
+        <i></i><i></i><i></i>
+        <span class="title">douya@blog: ~/about — zsh</span>
+      </div>
+      <div class="term-body">
+        <span class="line"><span class="prompt">➜ ~/about</span> <span class="cmd">finger douya</span></span>
+        <div class="about-hero" style="margin-top: 16px;">
+          <img class="avatar" src="/img/avatar.svg" alt="豆芽" />
+          <div>
+            <div style="font-size: 1.4rem; font-weight: 800;">豆芽 <span style="color: var(--ink-3); font-size: .9rem; font-weight: 400;">aka 赵佳乐</span></div>
+            <div style="color: var(--ink-2); font-size: .85rem; margin-top: 4px;">login: douya · shell: /bin/zsh · location: Beijing</div>
+          </div>
+        </div>
+
+        <div class="prose" style="border: none; padding: 8px 0 0; background: none;">
+          <span class="line" style="display:block; margin-top: 12px;"><span class="prompt">➜ ~/about</span> <span class="cmd">cat profile.txt</span></span>
+          <p>
+            白天在一家办公软件公司做研发，混迹于一个名字里带「AI」的部门。
+            日常是和前端、后端、测试、交付来回拉扯，哪个环节缺人就顶上去。
+            工作几年最深的体会：写代码不难，难的是把一件事真正做完。
+          </p>
+          <p>
+            下班之后继续折腾。手上有几个自己写着玩的项目——一个 Electron 做的办公应用，
+            一堆能偷懒就绝不手动的小工具。对 AI 保持高度兴趣，
+            一半因为好玩，另一半想搞清楚它会把我们这行带去哪。
+          </p>
+
+          <span class="line" style="display:block; margin-top: 8px;"><span class="prompt">➜ ~/about</span> <span class="cmd">cat why-this-blog.md</span></span>
+          <p>
+            这里不写框架用法的复读笔记。主要写三类东西：AI 正在怎么改变写代码这件事、
+            工程上踩过的坑和复盘、技术圈值得聊两句的新闻。偶尔也写游戏和硬件。
+            不追热点，不凑更新，只写自己真想过的问题。
+          </p>
+
+          <span class="line" style="display:block; margin-top: 8px;"><span class="prompt">➜ ~/about</span> <span class="cmd">printenv</span></span>
+          <ul>
+            <li>LANG=zh_CN.UTF-8，写 JavaScript / TypeScript 最多，Python 越来越多</li>
+            <li>EDITOR=vim（但现在更多是 AI 在写，我负责点头）</li>
+            <li>HOBBY=篮球,游戏,一切能自动化的东西</li>
+            <li>PHILOSOPHY=工具应该替人干活，而不是反过来</li>
+          </ul>
+
+          <span class="line" style="display:block; margin-top: 8px;"><span class="prompt">➜ ~/about</span> <span class="cmd">ping douya</span></span>
+          <ul>
+            <li>GitHub → <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">@zhaojiale001016</a></li>
+            <li>对文章有想法 → 仓库提 Issue，48ms 内响应（大概）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</Base>

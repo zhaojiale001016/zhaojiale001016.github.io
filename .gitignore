@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.deploy_git/
+.DS_Store
+.scratch/
+.sandbox-bg/
+.comate/

@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="404">
+  <div class="wrap" style="padding-top: 64px; padding-bottom: 64px; max-width: 760px;">
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><span class="title">douya@blog: ~ — zsh</span></div>
+      <div class="term-body">
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">cd /this-page</span></span>
+        <span class="out" style="color: var(--red);">cd: no such file or directory: /this-page</span>
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">echo $?</span></span>
+        <span class="out" style="font-size: 3rem; font-weight: 800; color: var(--green);">404</span>
+        <span class="out">页面不存在，可能已被移动或删除。</span>
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd"><a href="/" style="color: var(--cyan); border-bottom: 1px dashed var(--cyan);">cd ~/home</a> 或 <a href="/search" style="color: var(--cyan); border-bottom: 1px dashed var(--cyan);">grep 搜一下</a></span></span>
+      </div>
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+const fmt = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const byYear = new Map<number, typeof posts>();
+for (const p of posts) {
+  const y = p.data.pubDate.getFullYear();
+  byYear.set(y, [...(byYear.get(y) ?? []), p]);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+const categories = [...new Set(posts.map((p) => p.data.category))];
+---
+
+<Base title="archives">
+  <div class="wrap" style="padding-top: 44px; padding-bottom: 48px; max-width: 860px;">
+    <div class="term">
+      <div class="term-bar">
+        <i></i><i></i><i></i>
+        <span class="title">douya@blog: ~/posts — zsh</span>
+      </div>
+      <div class="term-body">
+        <span class="line"><span class="prompt">➜ ~/posts</span> <span class="cmd">ls -la --sort=time</span></span>
+        <span class="out">total {posts.length} · categories: {categories.join(', ')}</span>
+
+        {years.map((y) => (
+          <div class="arch-group">
+            <div class="arch-year">{y}/</div>
+            {byYear.get(y)!.map((p) => (
+              <div class="list-item">
+                <time>{fmt(p.data.pubDate)}</time>
+                <a href={`/posts/${p.id}`}>{p.data.title}</a>
+                <span class="cat">{p.data.category}</span>
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</Base>

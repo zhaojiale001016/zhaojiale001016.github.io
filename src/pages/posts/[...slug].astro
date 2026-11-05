@@ -1,0 +1,86 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog')).sort(
+    (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+  );
+  return posts.map((post, i) => ({
+    params: { slug: post.id },
+    props: {
+      post,
+      prev: posts[i + 1] ?? null, // 更早一篇
+      next: posts[i - 1] ?? null, // 更新一篇
+    },
+  }));
+}
+
+const { post, prev, next } = Astro.props;
+const { Content } = await render(post);
+const fmt = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
+---
+
+<Base title={post.data.title} description={post.data.description} cover={post.data.cover}>
+  <article class="article">
+    <div class="article-head">
+      <span class="path">➜ ~/posts $ cat ./{post.id}.md</span>
+      <h1>{post.data.title}</h1>
+      <div class="meta" style="margin-top: 16px; margin-bottom: 0;">
+        <a class="cat" href={`/categories/${encodeURIComponent(post.data.category)}`}>{post.data.category}</a>
+        <time>{fmt(post.data.pubDate)}</time>
+        <span>约 {minutes} 分钟读完</span>
+      </div>
+    </div>
+    {post.data.cover && <img class="cover" src={post.data.cover} alt={post.data.title} />}
+    <div class="prose">
+      <Content />
+    </div>
+    {post.data.tags.length > 0 && (
+      <div class="article-tags">
+        {post.data.tags.map((t) => (
+          <a href={`/tags/${encodeURIComponent(t)}`}>{t}</a>
+        ))}
+      </div>
+    )}
+
+    <nav class="post-nav">
+      {prev ? (
+        <a class="pn" href={`/posts/${prev.id}`}>
+          <span class="dir">← older</span>
+          <span class="t">{prev.data.title}</span>
+        </a>
+      ) : <span />}
+      {next ? (
+        <a class="pn right" href={`/posts/${next.id}`}>
+          <span class="dir">newer →</span>
+          <span class="t">{next.data.title}</span>
+        </a>
+      ) : <span />}
+    </nav>
+  </article>
+</Base>
+
+<style>
+  .post-nav {
+    display: flex; justify-content: space-between; gap: 16px;
+    margin-top: 40px;
+  }
+  .pn {
+    flex: 1; max-width: 48%;
+    display: flex; flex-direction: column; gap: 6px;
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 14px 18px;
+    transition: border-color .15s, transform .15s;
+  }
+  .pn:hover { border-color: var(--green); transform: translateY(-2px); }
+  .pn.right { text-align: right; margin-left: auto; }
+  .pn .dir { font-size: .72rem; color: var(--green); font-weight: 700; }
+  .pn .t { font-size: .85rem; color: var(--ink-2); line-height: 1.5; }
+  .article-tags a { color: var(--cyan); }
+  .article-tags a::before { content: "#"; }
+  .article-tags a:hover { color: var(--green); }
+  .meta a.cat:hover { text-decoration: underline; }
+</style>

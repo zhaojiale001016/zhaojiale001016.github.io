@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+const [featured, ...rest] = posts;
+const fmt = (d: Date) =>
+  `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const categories = [...new Set(posts.map((p) => p.data.category))];
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))];
+---
+
+<Base title="home">
+  <section class="hero">
+    <div class="wrap">
+      <div class="term">
+        <div class="term-bar">
+          <i></i><i></i><i></i>
+          <span class="title">douya@blog: ~ — zsh — 80×24</span>
+        </div>
+        <div class="term-body">
+          <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">./whoami</span></span>
+          <span class="out">你好，我是豆芽。写代码，也写代码背后的世界——<strong>前端 × AI × 游戏 × 硬件</strong>，技术圈的每一场变局都逃不过这个终端。</span>
+          <h1>豆芽的技术博客</h1>
+          <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">stat ./posts --format=summary</span></span>
+          <div class="stats">
+            <span class="stat">posts: <b>{posts.length}</b></span>
+            <span class="stat">categories: <b>{categories.join(' / ')}</b></span>
+            <span class="stat">updated: <b>{posts[0] ? fmt(posts[0].data.pubDate) : '-'}</b></span>
+            <span class="stat">status: <b>active</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="section-head">
+      <h2>latest.log</h2>
+      <a class="more" href="/archives">cat archives →</a>
+    </div>
+
+    {featured && (
+      <a class="featured" href={`/posts/${featured.id}`}>
+        {featured.data.cover && <img class="cover" src={featured.data.cover} alt={featured.data.title} />}
+        <div class="body">
+          <div class="meta">
+            <span class="cat">{featured.data.category}</span>
+            <time>{fmt(featured.data.pubDate)}</time>
+          </div>
+          <h3>{featured.data.title}</h3>
+          <p class="desc">{featured.data.description}</p>
+          <span class="read-more">open ./posts/{featured.id}</span>
+        </div>
+      </a>
+    )}
+
+    <div class="grid" style="margin-top: 20px;">
+      {rest.map((p) => (
+        <article class="card">
+          {p.data.cover && (
+            <a href={`/posts/${p.id}`}><img class="cover" src={p.data.cover} alt={p.data.title} loading="lazy" /></a>
+          )}
+          <div class="body">
+            <div class="meta">
+              <span class="cat">{p.data.category}</span>
+              <time>{fmt(p.data.pubDate)}</time>
+            </div>
+            <h3><a href={`/posts/${p.id}`}>{p.data.title}</a></h3>
+            <p class="desc">{p.data.description}</p>
+            {p.data.tags.length > 0 && (
+              <div class="tags">{p.data.tags.slice(0, 3).map((t) => <a href={`/tags/${encodeURIComponent(t)}`}><span>{t}</span></a>)}</div>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Base>
