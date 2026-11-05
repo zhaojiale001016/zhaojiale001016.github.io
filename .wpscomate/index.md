@@ -67,6 +67,8 @@ Root: `豆芽博客`
     │   ├── categories/
     │   │   └── [category].astro
     │   ├── index.astro
+    │   ├── page/
+    │   │   └── [page].astro
     │   ├── posts/
     │   │   └── [...slug].astro
     │   ├── rss.xml.ts
