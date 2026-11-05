@@ -6,8 +6,10 @@ export async function getStaticPaths({ paginate }: { paginate: Function }) {
   const posts = (await getCollection('blog')).sort(
     (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
   );
-  // 首页展示 featured + 前 8 篇，分页从第 9 篇开始接续
-  return paginate(posts.slice(1), { pageSize: 8 });
+  // 首页展示 featured(1篇) + 前 8 篇，分页从第 10 篇开始接续；无存量则不生成分页
+  const rest = posts.slice(1 + 8);
+  if (rest.length === 0) return [];
+  return paginate(rest, { pageSize: 8 });
 }
 
 const { page } = Astro.props as any;

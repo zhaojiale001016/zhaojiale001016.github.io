@@ -1,7 +1,7 @@
 ---
 title: "DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活"
 description: "11 月刚开头，DeepSeek 公开 Super-agent 架构让 AI 调度 AI，美团发布全程国产算力训练的 LongCat-2.5，OpenAI 悄悄灰度 GPT-6.2。三家动作放一起看，行业风向已经变了：模型比的不是谁会聊，是谁能把活干完。"
-pubDate: 2026-11-05 18:00:00
+pubDate: 2026-11-05T18:00:00+08:00
 cover: /img/cover-llm-agent.png
 category: "技术资讯"
 tags:

@@ -2,14 +2,14 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 
-export const PAGE_SIZE = 8;
+const PAGE_SIZE = 8;
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
 );
 const [featured, ...rest] = posts;
 const pagePosts = rest.slice(0, PAGE_SIZE);
-const totalPages = Math.max(1, Math.ceil(rest.length / PAGE_SIZE));
+const totalPages = Math.max(1, Math.ceil((rest.length - PAGE_SIZE) / PAGE_SIZE));
 const fmt = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const categories = [...new Set(posts.map((p) => p.data.category))];
@@ -84,7 +84,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
     {totalPages > 1 && (
       <nav class="pager">
         <span class="cur">page 1 / {totalPages}</span>
-        <a href="/page/2">older →</a>
+        <a href="/page/1">older →</a>
       </nav>
     )}
   </div>

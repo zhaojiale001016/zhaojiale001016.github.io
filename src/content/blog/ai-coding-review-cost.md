@@ -1,7 +1,7 @@
 ---
 title: "AI 写代码省下的时间，正在审查环节加倍还回去"
 description: "AI 编程工具确实让代码生成变快了，但哈佛和多项行业调查显示，审查、返工和流水线成本正在吞噬这部分收益，瓶颈从生产端转移到了验证端"
-pubDate: 2026-11-05 17:00:00
+pubDate: 2026-11-05T17:00:00+08:00
 cover: /img/cover-ai-review.png
 category: "技术资讯"
 tags:

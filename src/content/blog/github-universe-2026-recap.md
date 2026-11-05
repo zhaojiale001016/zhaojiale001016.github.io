@@ -1,7 +1,7 @@
 ---
 title: "GitHub Universe 2026 散场后，我记下了这几个数字"
 description: "GitHub Universe 2026 的核心信息：Copilot 从助手变成跨仓库的协作系统，平台在重建底层 Git 基础设施，而开源维护者正在学习如何抵挡 AI 生成的 PR 洪流"
-pubDate: 2026-11-05 17:30:00
+pubDate: 2026-11-05T17:30:00+08:00
 cover: /img/cover-github-universe.png
 category: "技术资讯"
 tags:
