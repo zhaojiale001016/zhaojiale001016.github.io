@@ -139,24 +139,6 @@ img { max-width: 100%; display: block; }
 .read-more::before { content: "$ "; color: var(--ink-3); }
 
 /* ===== Cards ===== */
-/* 热门文章 */
-.popular-section { margin-top: 28px; }
-.popular-list { display: flex; flex-direction: column; gap: 6px; }
-.pop-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 14px; border: 1px solid var(--line);
-  border-radius: var(--radius); background: var(--paper);
-  transition: border-color .15s, transform .15s;
-}
-.pop-item:hover { border-color: var(--green); transform: translateX(4px); }
-.pop-rank {
-  width: 24px; height: 24px; border-radius: 50%;
-  background: var(--green); color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-size: .7rem; font-weight: 700; flex-shrink: 0;
-}
-.pop-title { font-size: .82rem; color: var(--ink); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.pop-cat { font-size: .68rem; color: var(--ink-3); flex-shrink: 0; }
 
 .grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
