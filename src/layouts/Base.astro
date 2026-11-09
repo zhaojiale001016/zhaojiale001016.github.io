@@ -165,10 +165,13 @@ const nav = [
         }
       });
 
-      // AOS 初始化
-      if (typeof AOS !== 'undefined') {
-        AOS.init({ duration: 600, easing: 'ease-out', once: true, offset: 50 });
-      }
+      // AOS 初始化——先显示内容，再启动动画
+      window.addEventListener('load', () => {
+        if (typeof AOS !== 'undefined') {
+          document.body.classList.add('aos-ready');
+          AOS.init({ duration: 600, easing: 'ease-out', once: true, offset: 50 });
+        }
+      });
 
       // NProgress 页面加载
       if (typeof NProgress !== 'undefined') {

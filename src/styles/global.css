@@ -240,6 +240,11 @@ img { max-width: 100%; display: block; }
 .callout-caution { border-left-color: #c62828; background: rgba(198,40,40,.06); }
 .callout-caution .callout-title { color: #c62828; }
 
+/* AOS 兜底：如果 AOS 没初始化，2秒后强制显示 */
+[data-aos] { opacity: 1 !important; transform: none !important; }
+body.aos-ready [data-aos] { opacity: 0; }
+body.aos-ready [data-aos].aos-animate { opacity: 1; }
+
 /* Typed.js 光标样式 */
 .typed-cursor { color: var(--green); opacity: 1; animation: typedjsBlink .7s infinite; }
 @keyframes typedjsBlink { 50% { opacity: 0; } }
