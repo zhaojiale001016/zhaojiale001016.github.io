@@ -75,6 +75,8 @@ Root: `豆芽博客`
     │   ├── archives.astro
     │   ├── categories/
     │   │   └── [category].astro
+    │   ├── friends.astro
+    │   ├── graph.astro
     │   ├── index.astro
     │   ├── page/
     │   │   └── [page].astro
@@ -86,9 +88,10 @@ Root: `豆芽博客`
     │   │   └── index.json.ts
     │   ├── stats.astro
     │   ├── subscribe.astro
-    │   └── tags/
-    │       ├── [tag].astro
-    │       └── index.astro
+    │   ├── tags/
+    │   │   ├── [tag].astro
+    │   │   └── index.astro
+    │   └── uses.astro
     └── styles/
         └── global.css
 ```
