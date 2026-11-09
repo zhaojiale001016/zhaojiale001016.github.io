@@ -12,6 +12,9 @@ const site = 'https://zhaojiale001016.github.io';
 const canonical = site + Astro.url.pathname;
 const ogImage = cover ? site + cover : undefined;
 const path = Astro.url.pathname;
+// 全站文章 id 列表（随机漫游用）
+import { getCollection } from 'astro:content';
+const postIds = (await getCollection('blog')).map((p) => p.id);
 // 构建信息：git 短哈希 + 构建时间
 import { execSync } from 'node:child_process';
 let commit = 'dev';
@@ -23,6 +26,7 @@ const nav = [
   { href: '/', label: 'home' },
   { href: '/archives', label: 'archives' },
   { href: '/tags', label: 'tags' },
+  { href: '/stats', label: 'stats' },
   { href: '/search', label: 'search' },
   { href: '/about', label: 'about' },
 ];
@@ -73,12 +77,65 @@ const nav = [
         </div>
         <div class="links">
           <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a>
+          <a href="#" id="random-post">random</a>
           <a href="/rss.xml">rss</a>
           <a href="/sitemap-index.xml">sitemap</a>
         </div>
       </div>
     </footer>
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script is:inline define:vars={{ postIds }}>
+      window.__POSTS = postIds;
+      // 键盘快捷键
+      let gPending = false;
+      const toast = (msg) => {
+        let t = document.getElementById('kbd-toast');
+        if (!t) {
+          t = document.createElement('div');
+          t.id = 'kbd-toast';
+          t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#242b27;color:#f2efe7;padding:10px 18px;border-radius:8px;font-size:12px;z-index:200;font-family:inherit;white-space:pre;line-height:1.7';
+          document.body.appendChild(t);
+        }
+        t.textContent = msg;
+        t.style.display = 'block';
+        clearTimeout(t._h);
+        t._h = setTimeout(() => (t.style.display = 'none'), 2600);
+      };
+      const randomPost = () => {
+        if (!postIds.length) return;
+        const id = postIds[Math.floor(Math.random() * postIds.length)];
+        location.href = '/posts/' + id;
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (gPending) {
+          gPending = false;
+          const map = { h: '/', a: '/archives', t: '/tags', s: '/stats' };
+          if (map[e.key]) location.href = map[e.key];
+          return;
+        }
+        switch (e.key) {
+          case 'g': gPending = true; setTimeout(() => (gPending = false), 800); break;
+          case '/': e.preventDefault(); location.href = '/search'; break;
+          case 'r': randomPost(); break;
+          case 'ArrowLeft': {
+            const el = document.querySelector('.post-nav .pn:not(.right)');
+            if (el?.href) location.href = el.href;
+            break;
+          }
+          case 'ArrowRight': {
+            const el = document.querySelector('.post-nav .pn.right');
+            if (el?.href) location.href = el.href;
+            break;
+          }
+          case '?':
+            toast('快捷键\n  /        搜索\n  r        随机看一篇\n  ← / →    上一篇 / 下一篇（文章页）\n  g h      首页\n  g a      归档\n  g t      标签\n  g s      统计');
+            break;
+        }
+      });
+    </script>
     <script is:inline>
       // 不蒜子加载完成后显示统计数字
       const t = setInterval(() => {

@@ -1,0 +1,112 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime()
+);
+
+// 分类占比
+const catCount = new Map<string, number>();
+for (const p of posts) catCount.set(p.data.category, (catCount.get(p.data.category) ?? 0) + 1);
+
+// 月度产量
+const monthCount = new Map<string, number>();
+for (const p of posts) {
+  const k = `${p.data.pubDate.getFullYear()}-${String(p.data.pubDate.getMonth() + 1).padStart(2, '0')}`;
+  monthCount.set(k, (monthCount.get(k) ?? 0) + 1);
+}
+const months = [...monthCount.keys()].sort();
+
+// 标签 Top10
+const tagCount = new Map<string, number>();
+for (const p of posts) for (const t of p.data.tags) tagCount.set(t, (tagCount.get(t) ?? 0) + 1);
+const topTags = [...tagCount.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
+
+// 总字数估算
+const totalChars = posts.reduce((s, p) => s + (p.body?.length ?? 0), 0);
+
+const chartData = {
+  cats: [...catCount.entries()].map(([name, value]) => ({ name, value })),
+  months,
+  monthValues: months.map((m) => monthCount.get(m)),
+  tags: topTags.map(([t]) => t),
+  tagValues: topTags.map(([, v]) => v),
+};
+---
+
+<Base title="stats">
+  <div class="wrap" style="padding-top: 44px; padding-bottom: 56px; max-width: 960px;">
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><span class="title">douya@blog: ~/stats — zsh</span></div>
+      <div class="term-body">
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">./blog --stats --graph</span></span>
+        <div class="kpi">
+          <div class="k"><b>{posts.length}</b><span>articles</span></div>
+          <div class="k"><b>{catCount.size}</b><span>categories</span></div>
+          <div class="k"><b>{tagCount.size}</b><span>tags</span></div>
+          <div class="k"><b>{(totalChars / 10000).toFixed(1)}w</b><span>chars</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="charts">
+      <div class="panel"><div class="pt">$ monthly output</div><div id="c-month" class="chart"></div></div>
+      <div class="panel"><div class="pt">$ category share</div><div id="c-cat" class="chart"></div></div>
+      <div class="panel wide"><div class="pt">$ top tags</div><div id="c-tag" class="chart"></div></div>
+    </div>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/echarts@5.6.0/dist/echarts.min.js"></script>
+  <script is:inline define:vars={{ chartData }}>
+    const G = '#1f7a4d', G2 = '#4caf7d', C = '#2b8a9e', A = '#b8860b', INK = '#4a544e', LINE = '#ddd6c3';
+    const base = {
+      textStyle: { fontFamily: 'JetBrains Mono, SF Mono, Menlo, monospace', color: INK },
+      grid: { left: 40, right: 16, top: 24, bottom: 28 },
+    };
+    const init = (id, opt) => {
+      const el = document.getElementById(id);
+      if (!el || typeof echarts === 'undefined') return;
+      const ch = echarts.init(el);
+      ch.setOption(opt);
+      window.addEventListener('resize', () => ch.resize());
+    };
+    init('c-month', { ...base,
+      xAxis: { type: 'category', data: chartData.months, axisLine: { lineStyle: { color: LINE } } },
+      yAxis: { type: 'value', minInterval: 1, splitLine: { lineStyle: { color: LINE, type: 'dashed' } } },
+      series: [{ type: 'bar', data: chartData.monthValues, barWidth: '50%',
+        itemStyle: { color: G, borderRadius: [4, 4, 0, 0] } }],
+      tooltip: { trigger: 'axis' },
+    });
+    init('c-cat', { ...base,
+      series: [{ type: 'pie', radius: ['42%', '68%'],
+        itemStyle: { borderColor: '#fbfaf4', borderWidth: 2, borderRadius: 6 },
+        label: { color: INK, fontSize: 11 },
+        color: [G, G2, C, A],
+        data: chartData.cats }],
+      tooltip: { trigger: 'item', formatter: '{b}: {c} 篇（{d}%）' },
+    });
+    init('c-tag', { ...base,
+      grid: { left: 90, right: 24, top: 10, bottom: 24 },
+      xAxis: { type: 'value', minInterval: 1, splitLine: { lineStyle: { color: LINE, type: 'dashed' } } },
+      yAxis: { type: 'category', data: chartData.tags.reverse(), axisLine: { lineStyle: { color: LINE } } },
+      series: [{ type: 'bar', data: chartData.tagValues.reverse(), barWidth: '55%',
+        itemStyle: { color: C, borderRadius: [0, 4, 4, 0] } }],
+      tooltip: { trigger: 'axis' },
+    });
+  </script>
+</Base>
+
+<style>
+  .kpi { display: flex; gap: 28px; margin-top: 18px; flex-wrap: wrap; }
+  .kpi .k { display: flex; flex-direction: column; }
+  .kpi b { font-size: 1.5rem; color: var(--green); }
+  .kpi span { font-size: .72rem; color: var(--ink-3); }
+  .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 24px; }
+  .panel { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+  .panel.wide { grid-column: 1 / -1; }
+  .pt { font-size: .78rem; color: var(--green); font-weight: 700; margin-bottom: 8px; }
+  .chart { height: 240px; }
+  .panel.wide .chart { height: 300px; }
+  @media (max-width: 720px) { .charts { grid-template-columns: 1fr; } }
+</style>
