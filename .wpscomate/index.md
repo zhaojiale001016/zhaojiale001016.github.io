@@ -18,6 +18,7 @@ Root: `豆芽博客`
 │   │   ├── hero-tech-light-2.svg
 │   │   ├── inline/
 │   │   └── tag-bg.svg
+│   ├── manifest.webmanifest
 │   └── rss.xsl
 ├── scripts/
 │   ├── deploy.mjs
@@ -84,6 +85,7 @@ Root: `豆芽博客`
     │   │   ├── index.astro
     │   │   └── index.json.ts
     │   ├── stats.astro
+    │   ├── subscribe.astro
     │   └── tags/
     │       ├── [tag].astro
     │       └── index.astro

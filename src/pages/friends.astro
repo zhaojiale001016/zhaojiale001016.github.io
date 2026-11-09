@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+const friends = [
+  { name: 'Randy 的博客', url: '#', desc: '前端架构与技术思考' },
+  { name: 'Airing 的博客', url: '#', desc: '独立开发与产品笔记' },
+];
+---
+
+<Base title="friends">
+  <div class="wrap" style="padding-top: 44px; padding-bottom: 56px; max-width: 680px;">
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><span class="title">douya@blog: ~/friends — zsh</span></div>
+      <div class="term-body">
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">cat ./friends.md</span></span>
+
+        <p style="margin: 20px 0 14px; color: var(--ink-2)">常看的站点和博客。想交换友链的话，在 <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io" style="color: var(--green)" target="_blank" rel="noopener">GitHub 仓库</a> 开个 Issue 或者直接在评论区留言，我会手动加上。</p>
+
+        {friends.length > 0 ? (
+          <div class="friend-grid">
+            {friends.map((f) => (
+              <a class="friend" href={f.url} target="_blank" rel="noopener">
+                <b>{f.name}</b>
+                <span>{f.desc}</span>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <div class="empty" style="padding: 28px; text-align: center; color: var(--ink-3); font-size: .85rem;">
+            友链还在收集中。先来坐第一个沙发？
+          </div>
+        )}
+
+        <span class="line" style="margin-top: 18px;"><span class="prompt">➜ ~</span> <span class="cursor">&nbsp;</span></span>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .friend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .friend { display: flex; flex-direction: column; gap: 6px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; transition: border-color .15s, transform .15s; }
+  .friend:hover { border-color: var(--green); transform: translateY(-2px); }
+  .friend b { font-size: .88rem; color: var(--green); }
+  .friend span { font-size: .76rem; color: var(--ink-3); }
+  @media (max-width: 520px) { .friend-grid { grid-template-columns: 1fr; } }
+</style>

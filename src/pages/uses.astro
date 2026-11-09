@@ -1,0 +1,68 @@
+---
+import Base from '../layouts/Base.astro';
+const gear = [
+  { cat: '💻 主力机', items: [
+    ['MacBook Pro M4 Pro', '24GB / 512GB，日常开发和工作主力'],
+    ['机械革命蛟龙 16', 'AMD R7 + RTX 2060，玩游戏和跑 Windows 专用'],
+  ]},
+  { cat: '⌨️ 外设', items: [
+    ['Keychron K3 Pro', '矮轴青轴，矮轴的手感对我来说刚好'],
+    ['Logitech MX Master 3S', '安静、续航长、手势多，办公鼠标天花板'],
+    ['Dell U2723QE', '27 寸 4K，IPS Black，码字色准都不错'],
+  ]},
+  { cat: '🛠️ 软件', items: [
+    ['VS Code / JetBrains WebStorm', '看项目类型轮着开，前者改起来快，后者稳'],
+    ['Warp / iTerm2', '终端二选一，看当天心情'],
+    ['GitHub Copilot / Codex', '打草稿 / 接手长任务，分工明确'],
+  ]},
+  { cat: '📱 手机 & 随身', items: [
+    ['iPhone 15 Pro', '主力机，iOS 生态太方便了'],
+    ['AirPods Pro 2', '写码降噪、走路通透，全天不用摘'],
+  ]},
+  { cat: '🎮 游戏', items: [
+    ['Nintendo Switch + Switch 2', '塞尔达是无敌的，不接受反驳'],
+    ['Steam Deck OLED', '躺床上玩的独立游戏神器'],
+  ]},
+  { cat: '🏠 桌面', items: [
+    ['宜家升降桌 + Ergomax 工学椅', '站坐交替是真的有用，腰会感谢你'],
+    ['ScreenBar Halo', '屏幕挂灯，不占桌面，光线均匀'],
+    ['绿植 x3', '严格来说是三个花盆，里面的植物养死了就换'],
+  ]},
+];
+---
+
+<Base title="uses">
+  <div class="wrap" style="padding-top: 44px; padding-bottom: 56px; max-width: 760px;">
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><span class="title">douya@blog: ~/uses — zsh</span></div>
+      <div class="term-body">
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">cat ./uses.md</span></span>
+        <p style="margin: 20px 0 8px; color: var(--ink-2)">写码吃东西的家伙，全在这了。遵循 <a href="https://uses.tech" style="color: var(--green)" target="_blank" rel="noopener">uses.tech</a> 格式。</p>
+        {gear.map((g) => (
+          <div class="gear-cat">
+            <h2>{g.cat}</h2>
+            <div class="gear-grid">
+              {g.items.map(([name, desc]) => (
+                <div class="gear-item">
+                  <b>{name}</b>
+                  <span>{desc}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+        <span class="line" style="margin-top: 12px;"><span class="prompt">➜ ~</span> <span class="cursor">&nbsp;</span></span>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .gear-cat { margin-top: 26px; }
+  .gear-cat h2 { font-size: 1rem; color: var(--green); margin-bottom: 10px; }
+  .gear-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .gear-item { background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 10px 14px; }
+  .gear-item b { display: block; font-size: .88rem; margin-bottom: 3px; }
+  .gear-item span { font-size: .76rem; color: var(--ink-3); line-height: 1.5; }
+  @media (max-width: 560px) { .gear-grid { grid-template-columns: 1fr; } }
+</style>

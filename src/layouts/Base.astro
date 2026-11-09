@@ -80,6 +80,9 @@ const nav = [
           <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a>
           <a href="#" id="random-post">random</a>
           <a href="/rss.xml">rss</a>
+          <a href="/uses">uses</a>
+          <a href="/friends">friends</a>
+          <a href="/graph">graph</a>
           <a href="/sitemap-index.xml">sitemap</a>
         </div>
       </div>
@@ -138,6 +141,16 @@ const nav = [
       });
     </script>
     <script is:inline>
+      // Konami 彩蛋
+      let k = [];
+      const KONAMI = [38,38,40,40,37,39,37,39,66,65];
+      document.addEventListener('keydown', (e) => {
+        k.push(e.keyCode); k = k.slice(-10);
+        if (k.join() === KONAMI.join()) {
+          toast('🎮 ↑↑↓↓←→←→BA：欢迎来到豆芽博客的秘密通道。\n这台服务器上跑着 13 篇文章、40 个标签、3.3 万字。\n亏你想得到按这个。');
+          k = [];
+        }
+      });
       // 不蒜子加载完成后显示统计数字
       const t = setInterval(() => {
         if (document.getElementById('busuanzi_value_site_pv')?.innerText) {

@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const posts = await getCollection('blog');
+interface Node { id: string; label: string; group: number; r: number; url?: string }
+const nodes: Node[] = [];
+const edges: { source: string; target: string }[] = [];
+const addedTags = new Set<string>();
+
+// 分类颜色：1=技术 2=游戏 3=数码 4=汽车
+const catColor = (c: string) => c === '技术资讯' ? 1 : c === '游戏资讯' ? 2 : c === '数码资讯' ? 3 : 4;
+
+for (const p of posts) {
+  nodes.push({ id: p.id, label: p.data.title.slice(0, 18), group: catColor(p.data.category), r: 8, url: `/posts/${p.id}` });
+  for (const t of p.data.tags) {
+    if (!addedTags.has(t)) {
+      addedTags.add(t);
+      nodes.push({ id: t, label: t, group: 0, r: 5 });
+    }
+    edges.push({ source: p.id, target: t });
+  }
+}
+---
+
+<Base title="graph">
+  <div class="wrap" style="padding-top: 44px; padding-bottom: 80px;">
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><span class="title">douya@blog: ~/graph — zsh</span></div>
+      <div class="term-body">
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">./render --knowledge-graph</span></span>
+      </div>
+    </div>
+    <svg id="graph" style="width:100%;height:70vh;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);margin-top:14px;"></svg>
+    <div class="legend">
+      <span class="dot" style="background:#1f7a4d"></span> 文章
+      <span class="dot" style="background:#2b8a9e"></span> 标签
+    </div>
+  </div>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script is:inline define:vars={{ nodes, edges }}>
+    if (typeof d3 === 'undefined' || !nodes.length) return;
+    const svg = d3.select('#graph'),
+          W = svg.node().clientWidth, H = svg.attr('height') || window.innerHeight * 0.7;
+    svg.attr('viewBox', `0 0 ${W} ${H}`);
+    const g = svg.append('g');
+    const colors = ['#2b8a9e', '#1f7a4d', '#4caf7d', '#b8860b', '#c7783c'];
+
+    const sim = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(edges).id((d: any) => d.id).distance(80))
+      .force('charge', d3.forceManyBody().strength(-200))
+      .force('center', d3.forceCenter(W / 2, H / 2))
+      .force('collide', d3.forceCollide((d: any) => d.r + 4));
+
+    const link = g.append('g').selectAll('line')
+      .data(edges).join('line')
+      .attr('stroke', '#ddd6c3').attr('stroke-width', .8).attr('stroke-opacity', .7);
+
+    const node = g.append('g').selectAll('g')
+      .data(nodes).join('g').call(
+        d3.drag<SVGGElement, any>()
+          .on('start', (e: any, d: any) => { if (!e.active) sim.alphaTarget(.3).restart(); d.fx = d.x; d.fy = d.y; })
+          .on('drag', (e: any, d: any) => { d.fx = e.x; d.fy = e.y; })
+          .on('end', (e: any, d: any) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
+      );
+
+    node.append('circle')
+      .attr('r', (d: any) => d.r)
+      .attr('fill', (d: any) => colors[d.group % colors.length])
+      .attr('cursor', (d: any) => d.url ? 'pointer' : 'default')
+      .on('click', (e: any, d: any) => d.url && (window.location.href = d.url));
+
+    node.append('text')
+      .text((d: any) => d.label)
+      .attr('font-size', 10).attr('fill', '#242b27')
+      .attr('text-anchor', 'middle').attr('dy', (d: any) => d.r + 13)
+      .style('pointer-events', 'none');
+
+    sim.on('tick', () => {
+      link.attr('x1', (d: any) => d.source.x).attr('y1', (d: any) => d.source.y)
+          .attr('x2', (d: any) => d.target.x).attr('y2', (d: any) => d.target.y);
+      node.attr('transform', (d: any) => `translate(${d.x},${d.y})`);
+    });
+  </script>
+</Base>
+
+<style>
+  .legend { display: flex; align-items: center; gap: 16px; margin-top: 10px; font-size: .78rem; color: var(--ink-3); }
+  .legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+</style>
