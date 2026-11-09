@@ -13,7 +13,6 @@ Root: `豆芽博客`
 │   └── img/
 │       ├── about-bg.svg
 │       ├── archive-bg.svg
-│       ├── avatar.svg
 │       ├── category-bg.svg
 │       ├── hero-tech-light-1.svg
 │       ├── hero-tech-light-2.svg
