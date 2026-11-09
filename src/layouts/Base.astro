@@ -27,7 +27,9 @@ const nav = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" href="/img/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="180x180" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml" />
     <meta property="og:type" content="website" />
@@ -36,7 +38,7 @@ const nav = [
     <meta property="og:url" content={canonical} />
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta name="twitter:card" content="summary_large_image" />
-    <title>{title} · douya@blog</title>
+    <title>{title} · 豆芽的技术博客</title>
   </head>
   <body>
     <header class="site-header">
