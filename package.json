@@ -16,6 +16,7 @@
     "astro": "^5.13.0",
     "astro-expressive-code": "^0.44.3",
     "medium-zoom": "^1.1.2",
+    "mermaid": "^12.3.0",
     "pagefind": "^1.6.0",
     "rehype-autolink-headings": "^7.1.0",
     "schema-dts": "^2.1.0"

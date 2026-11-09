@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Now">
+  <div class="wrap" style="padding-top: 44px; padding-bottom: 56px; max-width: 680px;">
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><span class="title">豆芽@blog: ~/now — zsh</span></div>
+      <div class="term-body">
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">cat ./now.md</span></span>
+
+        <div class="now-content">
+          <h2>现在在干嘛</h2>
+          <p class="updated">更新于 2026-11-09</p>
+
+          <h3>工作</h3>
+          <ul>
+            <li>在金山办公写代码，部门名字里带「AI」</li>
+            <li>日常和 Copilot 结对编程，负责点头和摇头</li>
+          </ul>
+
+          <h3>项目</h3>
+          <ul>
+            <li><a href="/">豆芽的技术博客</a>——这个站，每天 18:00 自动更新</li>
+            <li>genoffice——自研 Electron 办公应用，侧边栏内嵌金山文档</li>
+            <li>work-hours-filler——Redmine 工时自动填报，工作日 18:05 执行</li>
+          </ul>
+
+          <h3>在读</h3>
+          <ul>
+            <li>《Crafting Interpreters》——Robert Nystrom，手写解释器</li>
+            <li>各种 AI 编程工具的更新日志（算是工作的一部分）</li>
+          </ul>
+
+          <h3>在玩</h3>
+          <ul>
+            <li>Switch 2 首发阵容观望中</li>
+            <li>NBA 2025-26 赛季，关注着</li>
+          </ul>
+
+          <h3>设备</h3>
+          <ul>
+            <li>MacBook Pro（主力）+ 机械革命蛟龙（Windows 副机）</li>
+            <li>Keychron K 系列键盘 + MX Master 3S</li>
+          </ul>
+
+          <p class="note">这是 <a href="https://nownownow.com/about" target="_blank" rel="noopener">nownownow.com</a> 倡议的一部分，不是简历，是「此刻」。</p>
+        </div>
+
+        <span class="line" style="margin-top: 18px;"><span class="prompt">➜ ~</span> <span class="cursor">&nbsp;</span></span>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .now-content { margin-top: 16px; }
+  .now-content h2 { font-size: 1.3rem; color: var(--green); margin-bottom: 8px; }
+  .now-content h3 { font-size: .95rem; color: var(--ink); margin: 20px 0 8px; }
+  .now-content h3::before { content: "## "; color: var(--green); }
+  .now-content .updated { font-size: .72rem; color: var(--ink-3); margin-bottom: 8px; }
+  .now-content ul { padding-left: 20px; margin: 0 0 8px; }
+  .now-content li { font-size: .85rem; color: var(--ink-2); line-height: 1.8; }
+  .now-content li a { color: var(--green); }
+  .now-content .note { font-size: .75rem; color: var(--ink-3); margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--line); }
+  .now-content .note a { color: var(--green); }
+</style>

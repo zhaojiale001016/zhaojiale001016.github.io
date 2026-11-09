@@ -52,6 +52,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
           <div class="meta">
             <span class="cat">{featured.data.category}</span>
             <time>{fmt(featured.data.pubDate)}</time>
+            <span class="read-time">{Math.max(1, Math.round((featured.body?.length ?? 0) / 400))} 分钟</span>
           </div>
           <h3>{featured.data.title}</h3>
           <p class="desc">{featured.data.description}</p>
@@ -70,6 +71,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
             <div class="meta">
               <span class="cat">{p.data.category}</span>
               <time>{fmt(p.data.pubDate)}</time>
+              <span class="read-time">{Math.max(1, Math.round((p.body?.length ?? 0) / 400))} 分钟</span>
             </div>
             <h3><a href={`/posts/${p.id}`}>{p.data.title}</a></h3>
             <p class="desc">{p.data.description}</p>

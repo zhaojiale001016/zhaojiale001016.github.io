@@ -38,6 +38,7 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
 const fmt = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
+const ageDays = Math.floor((Date.now() - post.data.pubDate.getTime()) / 86400000);
 const ldJson = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
@@ -67,6 +68,7 @@ const ldJson = {
           <time>{fmt(post.data.pubDate)}</time>
           <span>约 {minutes} 分钟读完</span>
           <span id="busuanzi_container_page_pv">· 阅读 <span id="busuanzi_value_page_pv">-</span> 次</span>
+          {ageDays > 30 && <span class="age-notice">· 发布于 {ageDays} 天前，内容可能已过时</span>}
         </div>
       </div>
       {post.data.cover && <img class="cover" src={post.data.cover} alt={post.data.title} loading="lazy" />}
@@ -256,6 +258,9 @@ const ldJson = {
     cursor: pointer; transition: all .15s;
   }
   .share-btn:hover { border-color: var(--green); color: var(--green); }
+  .age-notice { color: #c7783c; font-size: .72rem; }
+  .mermaid-diagram { display: flex; justify-content: center; margin: 20px 0; padding: 20px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow-x: auto; }
+  .mermaid-diagram svg { max-width: 100%; height: auto; }
   .article-tags a { color: var(--cyan); }
   .article-tags a::before { content: "#"; }
   .article-tags a:hover { color: var(--green); }
@@ -297,6 +302,21 @@ const ldJson = {
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // Mermaid 图表渲染
+  document.querySelectorAll('pre[data-language="mermaid"]').forEach(async (pre, i) => {
+    try {
+      const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
+      mermaid.initialize({ startOnLoad: false, theme: 'neutral', themeVariables: { primaryColor: '#43a047', primaryTextColor: '#242b27', lineColor: '#43a047' } });
+      const code = pre.textContent;
+      const { svg } = await mermaid.render('mmd-' + i, code);
+      const div = document.createElement('div');
+      div.className = 'mermaid-diagram';
+      div.innerHTML = svg;
+      const ec = pre.closest('.expressive-code');
+      if (ec) ec.replaceWith(div); else pre.replaceWith(div);
+    } catch {}
+  });
 
   // 复制链接
   document.querySelector('.copy-link')?.addEventListener('click', (e) => {
