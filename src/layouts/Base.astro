@@ -7,7 +7,7 @@ interface Props {
   cover?: string;
 }
 
-const { title, description = '豆芽的技术博客：前端、AI、游戏、硬件与技术圈观察', cover } = Astro.props;
+const { title, description = '豆芽的技术博客：前端、AI、游戏、硬件、篮球与技术圈观察', cover } = Astro.props;
 const site = 'https://zhaojiale001016.github.io';
 const canonical = site + Astro.url.pathname;
 const ogImage = cover ? site + cover : undefined;

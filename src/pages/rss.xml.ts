@@ -7,7 +7,7 @@ export async function GET(context: { site: string }) {
   );
   return rss({
     title: '豆芽的技术博客',
-    description: '前端、AI、游戏、硬件与技术圈观察',
+    description: '前端、AI、游戏、硬件、篮球与技术圈观察',
     site: context.site,
     stylesheet: '/rss.xsl',
     items: posts.map((p) => ({
