@@ -240,6 +240,12 @@ img { max-width: 100%; display: block; }
 .callout-caution { border-left-color: #c62828; background: rgba(198,40,40,.06); }
 .callout-caution .callout-title { color: #c62828; }
 
+/* Vanta 背景层级 */
+.vanta-canvas { z-index: -1 !important; }
+main { position: relative; z-index: 1; }
+.site-header { position: relative; z-index: 2; }
+.site-footer { position: relative; z-index: 1; }
+
 /* AOS 兜底：如果 AOS 没初始化，2秒后强制显示 */
 [data-aos] { opacity: 1 !important; transform: none !important; }
 body.aos-ready [data-aos] { opacity: 0; }
