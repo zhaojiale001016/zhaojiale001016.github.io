@@ -26,7 +26,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
         </div>
         <div class="term-body">
           <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">./whoami</span></span>
-          <span class="out" id="typed-out"><span id="typed-text"></span><span class="typed-cursor">▊</span></span>
+          <span class="out" id="typed-out"><span id="typed-text"></span></span>
           <h1>豆芽的技术博客</h1>
           <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">stat ./posts --format=summary</span></span>
           <div class="stats">
@@ -92,10 +92,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
         loop: false,
         showCursor: true,
         cursorChar: '▊',
-        contentType: 'html',
-        onComplete: (self) => {
-          setTimeout(() => self.cursor?.classList.add('typed-cursor'), 500);
-        }
+        contentType: 'html'
       });
     });
   </script>

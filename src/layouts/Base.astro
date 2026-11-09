@@ -165,13 +165,10 @@ const nav = [
         }
       });
 
-      // AOS 初始化——先显示内容，再启动动画
-      window.addEventListener('load', () => {
-        if (typeof AOS !== 'undefined') {
-          document.body.classList.add('aos-ready');
-          AOS.init({ duration: 600, easing: 'ease-out', once: true, offset: 50 });
-        }
-      });
+      // AOS 初始化（脚本在 body 末尾，DOM 已就绪，直接启动）
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 600, easing: 'ease-out', once: true, offset: 50 });
+      }
 
       // NProgress 页面加载
       if (typeof NProgress !== 'undefined') {
@@ -181,7 +178,7 @@ const nav = [
       }
 
       // Vanta.js 动态背景（浅色小点，不干扰阅读）
-      if (typeof VANTA !== 'undefined' && document.querySelector('.hero')) {
+      if (typeof VANTA !== 'undefined' && typeof THREE !== 'undefined') {
         VANTA.DOTS({
           el: 'body',
           mouseControls: false,
@@ -212,6 +209,11 @@ const nav = [
     <script is:inline src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
     <!-- Rough Notation -->
     <script is:inline src="https://cdn.jsdelivr.net/npm/rough-notation@0.5.1/lib/rough-notation.iife.js"></script>
+    <!-- 鼠标星星尾迹（tholman/cursor-effects） -->
+    <script type="module">
+      import { fairyDustCursor } from 'https://cdn.jsdelivr.net/npm/cursor-effects@latest/+esm';
+      new fairyDustCursor({ colors: ['#43a047', '#2b8a9e', '#66bb6a'] });
+    </script>
 
     <script is:inline>
       // 不蒜子加载完成后显示统计数字
