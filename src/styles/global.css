@@ -263,7 +263,7 @@ img { max-width: 100%; display: block; }
   margin-top: 72px; padding: 30px 0;
 }
 .site-footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.site-footer .copy { color: var(--ink-3); font-size: .78rem; }
+.site-footer .copy { color: var(--ink-3); font-size: .78rem; white-space: nowrap; }
 .site-footer .links { display: flex; gap: 20px; font-size: .82rem; color: var(--ink-2); }
 .site-footer .links a:hover { color: var(--green); }
 

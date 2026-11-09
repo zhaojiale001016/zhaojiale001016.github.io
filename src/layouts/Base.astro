@@ -23,13 +23,13 @@ try {
 } catch {}
 const buildTime = new Date().toISOString().slice(0, 16).replace('T', ' ');
 const nav = [
-  { href: '/', label: 'home' },
-  { href: '/archives', label: 'archives' },
-  { href: '/tags', label: 'tags' },
-  { href: '/stats', label: 'stats' },
-  { href: '/subscribe', label: 'subscribe' },
-  { href: '/search', label: 'search' },
-  { href: '/about', label: 'about' },
+  { href: '/', label: '首页' },
+  { href: '/archives', label: '归档' },
+  { href: '/tags', label: '标签' },
+  { href: '/stats', label: '统计' },
+  { href: '/subscribe', label: '订阅' },
+  { href: '/search', label: '搜索' },
+  { href: '/about', label: '关于' },
 ];
 ---
 
@@ -56,7 +56,7 @@ const nav = [
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/">
-          <span class="path">douya@blog:~$</span> whoami<span class="cursor"></span>
+          <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span>
         </a>
         <nav class="nav">
           {nav.map((n) => (
@@ -72,7 +72,7 @@ const nav = [
 
     <footer class="site-footer">
       <div class="wrap">
-        <div class="copy">© {new Date().getFullYear()} douya · built with Astro · <a class="commit" href={`https://github.com/zhaojiale001016/zhaojiale001016.github.io/commit/${commit}`} target="_blank" rel="noopener">{commit}</a> · {buildTime} · exit code 0
+        <div class="copy">© {new Date().getFullYear()} 豆芽 · exit code 0
           <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span>
           <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span>
         </div>
