@@ -15,6 +15,10 @@ tags:
 
 ## 这次更新到底说了什么
 
+![OpenAI 发布 Codex 重大更新，官方开发者社区同步公告](/img/inline/codex-for-almost-everything-1.png)
+*图源：OpenAI 开发者社区官方公告《Introducing the New Codex for (almost) everything》*
+
+
 先摆事实。OpenAI 官方博客宣布，Codex 现在每周有超过 300 万开发者在用，而这次更新的核心，是把 Codex 的能力边界从"代码"扩展到了"整台电脑"和"整个开发流程"。具体拆开看有这么几块：
 
 - **后台电脑操控（Computer Use）**：Codex 可以用自己的光标去"看、点、打字"，直接操作你电脑上的应用。多个 agent 可以在同一台 Mac 上并行干活，还不干扰你正在用的其他软件。OpenAI 给的场景很实在：调试前端改动、测试应用，以及操作那些根本没有 API 的老软件。
@@ -51,3 +55,8 @@ tags:
 对开发者来说，我的建议很直接：别只盯着代码能力评测了，尽早把 Codex（或任何一家的同类产品）的 automations 和记忆功能用起来，去跑真实的长期任务。工具形态的切换窗口往往就这么一两年，早习惯的人，早一步知道新范式里什么是真本事、什么是演示效果。
 
 OpenAI 说 "What's next" 还有一页没讲完。我想，答案大概率不是某个新模型，而是把这次更新里的每一块拼图，打磨到"日常敢用"的程度。
+
+## 参考来源
+
+- [OpenAI 官方博客：Codex for (almost) everything](https://openai.com/index/codex-for-almost-everything/)
+- [OpenAI 开发者社区公告：Introducing the New Codex for (almost) everything](https://community.openai.com/t/introducing-the-new-codex-for-almost-everything/1379125)
