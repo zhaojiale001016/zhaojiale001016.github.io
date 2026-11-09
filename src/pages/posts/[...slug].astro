@@ -83,13 +83,13 @@ const ldJson = {
       <nav class="post-nav">
         {prev ? (
           <a class="pn" href={`/posts/${prev.id}`}>
-            <span class="dir">← older</span>
+            <span class="dir">← 上一篇</span>
             <span class="t">{prev.data.title}</span>
           </a>
         ) : <span />}
         {next ? (
           <a class="pn right" href={`/posts/${next.id}`}>
-            <span class="dir">newer →</span>
+            <span class="dir">下一篇 →</span>
             <span class="t">{next.data.title}</span>
           </a>
         ) : <span />}
@@ -98,7 +98,7 @@ const ldJson = {
       {related.length > 0 && (
         <section class="related">
           <div class="section-head" style="margin: 0 0 16px;">
-            <h2>related.log</h2>
+            <h2>相关阅读</h2>
           </div>
           <div class="related-grid">
             {related.map((r) => (
@@ -112,9 +112,9 @@ const ldJson = {
         </section>
       )}
 
-      <section class="comments">
+      <section class="评论">
         <div class="section-head" style="margin: 0 0 18px;">
-          <h2>comments</h2>
+          <h2>评论</h2>
         </div>
         <script
           src="https://giscus.app/client.js"
@@ -137,7 +137,7 @@ const ldJson = {
 
     {toc.length > 0 && (
       <aside class="toc">
-        <div class="toc-title">$ cat ./toc</div>
+        <div class="toc-title">$ 目录</div>
         <nav id="toc-nav">
           {toc.map((h) => (
             <a href={`#${h.slug}`} class={h.depth === 3 ? 'lv3' : ''} data-slug={h.slug}>{h.text}</a>
@@ -174,7 +174,7 @@ const ldJson = {
   .toc nav a.lv3 { padding-left: 26px; font-size: .76rem; }
   .toc nav a:hover { color: var(--green); }
   .toc nav a.active { color: var(--green); border-left-color: var(--green); font-weight: 700; }
-  .comments {
+  .评论 {
     margin-top: 48px; background: var(--paper);
     border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
   }

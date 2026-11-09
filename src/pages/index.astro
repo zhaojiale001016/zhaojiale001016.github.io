@@ -15,7 +15,7 @@ const fmt = (d: Date) =>
 const categories = [...new Set(posts.map((p) => p.data.category))];
 ---
 
-<Base title="home">
+<Base title="首页">
   <section class="hero">
     <div class="wrap">
       <div class="term">
@@ -41,7 +41,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
 
   <div class="wrap">
     <div class="section-head">
-      <h2>latest.log</h2>
+      <h2>最新文章</h2>
       <a class="more" href="/archives">cat archives →</a>
     </div>
 
@@ -55,7 +55,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
           </div>
           <h3>{featured.data.title}</h3>
           <p class="desc">{featured.data.description}</p>
-          <span class="read-more">open ./posts/{featured.id}</span>
+          <span class="read-more">阅读全文{featured.id}</span>
         </div>
       </a>
     )}
@@ -74,7 +74,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
             <h3><a href={`/posts/${p.id}`}>{p.data.title}</a></h3>
             <p class="desc">{p.data.description}</p>
             {p.data.tags.length > 0 && (
-              <div class="tags">{p.data.tags.slice(0, 3).map((t) => <a href={`/tags/${encodeURIComponent(t)}`}><span>{t}</span></a>)}</div>
+              <div class="标签">{p.data.tags.slice(0, 3).map((t) => <a href={`/tags/${encodeURIComponent(t)}`}><span>{t}</span></a>)}</div>
             )}
           </div>
         </article>
@@ -84,7 +84,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
     {totalPages > 1 && (
       <nav class="pager">
         <span class="cur">page 1 / {totalPages}</span>
-        <a href="/page/1">older →</a>
+        <a href="/page/1">较旧 →</a>
       </nav>
     )}
   </div>

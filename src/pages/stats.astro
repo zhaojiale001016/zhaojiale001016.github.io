@@ -35,25 +35,25 @@ const chartData = {
 };
 ---
 
-<Base title="stats">
+<Base title="统计">
   <div class="wrap" style="padding-top: 44px; padding-bottom: 56px; max-width: 960px;">
     <div class="term">
       <div class="term-bar"><i></i><i></i><i></i><span class="title">douya@blog: ~/stats — zsh</span></div>
       <div class="term-body">
         <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">./blog --stats --graph</span></span>
         <div class="kpi">
-          <div class="k"><b>{posts.length}</b><span>articles</span></div>
-          <div class="k"><b>{catCount.size}</b><span>categories</span></div>
-          <div class="k"><b>{tagCount.size}</b><span>tags</span></div>
-          <div class="k"><b>{(totalChars / 10000).toFixed(1)}w</b><span>chars</span></div>
+          <div class="k"><b>{posts.length}</b><span>文章</span></div>
+          <div class="k"><b>{catCount.size}</b><span>个分类</span></div>
+          <div class="k"><b>{tagCount.size}</b><span>个标签</span></div>
+          <div class="k"><b>{(totalChars / 10000).toFixed(1)}w</b><span>万字</span></div>
         </div>
       </div>
     </div>
 
     <div class="charts">
-      <div class="panel"><div class="pt">$ monthly output</div><div id="c-month" class="chart"></div></div>
-      <div class="panel"><div class="pt">$ category share</div><div id="c-cat" class="chart"></div></div>
-      <div class="panel wide"><div class="pt">$ top tags</div><div id="c-tag" class="chart"></div></div>
+      <div class="panel"><div class="pt">$ 月度产量</div><div id="c-month" class="chart"></div></div>
+      <div class="panel"><div class="pt">$ 分类占比</div><div id="c-cat" class="chart"></div></div>
+      <div class="panel wide"><div class="pt">$ 热门标签</div><div id="c-tag" class="chart"></div></div>
     </div>
   </div>
 

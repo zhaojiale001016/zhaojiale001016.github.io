@@ -8,7 +8,7 @@ for (const p of posts) for (const t of p.data.tags) count.set(t, (count.get(t) ?
 const tags = [...count.entries()].sort((a, b) => b[1] - a[1]);
 ---
 
-<Base title="tags">
+<Base title="标签">
   <div class="wrap" style="padding-top: 44px; padding-bottom: 48px; max-width: 860px;">
     <div class="term">
       <div class="term-bar"><i></i><i></i><i></i><span class="title">douya@blog: ~/tags — zsh</span></div>
