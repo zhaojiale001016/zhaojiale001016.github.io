@@ -1,8 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 const friends = [
-  { name: 'Randy 的博客', url: '#', desc: '前端架构与技术思考' },
-  { name: 'Airing 的博客', url: '#', desc: '独立开发与产品笔记' },
+  { name: 'Randy 的博客', url: 'https://lutaonan.com', desc: '前端架构与技术思考' },
+  { name: 'Airing 的博客', url: 'https://ursb.me', desc: '独立开发与产品笔记' },
 ];
 ---
 
@@ -37,7 +37,7 @@ const friends = [
 </Base>
 
 <style>
-  .friend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .friend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
   .friend { display: flex; flex-direction: column; gap: 6px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; transition: border-color .15s, transform .15s; }
   .friend:hover { border-color: var(--green); transform: translateY(-2px); }
   .friend b { font-size: .88rem; color: var(--green); }
