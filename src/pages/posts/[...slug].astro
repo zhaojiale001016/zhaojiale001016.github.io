@@ -6,17 +6,33 @@ export async function getStaticPaths() {
   const posts = (await getCollection('blog')).sort(
     (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
   );
-  return posts.map((post, i) => ({
-    params: { slug: post.id },
-    props: {
-      post,
-      prev: posts[i + 1] ?? null,
-      next: posts[i - 1] ?? null,
-    },
-  }));
+  return posts.map((post, i) => {
+    // 相关阅读：同分类优先，其次共享标签数
+    const related = posts
+      .filter((p) => p.id !== post.id)
+      .map((p) => ({
+        p,
+        score:
+          (p.data.category === post.data.category ? 10 : 0) +
+          p.data.tags.filter((t) => post.data.tags.includes(t)).length,
+      }))
+      .filter((r) => r.score > 0)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 3)
+      .map((r) => r.p);
+    return {
+      params: { slug: post.id },
+      props: {
+        post,
+        prev: posts[i + 1] ?? null,
+        next: posts[i - 1] ?? null,
+        related,
+      },
+    };
+  });
 }
 
-const { post, prev, next } = Astro.props;
+const { post, prev, next, related } = Astro.props;
 const { Content, headings } = await render(post);
 const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
 const fmt = (d: Date) =>
@@ -63,6 +79,23 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
         ) : <span />}
       </nav>
 
+      {related.length > 0 && (
+        <section class="related">
+          <div class="section-head" style="margin: 0 0 16px;">
+            <h2>related.log</h2>
+          </div>
+          <div class="related-grid">
+            {related.map((r) => (
+              <a class="rel" href={`/posts/${r.id}`}>
+                <span class="cat">{r.data.category}</span>
+                <span class="t">{r.data.title}</span>
+                <time>{fmt(r.data.pubDate)}</time>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section class="comments">
         <div class="section-head" style="margin: 0 0 18px;">
           <h2>comments</h2>
@@ -97,6 +130,9 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
       </aside>
     )}
   </div>
+
+  <div class="progress" id="progress"></div>
+  <button class="to-top" id="to-top" title="回到顶部">↑ top</button>
 </Base>
 
 <style>
@@ -126,6 +162,50 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
     margin-top: 48px; background: var(--paper);
     border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
   }
+  .related { margin-top: 48px; }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .rel {
+    display: flex; flex-direction: column; gap: 8px;
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: var(--radius); padding: 14px 16px;
+    transition: border-color .15s, transform .15s;
+  }
+  .rel:hover { border-color: var(--green); transform: translateY(-2px); }
+  .rel .cat { font-size: .68rem; color: var(--green); font-weight: 700; }
+  .rel .t {
+    font-size: .82rem; color: var(--ink); font-weight: 700; line-height: 1.5;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .rel time { font-size: .7rem; color: var(--ink-3); }
+  .progress {
+    position: fixed; top: 0; left: 0; height: 3px; width: 0;
+    background: var(--green); z-index: 100;
+    transition: width .1s linear;
+  }
+  .to-top {
+    position: fixed; right: 22px; bottom: 22px;
+    background: var(--paper); color: var(--green);
+    border: 1px solid var(--green); border-radius: var(--radius);
+    font-family: inherit; font-size: .75rem; font-weight: 700;
+    padding: 8px 14px; cursor: pointer; z-index: 90;
+    opacity: 0; pointer-events: none; transform: translateY(8px);
+    transition: opacity .2s, transform .2s;
+  }
+  .to-top.show { opacity: 1; pointer-events: auto; transform: none; }
+  .to-top:hover { background: var(--green); color: #fff; }
+  @media (max-width: 720px) {
+    .related-grid { grid-template-columns: 1fr; }
+  }
+  .copy-btn {
+    position: absolute; top: 8px; right: 8px;
+    background: var(--bg); border: 1px solid var(--line-strong);
+    color: var(--ink-3); border-radius: 6px;
+    font-family: inherit; font-size: .68rem; font-weight: 700;
+    padding: 4px 10px; cursor: pointer;
+    opacity: 0; transition: opacity .15s;
+  }
+  pre:hover .copy-btn { opacity: 1; }
+  .copy-btn.copied { color: var(--green); border-color: var(--green); }
   .post-nav {
     display: flex; justify-content: space-between; gap: 16px; margin-top: 40px;
   }
@@ -168,4 +248,35 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
     }, { rootMargin: '-80px 0px -70% 0px' });
     map.forEach((_, el) => io.observe(el));
   }
+
+  // 阅读进度条
+  const bar = document.getElementById('progress');
+  const toTop = document.getElementById('to-top');
+  const onScroll = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    if (bar) bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    toTop?.classList.toggle('show', h.scrollTop > 600);
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // 代码块复制按钮
+  document.querySelectorAll('.prose pre').forEach((pre) => {
+    pre.style.position = 'relative';
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'copy';
+    btn.addEventListener('click', async () => {
+      const code = pre.querySelector('code')?.innerText ?? pre.innerText;
+      try {
+        await navigator.clipboard.writeText(code);
+        btn.textContent = 'copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 1500);
+      } catch { btn.textContent = 'failed'; }
+    });
+    pre.appendChild(btn);
+  });
 </script>
