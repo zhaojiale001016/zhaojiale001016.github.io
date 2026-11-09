@@ -12,6 +12,13 @@ const site = 'https://zhaojiale001016.github.io';
 const canonical = site + Astro.url.pathname;
 const ogImage = cover ? site + cover : undefined;
 const path = Astro.url.pathname;
+// 构建信息：git 短哈希 + 构建时间
+import { execSync } from 'node:child_process';
+let commit = 'dev';
+try {
+  commit = execSync('git rev-parse --short HEAD').toString().trim();
+} catch {}
+const buildTime = new Date().toISOString().slice(0, 16).replace('T', ' ');
 const nav = [
   { href: '/', label: 'home' },
   { href: '/archives', label: 'archives' },
@@ -60,7 +67,10 @@ const nav = [
 
     <footer class="site-footer">
       <div class="wrap">
-        <div class="copy">© {new Date().getFullYear()} douya · built with Astro · deployed on GitHub Pages · exit code 0</div>
+        <div class="copy">© {new Date().getFullYear()} douya · built with Astro · <a class="commit" href={`https://github.com/zhaojiale001016/zhaojiale001016.github.io/commit/${commit}`} target="_blank" rel="noopener">{commit}</a> · {buildTime} · exit code 0
+          <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span>
+          <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span>
+        </div>
         <div class="links">
           <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a>
           <a href="/rss.xml">rss</a>
@@ -68,5 +78,17 @@ const nav = [
         </div>
       </div>
     </footer>
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <script is:inline>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+    </script>
   </body>
 </html>

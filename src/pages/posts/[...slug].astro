@@ -50,6 +50,7 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
           <a class="cat" href={`/categories/${encodeURIComponent(post.data.category)}`}>{post.data.category}</a>
           <time>{fmt(post.data.pubDate)}</time>
           <span>约 {minutes} 分钟读完</span>
+          <span id="busuanzi_container_page_pv">· 阅读 <span id="busuanzi_value_page_pv">-</span> 次</span>
         </div>
       </div>
       {post.data.cover && <img class="cover" src={post.data.cover} alt={post.data.title} />}
@@ -63,6 +64,10 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
           ))}
         </div>
       )}
+
+      <div class="edit-link">
+        <a href={`https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/${post.id}.md`} target="_blank" rel="noopener">$ git edit ./posts/{post.id}.md → 在 GitHub 上编辑此页</a>
+      </div>
 
       <nav class="post-nav">
         {prev ? (
@@ -162,6 +167,9 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
     margin-top: 48px; background: var(--paper);
     border: 1px solid var(--line); border-radius: var(--radius); padding: 24px;
   }
+  .edit-link { margin-top: 32px; text-align: center; }
+  .edit-link a { font-size: .75rem; color: var(--ink-3); }
+  .edit-link a:hover { color: var(--green); }
   .related { margin-top: 48px; }
   .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
   .rel {
@@ -196,16 +204,6 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
   @media (max-width: 720px) {
     .related-grid { grid-template-columns: 1fr; }
   }
-  .copy-btn {
-    position: absolute; top: 8px; right: 8px;
-    background: var(--bg); border: 1px solid var(--line-strong);
-    color: var(--ink-3); border-radius: 6px;
-    font-family: inherit; font-size: .68rem; font-weight: 700;
-    padding: 4px 10px; cursor: pointer;
-    opacity: 0; transition: opacity .15s;
-  }
-  pre:hover .copy-btn { opacity: 1; }
-  .copy-btn.copied { color: var(--green); border-color: var(--green); }
   .post-nav {
     display: flex; justify-content: space-between; gap: 16px; margin-top: 40px;
   }
@@ -262,21 +260,11 @@ const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
   onScroll();
   toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  // 代码块复制按钮
-  document.querySelectorAll('.prose pre').forEach((pre) => {
-    pre.style.position = 'relative';
-    const btn = document.createElement('button');
-    btn.className = 'copy-btn';
-    btn.textContent = 'copy';
-    btn.addEventListener('click', async () => {
-      const code = pre.querySelector('code')?.innerText ?? pre.innerText;
-      try {
-        await navigator.clipboard.writeText(code);
-        btn.textContent = 'copied!';
-        btn.classList.add('copied');
-        setTimeout(() => { btn.textContent = 'copy'; btn.classList.remove('copied'); }, 1500);
-      } catch { btn.textContent = 'failed'; }
+  // 图片灯箱（medium-zoom）
+  import('https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm').then(({ default: mediumZoom }) => {
+    mediumZoom('.prose img, article.article img.cover', {
+      background: 'rgba(36, 43, 39, .85)',
+      margin: 24,
     });
-    pre.appendChild(btn);
-  });
+  }).catch(() => {});
 </script>

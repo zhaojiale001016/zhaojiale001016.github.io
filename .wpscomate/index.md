@@ -10,13 +10,14 @@ Root: `豆芽博客`
 ├── package-lock.json
 ├── package.json
 ├── public/
-│   └── img/
-│       ├── about-bg.svg
-│       ├── archive-bg.svg
-│       ├── category-bg.svg
-│       ├── hero-tech-light-1.svg
-│       ├── hero-tech-light-2.svg
-│       └── tag-bg.svg
+│   ├── img/
+│   │   ├── about-bg.svg
+│   │   ├── archive-bg.svg
+│   │   ├── category-bg.svg
+│   │   ├── hero-tech-light-1.svg
+│   │   ├── hero-tech-light-2.svg
+│   │   └── tag-bg.svg
+│   └── rss.xsl
 ├── scripts/
 │   └── deploy.mjs
 ├── source/

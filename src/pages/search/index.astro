@@ -7,53 +7,52 @@ import Base from '../../layouts/Base.astro';
     <div class="term">
       <div class="term-bar"><i></i><i></i><i></i><span class="title">douya@blog: ~/search — zsh</span></div>
       <div class="term-body">
-        <span class="line"><span class="prompt">➜ ~/search</span> <span class="cmd">grep -ri "<span id="echo" style="color: var(--amber);"></span>" ../posts/</span></span>
-        <input
-          id="q"
-          type="text"
-          placeholder="输入关键词，搜索标题 / 摘要 / 正文 / 标签…"
-          autofocus
-          style="width: 100%; margin-top: 16px; padding: 12px 16px; font-family: var(--mono); font-size: .95rem; background: var(--panel); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 6px; outline: none;"
-        />
-        <div id="hint" style="margin-top: 14px; font-size: .82rem; color: var(--ink-3);">支持中文，实时匹配</div>
-        <div id="results" style="margin-top: 8px;"></div>
+        <span class="line"><span class="prompt">➜ ~/search</span> <span class="cmd">pagefind --source ./posts</span></span>
+        <div id="search" style="margin-top: 18px;"></div>
       </div>
     </div>
   </div>
 
-  <script>
-    const q = document.getElementById('q');
-    const results = document.getElementById('results');
-    const hint = document.getElementById('hint');
-    const echo = document.getElementById('echo');
-    let posts = [];
-    fetch('/search/index.json')
-      .then((r) => r.json())
-      .then((d) => { posts = d; q.focus(); });
-
-    function esc(s) {
-      return s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    }
-    function render(list, kw) {
-      if (!kw) { results.innerHTML = ''; hint.textContent = '支持中文，实时匹配'; return; }
-      hint.textContent = `找到 ${list.length} 篇`;
-      results.innerHTML = list.map((p) => `
-        <div class="list-item">
-          <time>${p.date}</time>
-          <a href="/posts/${p.id}">${esc(p.title)}</a>
-          <span class="cat">${esc(p.category)}</span>
-        </div>
-      `).join('') || '<div style="padding: 20px 0; color: var(--ink-3); font-size: .85rem;">grep: no matches found</div>';
-    }
-    q.addEventListener('input', () => {
-      const kw = q.value.trim().toLowerCase();
-      echo.textContent = q.value;
-      if (!kw) return render([], '');
-      const hit = posts.filter((p) =>
-        [p.title, p.description, p.category, p.body, ...(p.tags || [])]
-          .join(' ').toLowerCase().includes(kw)
-      );
-      render(hit, kw);
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+  <script src="/pagefind/pagefind-ui.js" is:inline></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      new PagefindUI({
+        element: '#search',
+        showSubResults: true,
+        showImages: false,
+        placeholder: '输入关键词，搜索标题 / 摘要 / 正文 / 标签…',
+        translations: {
+          placeholder: '输入关键词，搜索标题 / 摘要 / 正文 / 标签…',
+          clear_search: '清除',
+          load_more: '加载更多',
+          search_label: '站内搜索',
+          filters_label: '筛选',
+          zero_results: '没有找到「[SEARCH_TERM]」相关的内容',
+          many_results: '找到 [COUNT] 条「[SEARCH_TERM]」相关结果',
+          one_result: '找到 1 条「[SEARCH_TERM]」相关结果',
+          alt_search: '没有找到「[SEARCH_TERM]」，试试「[DIFFERENT_TERM]」',
+          search_suggestion: '没有找到「[SEARCH_TERM]」，试试以下搜索',
+          searching: '正在搜索「[SEARCH_TERM]」…',
+        },
+      });
     });
   </script>
 </Base>
+
+<style is:global>
+  /* Pagefind UI 适配米色终端主题 */
+  :root {
+    --pagefind-ui-scale: 0.9;
+    --pagefind-ui-primary: #1f7a4d;
+    --pagefind-ui-text: #242b27;
+    --pagefind-ui-background: #fbfaf4;
+    --pagefind-ui-border: #ddd6c3;
+    --pagefind-ui-tag: #eef3ee;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 8px;
+    --pagefind-ui-font: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  }
+  .pagefind-ui__result-link { color: #1f7a4d !important; }
+  .pagefind-ui__result-title { font-weight: 700; }
+</style>
