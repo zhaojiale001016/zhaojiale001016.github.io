@@ -83,6 +83,15 @@ const ldJson = {
         </div>
       )}
 
+      <div class="author-box">
+        <img src="/img/avatar.png" alt="豆芽" class="author-avatar" />
+        <div class="author-info">
+          <div class="author-name">豆芽</div>
+          <div class="author-bio">写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div>
+          <a href="/about" class="author-link">更多关于我 →</a>
+        </div>
+      </div>
+
       <div class="share-bar">
         <span class="share-label">分享：</span>
         <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent('https://zhaojiale001016.github.io/posts/' + post.id)}`} target="_blank" rel="noopener" class="share-btn">𝕏</a>
@@ -259,6 +268,21 @@ const ldJson = {
   }
   .share-btn:hover { border-color: var(--green); color: var(--green); }
   .age-notice { color: #c7783c; font-size: .72rem; }
+  .author-box {
+    display: flex; gap: 14px; align-items: center;
+    margin-top: 32px; padding: 18px 20px;
+    background: var(--paper); border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+  .author-avatar { width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0; }
+  .author-name { font-size: .88rem; font-weight: 700; color: var(--ink); }
+  .author-bio { font-size: .76rem; color: var(--ink-3); line-height: 1.5; margin-top: 2px; }
+  .author-link { font-size: .72rem; color: var(--green); margin-top: 4px; display: inline-block; }
+  .copy-quote-toast {
+    position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+    background: #242b27; color: #f2efe7; padding: 8px 16px;
+    border-radius: 6px; font-size: .72rem; z-index: 200; display: none;
+  }
   .mermaid-diagram { display: flex; justify-content: center; margin: 20px 0; padding: 20px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow-x: auto; }
   .mermaid-diagram svg { max-width: 100%; height: auto; }
   .article-tags a { color: var(--cyan); }
@@ -302,6 +326,25 @@ const ldJson = {
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // 选中文字复制带出处
+  document.addEventListener('mouseup', () => {
+    const sel = window.getSelection();
+    if (!sel || sel.isCollapsed || !sel.toString().trim()) return;
+    const range = sel.getRangeAt(0);
+    const prose = range.commonAncestorContainer.parentElement?.closest('.prose');
+    if (!prose) return;
+    const text = sel.toString().trim();
+    if (text.length < 10) return;
+    const quote = `「${text}」\n\n—— 摘自《${document.title.replace(' · 豆芽的技术博客', '')}》\n${location.href}`;
+    const toast = document.createElement('div');
+    toast.className = 'copy-quote-toast';
+    toast.textContent = '已复制引用格式';
+    document.body.appendChild(toast);
+    navigator.clipboard?.writeText(quote);
+    toast.style.display = 'block';
+    setTimeout(() => { toast.style.display = 'none'; setTimeout(() => toast.remove(), 300); }, 2000);
+  });
 
   // Mermaid 图表渲染
   document.querySelectorAll('pre[data-language="mermaid"]').forEach(async (pre, i) => {

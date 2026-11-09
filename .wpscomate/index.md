@@ -77,7 +77,9 @@ Root: `豆芽博客`
     │   │   └── [category].astro
     │   ├── friends.astro
     │   ├── graph.astro
+    │   ├── guestbook.astro
     │   ├── index.astro
+    │   ├── now.astro
     │   ├── page/
     │   │   └── [page].astro
     │   ├── posts/

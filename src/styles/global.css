@@ -139,6 +139,25 @@ img { max-width: 100%; display: block; }
 .read-more::before { content: "$ "; color: var(--ink-3); }
 
 /* ===== Cards ===== */
+/* 热门文章 */
+.popular-section { margin-top: 28px; }
+.popular-list { display: flex; flex-direction: column; gap: 6px; }
+.pop-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px; border: 1px solid var(--line);
+  border-radius: var(--radius); background: var(--paper);
+  transition: border-color .15s, transform .15s;
+}
+.pop-item:hover { border-color: var(--green); transform: translateX(4px); }
+.pop-rank {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--green); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .7rem; font-weight: 700; flex-shrink: 0;
+}
+.pop-title { font-size: .82rem; color: var(--ink); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pop-cat { font-size: .68rem; color: var(--ink-3); flex-shrink: 0; }
+
 .grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px; padding-bottom: 8px;
@@ -203,6 +222,23 @@ img { max-width: 100%; display: block; }
 /* 正文插图与图注 */
 .prose img { border-radius: 8px; border: 1px solid var(--line); margin: .4em auto; display: block; max-width: 100%; cursor: zoom-in; }
 .prose p:has(> em:only-child) { text-align: center; font-size: .78rem; color: var(--ink-3); margin: -0.6em 0 1.6em; }
+
+/* Callout 提示块 */
+.callout {
+  margin: 16px 0; padding: 14px 16px; border-radius: 8px;
+  border-left: 4px solid; font-size: .85rem; line-height: 1.7;
+}
+.callout p:first-child { margin-top: 0; }
+.callout p:last-child { margin-bottom: 0; }
+.callout .callout-title { font-weight: 700; margin-bottom: 6px; font-size: .82rem; }
+.callout-note { border-left-color: #2b8a9e; background: rgba(43,138,158,.06); }
+.callout-note .callout-title { color: #2b8a9e; }
+.callout-tip { border-left-color: #43a047; background: rgba(67,160,71,.06); }
+.callout-tip .callout-title { color: #43a047; }
+.callout-warning { border-left-color: #c7783c; background: rgba(199,120,60,.06); }
+.callout-warning .callout-title { color: #c7783c; }
+.callout-caution { border-left-color: #c62828; background: rgba(198,40,40,.06); }
+.callout-caution .callout-title { color: #c62828; }
 
 /* 外链图标 */
 .prose a[href^="http"]:not([href*="zhaojiale001016.github.io"])::after {

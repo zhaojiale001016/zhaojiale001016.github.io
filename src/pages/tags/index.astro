@@ -15,12 +15,16 @@ const tags = [...count.entries()].sort((a, b) => b[1] - a[1]);
       <div class="term-body">
         <span class="line"><span class="prompt">➜ ~/tags</span> <span class="cmd">ls -l | sort -k5 -rn</span></span>
         <span class="out">total {tags.length} 个标签，点任意标签筛选文章</span>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px;">
-          {tags.map(([t, n]) => (
-            <a href={`/tags/${encodeURIComponent(t)}`} class="tag-chip">
-              #{t} <b>{n}</b>
-            </a>
-          ))}
+        <div class="tag-cloud">
+          {tags.map(([t, n]) => {
+            const max = tags[0]?.[1] ?? 1;
+            const scale = 0.7 + (n / max) * 0.6;
+            return (
+              <a href={`/tags/${encodeURIComponent(t)}`} class="tag-cloud-item" style={`font-size: ${scale}rem; opacity: ${0.6 + (n / max) * 0.4}`}>
+                #{t} <b>{n}</b>
+              </a>
+            );
+          })}
         </div>
       </div>
     </div>
@@ -28,12 +32,13 @@ const tags = [...count.entries()].sort((a, b) => b[1] - a[1]);
 </Base>
 
 <style>
-  .tag-chip {
-    display: inline-flex; gap: 6px; align-items: center;
-    padding: 6px 14px; border: 1px solid var(--line-strong); border-radius: 6px;
-    background: var(--panel); color: var(--cyan); font-size: .85rem;
-    transition: all .15s;
+  .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; align-items: baseline; }
+  .tag-cloud-item {
+    display: inline-flex; gap: 4px; align-items: baseline;
+    padding: 4px 10px; border-radius: 6px;
+    color: var(--cyan); transition: all .15s;
+    line-height: 1.4;
   }
-  .tag-chip b { color: var(--green); font-size: .78rem; }
-  .tag-chip:hover { border-color: var(--green); transform: translateY(-2px); box-shadow: var(--shadow); }
+  .tag-cloud-item b { color: var(--green); font-size: .7em; }
+  .tag-cloud-item:hover { color: var(--green); background: rgba(67,160,71,.08); }
 </style>

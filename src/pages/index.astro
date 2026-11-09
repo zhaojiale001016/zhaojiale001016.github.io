@@ -9,6 +9,7 @@ const posts = (await getCollection('blog')).sort(
 );
 const [featured, ...rest] = posts;
 const pagePosts = rest.slice(0, PAGE_SIZE);
+const popular = [...posts].sort((a, b) => b.data.tags.length - a.data.tags.length).slice(0, 5);
 const totalPages = Math.max(1, Math.ceil((rest.length - PAGE_SIZE) / PAGE_SIZE));
 const fmt = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -59,6 +60,23 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
           <span class="read-more">阅读全文{featured.id}</span>
         </div>
       </a>
+    )}
+
+    {popular.length > 0 && (
+      <div class="popular-section">
+        <div class="section-head" style="margin: 0 0 14px;">
+          <h2>热门文章</h2>
+        </div>
+        <div class="popular-list">
+          {popular.map((p, i) => (
+            <a class="pop-item" href={`/posts/${p.id}`}>
+              <span class="pop-rank">{i + 1}</span>
+              <span class="pop-title">{p.data.title}</span>
+              <span class="pop-cat">{p.data.category}</span>
+            </a>
+          ))}
+        </div>
+      </div>
     )}
 
     <div class="grid" style="margin-top: 20px;">
