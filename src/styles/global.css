@@ -28,7 +28,11 @@ body {
   font-size: 15.5px;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+main { flex: 1; }
 /* 浅色网格底纹 */
 body::before {
   content: "";
