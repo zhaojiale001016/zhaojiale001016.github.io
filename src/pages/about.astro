@@ -3,57 +3,62 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="about">
-  <div class="wrap" style="padding-top: 44px; padding-bottom: 56px; max-width: 820px;">
+  <div class="wrap" style="max-width: 720px; padding-top: 48px;">
     <div class="term">
       <div class="term-bar">
         <i></i><i></i><i></i>
         <span class="title">douya@blog: ~/about — zsh</span>
       </div>
       <div class="term-body">
-        <span class="line"><span class="prompt">➜ ~/about</span> <span class="cmd">finger douya</span></span>
-        <div class="about-hero" style="margin-top: 16px;">
-          <img class="avatar" src="/img/avatar.svg" alt="豆芽" />
-          <div>
-            <div style="font-size: 1.4rem; font-weight: 800;">豆芽 <span style="color: var(--ink-3); font-size: .9rem; font-weight: 400;">aka 赵佳乐</span></div>
-            <div style="color: var(--ink-2); font-size: .85rem; margin-top: 4px;">login: douya · shell: /bin/zsh · location: Beijing</div>
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">cat ./about.md</span></span>
+
+        <div class="about-head">
+          <img class="avatar" src="/img/avatar.png" alt="豆芽的头像" />
+          <div class="intro">
+            <h1>豆芽</h1>
+            <p class="sig">头顶两片叶子，整天泡在终端里。</p>
+            <p>真名赵佳乐，在一家做办公软件的公司搬砖，部门名字里带「AI」俩字。白天写代码，晚上还是写代码——区别是晚上的没有 deadline。</p>
           </div>
         </div>
 
-        <div class="prose" style="border: none; padding: 8px 0 0; background: none;">
-          <span class="line" style="display:block; margin-top: 12px;"><span class="prompt">➜ ~/about</span> <span class="cmd">cat profile.txt</span></span>
-          <p>
-            白天在一家办公软件公司做研发，混迹于一个名字里带「AI」的部门。
-            日常是和前端、后端、测试、交付来回拉扯，哪个环节缺人就顶上去。
-            工作几年最深的体会：写代码不难，难的是把一件事真正做完。
-          </p>
-          <p>
-            下班之后继续折腾。手上有几个自己写着玩的项目——一个 Electron 做的办公应用，
-            一堆能偷懒就绝不手动的小工具。对 AI 保持高度兴趣，
-            一半因为好玩，另一半想搞清楚它会把我们这行带去哪。
-          </p>
+        <h2>这博客是干嘛的</h2>
+        <p>技术圈的碎碎念收容所。每天傍晚 6 点，我养的 AI 会扫一遍当天值得看的<strong>技术 / 游戏 / 数码 / 汽车</strong>新闻，挑有点意思的写成评论；我自己心血来潮也会手写几篇。</p>
+        <p>规矩就三条：不搞水文，没有好货宁可空窗；转载二手消息不如不写；观点可以错，但不能没观点。</p>
 
-          <span class="line" style="display:block; margin-top: 8px;"><span class="prompt">➜ ~/about</span> <span class="cmd">cat why-this-blog.md</span></span>
-          <p>
-            这里不写框架用法的复读笔记。主要写三类东西：AI 正在怎么改变写代码这件事、
-            工程上踩过的坑和复盘、技术圈值得聊两句的新闻。偶尔也写游戏和硬件。
-            不追热点，不凑更新，只写自己真想过的问题。
-          </p>
+        <h2>为什么叫豆芽</h2>
+        <p>因为好养活。给点水（咖啡因）、给点光（显示器蓝光）就能长。而且豆芽再怎么长，也是仰望大树的姿态——对技术保持点敬畏，挺好。</p>
 
-          <span class="line" style="display:block; margin-top: 8px;"><span class="prompt">➜ ~/about</span> <span class="cmd">printenv</span></span>
-          <ul>
-            <li>LANG=zh_CN.UTF-8，写 JavaScript / TypeScript 最多，Python 越来越多</li>
-            <li>EDITOR=vim（但现在更多是 AI 在写，我负责点头）</li>
-            <li>HOBBY=篮球,游戏,一切能自动化的东西</li>
-            <li>PHILOSOPHY=工具应该替人干活，而不是反过来</li>
-          </ul>
-
-          <span class="line" style="display:block; margin-top: 8px;"><span class="prompt">➜ ~/about</span> <span class="cmd">ping douya</span></span>
-          <ul>
-            <li>GitHub → <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">@zhaojiale001016</a></li>
-            <li>对文章有想法 → 仓库提 Issue，48ms 内响应（大概）</li>
-          </ul>
+        <h2>一些配置</h2>
+        <div class="kv">
+          <div class="k">EDITOR</div><div class="v">vim（但现在更多是 AI 在写，我负责点头）</div>
+          <div class="k">SHELL</div><div class="v">zsh + 一堆写了就忘的 alias</div>
+          <div class="k">MUSIC</div><div class="v">写码听 Lo-Fi，debug 听白噪音（主要是风扇）</div>
+          <div class="k">STACK</div><div class="v">本站用 Astro 手搓，跑在 GitHub Pages 上</div>
+          <div class="k">BOT</div><div class="v">一个每天 18:00 准时上班的 AI 写手，写不出东西就装死</div>
         </div>
+
+        <span class="line" style="margin-top: 8px;"><span class="prompt">➜ ~</span> <span class="cursor">&nbsp;</span></span>
       </div>
     </div>
   </div>
 </Base>
+
+<style>
+  .about-head {
+    display: flex; gap: 24px; align-items: center;
+    margin: 26px 0 6px; padding-bottom: 22px;
+    border-bottom: 1px dashed var(--line-strong);
+  }
+  .avatar {
+    width: 132px; height: 132px; border-radius: 50%;
+    object-fit: cover; flex-shrink: 0;
+    border: 3px solid var(--green);
+    box-shadow: 0 6px 18px rgba(36, 43, 39, .16);
+  }
+  .about-head h1 { margin-bottom: 8px; }
+  .sig { color: var(--green); font-weight: 700; margin-bottom: 8px !important; }
+  .intro p:last-child { margin-bottom: 0; }
+  @media (max-width: 560px) {
+    .about-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+  }
+</style>
