@@ -320,10 +320,52 @@ img { max-width: 100%; display: block; }
   .featured { grid-template-columns: 1fr; }
   .featured .cover { min-height: 190px; }
   .featured .body { padding: 24px 20px; }
-  .nav { gap: 4px; }
-  .nav a { padding: 4px 8px; }
+  .nav { gap: 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .nav a { padding: 4px 8px; white-space: nowrap; flex-shrink: 0; }
   .hero { padding: 36px 0 30px; }
   .term-body { padding: 18px 18px 22px; }
   .article-head { padding: 24px 20px; }
   .prose { padding: 8px 20px 20px; }
+  .grid { grid-template-columns: 1fr; }
+  .site-footer .wrap { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .site-footer .links { flex-wrap: wrap; }
+  .post-nav { flex-direction: column; }
+  .pn { max-width: 100%; }
+  .related-grid { grid-template-columns: 1fr; }
+  .share-bar { flex-wrap: wrap; }
+  .author-box { flex-direction: column; text-align: center; }
+  .tag-cloud { gap: 4px; }
+  .breadcrumb { flex-wrap: wrap; }
+  .popular-list { gap: 4px; }
+  .pop-item { padding: 8px 10px; }
+  .pop-title { font-size: .78rem; }
+  .kpi { gap: 16px; }
+  .friend-grid { grid-template-columns: 1fr; }
+  .gb-btn .desc { display: none; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.3rem; }
+  .hero .out { font-size: .78rem; }
+  .term-bar .title { font-size: .68rem; }
+  .featured h3 { font-size: 1.1rem; }
+  .card .body { padding: 14px 16px; }
+  .card h3 { font-size: .88rem; }
+  .prose h1 { font-size: 1.3rem; }
+  .prose h2 { font-size: 1.1rem; }
+  .prose h3 { font-size: .95rem; }
+  .prose p, .prose li { font-size: .85rem; }
+  .article { padding: 32px 0 60px; }
+  .article-layout { padding: 0 16px; }
+  .meta { flex-wrap: wrap; gap: 6px; }
+  .meta .cat, .meta time, .meta span { font-size: .72rem; }
+  .author-avatar { width: 40px; height: 40px; }
+  .share-btn { min-width: 40px; height: 36px; font-size: .72rem; }
+  .pop-rank { width: 20px; height: 20px; font-size: .62rem; }
+  .section-head h2 { font-size: .95rem; }
+  .to-top { right: 12px; bottom: 12px; padding: 6px 10px; font-size: .68rem; }
+  .gb-btn { flex-direction: column; text-align: center; gap: 6px; }
+  .gb-btn .desc { display: block; margin-left: 0; }
+  .now-content h3 { font-size: .85rem; }
+  .now-content li { font-size: .8rem; }
 }
