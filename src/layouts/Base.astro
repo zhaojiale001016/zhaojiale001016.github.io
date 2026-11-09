@@ -43,6 +43,8 @@ const nav = [
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="canonical" href={canonical} />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" />
     <link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${title} · 豆芽的技术博客`} />
@@ -155,13 +157,58 @@ const nav = [
           }
         }
       });
-      // 双击页脚 exit code 彩蛋
+      // 双击页脚 exit code 彩蛋 + 彩带
       document.querySelector('.copy')?.addEventListener('dblclick', () => {
         toast('✨ 你发现了豆芽的秘密通道');
+        if (typeof confetti !== 'undefined') {
+          confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 }, colors: ['#43a047', '#2b8a9e', '#c7783c', '#66bb6a'] });
+        }
       });
+
+      // AOS 初始化
+      if (typeof AOS !== 'undefined') {
+        AOS.init({ duration: 600, easing: 'ease-out', once: true, offset: 50 });
+      }
+
+      // NProgress 页面加载
+      if (typeof NProgress !== 'undefined') {
+        NProgress.configure({ showSpinner: false, trickleSpeed: 200 });
+        NProgress.start();
+        window.addEventListener('load', () => NProgress.done());
+      }
+
+      // Vanta.js 动态背景（浅色小点，不干扰阅读）
+      if (typeof VANTA !== 'undefined' && document.querySelector('.hero')) {
+        VANTA.DOTS({
+          el: 'body',
+          mouseControls: false,
+          touchControls: false,
+          gyroControls: false,
+          minHeight: 200, minWidth: 200,
+          scale: 1, scaleMobile: 1,
+          color: 0x43a047,
+          color2: 0x2b8a9e,
+          backgroundColor: 0xf2efe7,
+          size: 2.5,
+          spacing: 28,
+          showLines: false
+        });
+      }
     </script>
     <!-- Live2D 看板娘 -->
     <script is:inline src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+    <!-- AOS -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <!-- NProgress -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
+    <!-- canvas-confetti -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.js"></script>
+    <!-- Vanta.js 动态背景 -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script is:inline src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+    <!-- Rough Notation -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/rough-notation@0.5.1/lib/rough-notation.iife.js"></script>
 
     <script is:inline>
       // 不蒜子加载完成后显示统计数字
