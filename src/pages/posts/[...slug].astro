@@ -55,6 +55,11 @@ const ldJson = {
     <script type="application/ld+json" set:html={JSON.stringify(ldJson)}></script>
     <article class="article">
       <div class="article-head">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="/">首页</a><span class="sep">/</span>
+          <a href={`/categories/${encodeURIComponent(post.data.category)}`}>{post.data.category}</a><span class="sep">/</span>
+          <span class="cur">{post.data.title.length > 20 ? post.data.title.slice(0, 20) + '…' : post.data.title}</span>
+        </nav>
         <span class="path">➜ ~/posts $ cat ./{post.id}.md</span>
         <h1>{post.data.title}</h1>
         <div class="meta" style="margin-top: 16px; margin-bottom: 0;">
@@ -64,7 +69,7 @@ const ldJson = {
           <span id="busuanzi_container_page_pv">· 阅读 <span id="busuanzi_value_page_pv">-</span> 次</span>
         </div>
       </div>
-      {post.data.cover && <img class="cover" src={post.data.cover} alt={post.data.title} />}
+      {post.data.cover && <img class="cover" src={post.data.cover} alt={post.data.title} loading="lazy" />}
       <div class="prose">
         <Content />
       </div>
@@ -75,6 +80,13 @@ const ldJson = {
           ))}
         </div>
       )}
+
+      <div class="share-bar">
+        <span class="share-label">分享：</span>
+        <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent('https://zhaojiale001016.github.io/posts/' + post.id)}`} target="_blank" rel="noopener" class="share-btn">𝕏</a>
+        <a href={`https://service.weibo.com/share/share.php?title=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent('https://zhaojiale001016.github.io/posts/' + post.id)}`} target="_blank" rel="noopener" class="share-btn">微博</a>
+        <button class="share-btn copy-link" data-url={`https://zhaojiale001016.github.io/posts/${post.id}`} title="复制链接">🔗</button>
+      </div>
 
       <div class="edit-link">
         <a href={`https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/${post.id}.md`} target="_blank" rel="noopener">$ git edit ./posts/{post.id}.md → 在 GitHub 上编辑此页</a>
@@ -229,6 +241,21 @@ const ldJson = {
   .pn.right { text-align: right; margin-left: auto; }
   .pn .dir { font-size: .72rem; color: var(--green); font-weight: 700; }
   .pn .t { font-size: .85rem; color: var(--ink-2); line-height: 1.5; }
+  .breadcrumb { font-size: .75rem; color: var(--ink-3); margin-bottom: 12px; }
+  .breadcrumb a { color: var(--ink-3); }
+  .breadcrumb a:hover { color: var(--green); }
+  .breadcrumb .sep { margin: 0 6px; color: var(--line); }
+  .breadcrumb .cur { color: var(--ink-2); }
+  .share-bar { display: flex; align-items: center; gap: 10px; margin-top: 28px; padding: 14px 0; border-top: 1px solid var(--line); }
+  .share-label { font-size: .78rem; color: var(--ink-3); }
+  .share-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 32px; height: 32px; padding: 0 10px;
+    border: 1px solid var(--line); border-radius: 6px;
+    font-size: .75rem; color: var(--ink-2); background: var(--paper);
+    cursor: pointer; transition: all .15s;
+  }
+  .share-btn:hover { border-color: var(--green); color: var(--green); }
   .article-tags a { color: var(--cyan); }
   .article-tags a::before { content: "#"; }
   .article-tags a:hover { color: var(--green); }
@@ -270,6 +297,15 @@ const ldJson = {
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
   toTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // 复制链接
+  document.querySelector('.copy-link')?.addEventListener('click', (e) => {
+    const url = e.target.dataset.url;
+    navigator.clipboard?.writeText(url).then(() => {
+      e.target.textContent = '✓';
+      setTimeout(() => (e.target.textContent = '🔗'), 1500);
+    });
+  });
 
   // 图片灯箱（medium-zoom）
   import('https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm').then(({ default: mediumZoom }) => {
