@@ -26,7 +26,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
         </div>
         <div class="term-body">
           <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">./whoami</span></span>
-          <span class="out">你好，我是豆芽。写代码，也写代码背后的世界——<strong>前端 × AI × 游戏 × 硬件 × 篮球</strong>，技术圈的每一场变局都逃不过这个终端。</span>
+          <span class="out" id="typed-out"><span id="typed-text"></span><span class="typed-cursor">▊</span></span>
           <h1>豆芽的技术博客</h1>
           <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">stat ./posts --format=summary</span></span>
           <div class="stats">
@@ -79,7 +79,27 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
       </div>
     )}
 
-    <div class="grid" style="margin-top: 20px;">
+    <script is:inline>
+    (function(){
+      const el = document.getElementById('typed-text');
+      if (!el) return;
+      const full = '你好，我是豆芽。写代码，也写代码背后的世界——前端 × AI × 游戏 × 硬件 × 篮球，技术圈的每一场变局都逃不过这个终端。';
+      let i = 0;
+      const speed = 35;
+      function type() {
+        if (i < full.length) {
+          el.textContent += full[i];
+          i++;
+          setTimeout(type, full[i-1] === '。' || full[i-1] === '，' ? speed * 3 : speed);
+        } else {
+          document.querySelector('.typed-cursor')?.classList.add('blink');
+        }
+      }
+      setTimeout(type, 600);
+    })();
+  </script>
+
+  <div class="grid" style="margin-top: 20px;">
       {pagePosts.map((p) => (
         <article class="card">
           {p.data.cover && (

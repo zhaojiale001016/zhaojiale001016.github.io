@@ -56,7 +56,7 @@ const nav = [
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/">
-          <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span>
+          <span class="path glitch">豆芽@blog:~$</span> whoami<span class="cursor"></span>
         </a>
         <nav class="nav">
           {nav.map((n) => (
@@ -160,6 +160,27 @@ const nav = [
         toast('✨ 你发现了豆芽的秘密通道');
       });
     </script>
+    <!-- 博客宠物 -->
+    <div class="sprout-pet" id="sprout-pet" title="豆芽小精灵">
+      <div class="pet-bubble">你好呀～我是小豆芽</div>
+      <svg viewBox="0 0 48 48" fill="none">
+        <g class="pet-body">
+          <ellipse cx="24" cy="38" rx="10" ry="8" fill="#43a047" opacity=".9"/>
+          <path d="M24 30 Q22 22 18 16 Q16 12 14 14 Q12 16 16 20 Q20 24 24 30" fill="#66bb6a"/>
+          <path d="M24 30 Q26 22 30 16 Q32 12 34 14 Q36 16 32 20 Q28 24 24 30" fill="#66bb6a"/>
+          <g class="pet-eyes">
+            <circle cx="20" cy="36" r="1.5" fill="#fff"/>
+            <circle cx="28" cy="36" r="1.5" fill="#fff"/>
+          </g>
+          <path d="M21 40 Q24 42 27 40" stroke="#fff" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Matrix 代码雨 -->
+    <canvas class="matrix-rain" id="matrix-rain"></canvas>
+    <button class="matrix-toggle" id="matrix-toggle" title="代码雨开关">▓ rain</button>
+
     <script is:inline>
       // 不蒜子加载完成后显示统计数字
       const t = setInterval(() => {
@@ -170,6 +191,54 @@ const nav = [
         }
       }, 500);
       setTimeout(() => clearInterval(t), 8000);
+
+      // 博客宠物点击互动
+      const pet = document.getElementById('sprout-pet');
+      const messages = ['你好呀～我是小豆芽', '今天也要加油哦', '点我干嘛，写文章去', '咕…', '博客又更新了？'];
+      let msgIdx = 0;
+      pet?.addEventListener('click', () => {
+        msgIdx = (msgIdx + 1) % messages.length;
+        const bubble = pet.querySelector('.pet-bubble');
+        if (bubble) bubble.textContent = messages[msgIdx];
+      });
+
+      // Matrix 代码雨
+      const canvas = document.getElementById('matrix-rain');
+      const toggle = document.getElementById('matrix-toggle');
+      let rainActive = false, rainRAF = null;
+      function startRain() {
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const chars = 'アイウエオカキクケコサシスセソ0123456789ABCDEF';
+        const fontSize = 14;
+        const cols = Math.floor(canvas.width / fontSize);
+        const drops = Array(cols).fill(1);
+        function draw() {
+          ctx.fillStyle = 'rgba(242,239,231,.1)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = '#43a047';
+          ctx.font = fontSize + 'px monospace';
+          for (let i = 0; i < drops.length; i++) {
+            ctx.fillText(chars[Math.floor(Math.random() * chars.length)], i * fontSize, drops[i] * fontSize);
+            if (drops[i] * fontSize > canvas.height && Math.random() > .975) drops[i] = 0;
+            drops[i]++;
+          }
+          rainRAF = requestAnimationFrame(draw);
+        }
+        draw();
+      }
+      function stopRain() {
+        if (rainRAF) cancelAnimationFrame(rainRAF);
+        rainRAF = null;
+      }
+      toggle?.addEventListener('click', () => {
+        rainActive = !rainActive;
+        canvas.classList.toggle('active', rainActive);
+        toggle.textContent = rainActive ? '▓ stop' : '▓ rain';
+        if (rainActive) startRain(); else stopRain();
+      });
+      window.addEventListener('resize', () => { if (rainActive) { stopRain(); startRain(); } });
     </script>
   </body>
 </html>
