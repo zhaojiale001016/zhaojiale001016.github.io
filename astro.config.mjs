@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import expressiveCode from 'astro-expressive-code';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import AstroPWA from '@vite-pwa/astro';
+import { AstroPWAIntegration } from '@vite-pwa/astro';
 
 export default defineConfig({
   site: 'https://zhaojiale001016.github.io',
@@ -12,7 +12,7 @@ export default defineConfig({
       styleOverrides: { borderRadius: '8px' },
     }),
     sitemap(),
-    AstroPWA({
+    AstroPWAIntegration({
       manifest: { injectManifest: false },
       registerType: 'autoUpdate',
       workbox: {
