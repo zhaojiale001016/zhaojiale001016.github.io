@@ -264,8 +264,10 @@ img { max-width: 100%; display: block; }
 }
 .site-footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
 .site-footer .copy { color: var(--ink-3); font-size: .78rem; white-space: nowrap; }
-.site-footer .links { display: flex; gap: 20px; font-size: .82rem; color: var(--ink-2); }
-.site-footer .links a:hover { color: var(--green); }
+.site-footer .links { display: flex; align-items: center; gap: 6px; font-size: .82rem; }
+.site-footer .links a { color: var(--ink-2); text-decoration: none; padding: 2px 6px; border-radius: 4px; transition: all .15s; }
+.site-footer .links a:hover { color: var(--green); background: rgba(67,160,71,.08); text-decoration: underline; }
+.site-footer .links .dot { color: var(--ink-4); font-size: .7rem; user-select: none; }
 
 @media (max-width: 768px) {
   .featured { grid-template-columns: 1fr; }
