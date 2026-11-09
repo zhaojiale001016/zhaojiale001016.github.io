@@ -31,7 +31,7 @@ for (const p of posts) {
         <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">./render --knowledge-graph</span></span>
       </div>
     </div>
-    <svg id="graph" style="width:100%;height:70vh;border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);margin-top:14px;"></svg>
+    <svg id="graph" width="100%" height="600" style="border:1px solid var(--line);border-radius:var(--radius);background:var(--paper);margin-top:14px;cursor:grab;"></svg>
     <div class="legend">
       <span class="dot" style="background:#1f7a4d"></span> 文章
       <span class="dot" style="background:#2b8a9e"></span> 标签
@@ -41,51 +41,68 @@ for (const p of posts) {
   <script id="graph-data" type="application/json" set:html={JSON.stringify({ nodes, edges })}></script>
   <script is:inline src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script is:inline>
-    const gdata = JSON.parse(document.getElementById('graph-data').textContent);
-    const { nodes, edges } = gdata;
-    if (typeof d3 !== 'undefined' && nodes.length) {
-    const svg = d3.select('#graph'),
-          W = svg.node().clientWidth, H = svg.attr('height') || window.innerHeight * 0.7;
-    svg.attr('viewBox', `0 0 ${W} ${H}`);
-    const g = svg.append('g');
-    const colors = ['#2b8a9e', '#1f7a4d', '#4caf7d', '#b8860b', '#c7783c'];
+    document.addEventListener('DOMContentLoaded', () => {
+      const gdata = JSON.parse(document.getElementById('graph-data').textContent);
+      const { nodes, edges } = gdata;
+      if (typeof d3 === 'undefined' || !nodes.length) return;
 
-    const sim = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(edges).id(d => d.id).distance(80))
-      .force('charge', d3.forceManyBody().strength(-200))
-      .force('center', d3.forceCenter(W / 2, H / 2))
-      .force('collide', d3.forceCollide(d => d.r + 4));
+      const svgEl = document.getElementById('graph');
+      const W = svgEl.clientWidth || 800;
+      const H = svgEl.clientHeight || 600;
+      const svg = d3.select('#graph');
+      const g = svg.append('g');
+      const colors = ['#2b8a9e', '#1f7a4d', '#4caf7d', '#b8860b', '#c7783c'];
 
-    const link = g.append('g').selectAll('line')
-      .data(edges).join('line')
-      .attr('stroke', '#ddd6c3').attr('stroke-width', .8).attr('stroke-opacity', .7);
+      // 缩放支持
+      const zoom = d3.zoom().scaleExtent([0.3, 4]).on('zoom', e => g.attr('transform', e.transform));
+      svg.call(zoom);
 
-    const node = g.append('g').selectAll('g')
-      .data(nodes).join('g').call(
-        d3.drag()
-          .on('start', (e, d) => { if (!e.active) sim.alphaTarget(.3).restart(); d.fx = d.x; d.fy = d.y; })
-          .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
-          .on('end', (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
+      const sim = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(edges).id(d => d.id).distance(80))
+        .force('charge', d3.forceManyBody().strength(-200))
+        .force('center', d3.forceCenter(W / 2, H / 2))
+        .force('collide', d3.forceCollide(d => d.r + 4));
+
+      const link = g.append('g').selectAll('line')
+        .data(edges).join('line')
+        .attr('stroke', '#ddd6c3').attr('stroke-width', .8).attr('stroke-opacity', .7);
+
+      const node = g.append('g').selectAll('g')
+        .data(nodes).join('g')
+        .attr('cursor', 'grab');
+
+      node.call(d3.drag()
+        .on('start', (e, d) => {
+          if (!e.active) sim.alphaTarget(.3).restart();
+          d.fx = d.x; d.fy = d.y;
+          d3.select(e.sourceEvent.target).attr('cursor', 'grabbing');
+        })
+        .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+        .on('end', (e, d) => {
+          if (!e.active) sim.alphaTarget(0);
+          d.fx = null; d.fy = null;
+          d3.select(e.sourceEvent.target).attr('cursor', 'grab');
+        })
       );
 
-    node.append('circle')
-      .attr('r', d => d.r)
-      .attr('fill', d => colors[d.group % colors.length])
-      .attr('cursor', d => d.url ? 'pointer' : 'default')
-      .on('click', (e, d) => d.url && (window.location.href = d.url));
+      node.append('circle')
+        .attr('r', d => d.r)
+        .attr('fill', d => colors[d.group % colors.length]);
 
-    node.append('text')
-      .text(d => d.label)
-      .attr('font-size', 10).attr('fill', '#242b27')
-      .attr('text-anchor', 'middle').attr('dy', d => d.r + 13)
-      .style('pointer-events', 'none');
+      node.append('text')
+        .text(d => d.label)
+        .attr('font-size', 10).attr('fill', '#242b27')
+        .attr('text-anchor', 'middle').attr('dy', d => d.r + 13)
+        .style('pointer-events', 'none');
 
-    sim.on('tick', () => {
-      link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
-          .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-      node.attr('transform', d => `translate(${d.x},${d.y})`);
+      node.on('click', (e, d) => { if (d.url) window.location.href = d.url; });
+
+      sim.on('tick', () => {
+        link.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+            .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+        node.attr('transform', d => `translate(${d.x},${d.y})`);
+      });
     });
-    }
   </script>
 </Base>
 
