@@ -43,7 +43,7 @@ for (const p of posts) {
   <script is:inline>
     const gdata = JSON.parse(document.getElementById('graph-data').textContent);
     const { nodes, edges } = gdata;
-    if (typeof d3 === 'undefined' || !nodes.length) return;
+    if (typeof d3 !== 'undefined' && nodes.length) {
     const svg = d3.select('#graph'),
           W = svg.node().clientWidth, H = svg.attr('height') || window.innerHeight * 0.7;
     svg.attr('viewBox', `0 0 ${W} ${H}`);
@@ -85,6 +85,7 @@ for (const p of posts) {
           .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
       node.attr('transform', d => `translate(${d.x},${d.y})`);
     });
+    }
   </script>
 </Base>
 
