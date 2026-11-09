@@ -1,5 +1,6 @@
 ---
 title: "Codex 不再只是写代码的：OpenAI 这次更新，把 AI 编程工具推向了『通用代理』"
+cover: /img/inline/codex-for-almost-everything-1.png
 description: "11 月 7 日 OpenAI 发布 Codex 重大更新：后台操控电脑、内置浏览器、图像生成、90+ 插件、记忆与定时自动化全部上车。当每周 300 万开发者在用的编程代理开始越过代码边界，AI 工具的下一战场已经不在 IDE 里了"
 pubDate: 2026-11-09T18:00:00+08:00
 category: "技术资讯"
