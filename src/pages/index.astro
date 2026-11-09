@@ -79,24 +79,25 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
       </div>
     )}
 
-    <script is:inline>
-    (function(){
-      const el = document.getElementById('typed-text');
-      if (!el) return;
-      const full = '你好，我是豆芽。写代码，也写代码背后的世界——前端 × AI × 游戏 × 硬件 × 篮球，技术圈的每一场变局都逃不过这个终端。';
-      let i = 0;
-      const speed = 35;
-      function type() {
-        if (i < full.length) {
-          el.textContent += full[i];
-          i++;
-          setTimeout(type, full[i-1] === '。' || full[i-1] === '，' ? speed * 3 : speed);
-        } else {
-          document.querySelector('.typed-cursor')?.classList.add('blink');
+    <script is:inline src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof Typed === 'undefined') return;
+      new Typed('#typed-text', {
+        strings: [
+          '你好，我是豆芽。写代码，也写代码背后的世界——<strong style="color:var(--green)">前端 × AI × 游戏 × 硬件 × 篮球</strong>，技术圈的每一场变局都逃不过这个终端。'
+        ],
+        typeSpeed: 40,
+        backSpeed: 0,
+        loop: false,
+        showCursor: true,
+        cursorChar: '▊',
+        contentType: 'html',
+        onComplete: (self) => {
+          setTimeout(() => self.cursor?.classList.add('typed-cursor'), 500);
         }
-      }
-      setTimeout(type, 600);
-    })();
+      });
+    });
   </script>
 
   <div class="grid" style="margin-top: 20px;">
