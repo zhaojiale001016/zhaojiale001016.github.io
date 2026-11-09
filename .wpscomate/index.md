@@ -20,7 +20,8 @@ Root: `豆芽博客`
 │   │   └── tag-bg.svg
 │   └── rss.xsl
 ├── scripts/
-│   └── deploy.mjs
+│   ├── deploy.mjs
+│   └── optimize-images.mjs
 ├── source/
 │   ├── _posts/
 │   │   ├── ai-coding-review-cost.md
@@ -82,6 +83,7 @@ Root: `豆芽博客`
     │   ├── search/
     │   │   ├── index.astro
     │   │   └── index.json.ts
+    │   ├── stats.astro
     │   └── tags/
     │       ├── [tag].astro
     │       └── index.astro

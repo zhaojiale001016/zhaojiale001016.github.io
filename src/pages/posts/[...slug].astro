@@ -38,10 +38,21 @@ const toc = headings.filter((h) => h.depth === 2 || h.depth === 3);
 const fmt = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const minutes = Math.max(1, Math.round((post.body?.length ?? 0) / 400));
+const ldJson = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  image: post.data.cover ? `https://zhaojiale001016.github.io${post.data.cover}` : undefined,
+  datePublished: post.data.pubDate.toISOString(),
+  author: { '@type': 'Person', name: '豆芽', url: 'https://zhaojiale001016.github.io/about' },
+  publisher: { '@type': 'Organization', name: '豆芽的技术博客', logo: { '@type': 'ImageObject', url: 'https://zhaojiale001016.github.io/icon-192.png' } },
+};
 ---
 
 <Base title={post.data.title} description={post.data.description} cover={post.data.cover}>
   <div class="article-layout">
+    <script type="application/ld+json" set:html={JSON.stringify(ldJson)}></script>
     <article class="article">
       <div class="article-head">
         <span class="path">➜ ~/posts $ cat ./{post.id}.md</span>

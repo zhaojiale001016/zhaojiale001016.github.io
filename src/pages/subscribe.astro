@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="subscribe">
+  <div class="wrap" style="padding-top: 44px; padding-bottom: 56px; max-width: 680px;">
+    <div class="term">
+      <div class="term-bar"><i></i><i></i><i></i><span class="title">douya@blog: ~/subscribe — zsh</span></div>
+      <div class="term-body">
+        <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">./subscribe --init</span></span>
+
+        <h2>邮件订阅 · 新文章自动推送</h2>
+        <p>提交邮箱即可订阅，每天有新文章时，follow.it 会代我发一封通知邮件到你邮箱。不收钱、不骚扰，随时可退订。</p>
+
+        <div class="form-wrap" style="margin: 24px 0;">
+          <form action="https://api.follow.it/subscription-form/NlIxd1NoY3RsYmFXRjdzL25jTWswSHhmZnc3ckpqT05nS2s4SG5FMUZwQWtWM1MwcUhzTkEzTjlLUFZrYjlJeTFZYnE4cnRkY25jSUhjaTJZTW5wcFRUYWNHRUZ5ODlSUWFpc3N5SCt2T0RXeFJUdFcvL0N3aGFOWUd2Ty9kakJ8SXFGQk9xZmhFbXlwM3VJS2owQkRiUDZLSXI2WTkvQ0h3RFJYRzhVUnJvND0=/8" method="post" target="_blank">
+            <input type="email" name="email" placeholder="your@email.com" required style="width:100%;max-width:360px;padding:10px 14px;font-family:var(--mono);font-size:.92rem;background:var(--panel);color:var(--ink);border:1px solid var(--line-strong);border-radius:6px;outline:none" />
+            <button type="submit" class="sub-btn">subscribe</button>
+          </form>
+        </div>
+
+        <p style="font-size:.8rem;color:var(--ink-3)">Powered by <a href="https://follow.it" target="_blank" rel="noopener">follow.it</a>，免费服务，你只需在收到的确认邮件里点一下确认。</p>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .sub-btn {
+    margin-left: 8px; padding: 10px 18px;
+    font-family: var(--mono); font-size: .92rem; font-weight: 700;
+    background: var(--green); color: #fff; border: none;
+    border-radius: 6px; cursor: pointer;
+  }
+  .sub-btn:hover { opacity: .9; }
+</style>
