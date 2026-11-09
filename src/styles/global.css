@@ -240,8 +240,8 @@ img { max-width: 100%; display: block; }
 .callout-caution { border-left-color: #c62828; background: rgba(198,40,40,.06); }
 .callout-caution .callout-title { color: #c62828; }
 
-/* Vanta 背景：低存在感，半透明贴近纸面 */
-.vanta-canvas { opacity: .45; }
+/* tsParticles 背景：低存在感，半透明贴近纸面 */
+#tsparticles { opacity: .5; }
 
 main { position: relative; z-index: 1; }
 .site-header { position: relative; z-index: 2; }
