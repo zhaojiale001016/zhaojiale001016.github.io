@@ -97,7 +97,7 @@ const nav = [
     <script is:inline define:vars={{ postIds }}>
       window.__POSTS = postIds;
       // 键盘快捷键
-      let gPending = false;
+      let gPending = false, _escLast = 0;
       const toast = (msg) => {
         let t = document.getElementById('kbd-toast');
         if (!t) {
@@ -140,17 +140,23 @@ const nav = [
             if (el?.href) location.href = el.href;
             break;
           }
-          case '?':
-            toast('快捷键\n  /        搜索\n  r        随机看一篇\n  ← / →    上一篇 / 下一篇（文章页）\n  g h      首页\n  g a      归档\n  g t      标签\n  g s      统计');
+          case 'Escape': {
+            const now = Date.now();
+            if (now - _escLast < 500) {
+              toast('快捷键\n  /        搜索\n  r        随机看一篇\n  ← / →    上一篇 / 下一篇（文章页）\n  g h      首页\n  g a      归档\n  g t      标签\n  g s      统计');
+              _escLast = 0;
+            } else {
+              _escLast = now;
+            }
             break;
+          }
         }
-      });
-    </script>
-    <script is:inline>
       // 双击页脚 exit code 彩蛋
       document.querySelector('.copy')?.addEventListener('dblclick', () => {
         toast('✨ 你发现了豆芽的秘密通道');
       });
+    </script>
+    <script is:inline>
       // 不蒜子加载完成后显示统计数字
       const t = setInterval(() => {
         if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
