@@ -11,29 +11,27 @@ import Base from '../layouts/Base.astro';
 
         <div class="gb-content">
           <h2>留言板</h2>
-          <p>随便写点什么——路过的痕迹、想聊的话题、对博客的建议，或者只是打个招呼。</p>
+          <p>随便写点什么——路过的痕迹、想聊的话题、对博客的建议，或者只是打个招呼。登录 GitHub 即可留言，支持 Markdown。</p>
+        </div>
 
-          <div class="gb-options">
-            <a class="gb-btn" href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/discussions" target="_blank" rel="noopener">
-              <span class="icon">💬</span>
-              <span class="label">GitHub Discussions</span>
-              <span class="desc">登录 GitHub 后直接留言，支持 Markdown</span>
-            </a>
-            <a class="gb-btn" href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/issues/new" target="_blank" rel="noopener">
-              <span class="icon">📋</span>
-              <span class="label">GitHub Issue</span>
-              <span class="desc">提建议、报 bug、交换友链</span>
-            </a>
-            <a class="gb-btn" href="/posts/ai-coding-review-cost#comments">
-              <span class="icon">✍️</span>
-              <span class="label">文章评论区</span>
-              <span class="desc">每篇文章底部都有 Giscus 评论区</span>
-            </a>
-          </div>
-
-          <div class="gb-note">
-            <p>三种方式都会收到通知，通常 24 小时内回复。不登录 GitHub 也可以通过 <a href="/subscribe">邮件订阅</a> 保持联系。</p>
-          </div>
+        <div class="gb-comments">
+          <script
+            src="https://giscus.app/client.js"
+            data-repo="zhaojiale001016/zhaojiale001016.github.io"
+            data-repo-id="R_kgDOVjsqow"
+            data-category="General"
+            data-category-id="DIC_kwDOVjsqo84DKcIg"
+            data-mapping="specific"
+            data-term="guestbook"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="zh-CN"
+            crossorigin="anonymous"
+            async
+          ></script>
         </div>
 
         <span class="line" style="margin-top: 18px;"><span class="prompt">➜ ~</span> <span class="cursor">&nbsp;</span></span>
@@ -46,18 +44,5 @@ import Base from '../layouts/Base.astro';
   .gb-content { margin-top: 16px; }
   .gb-content h2 { font-size: 1.3rem; color: var(--green); margin-bottom: 8px; }
   .gb-content p { font-size: .85rem; color: var(--ink-2); line-height: 1.7; }
-  .gb-options { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
-  .gb-btn {
-    display: flex; align-items: center; gap: 14px;
-    background: var(--bg); border: 1px solid var(--line);
-    border-radius: var(--radius); padding: 16px 18px;
-    transition: border-color .15s, transform .15s;
-  }
-  .gb-btn:hover { border-color: var(--green); transform: translateY(-2px); }
-  .gb-btn .icon { font-size: 1.3rem; }
-  .gb-btn .label { font-size: .88rem; font-weight: 700; color: var(--ink); }
-  .gb-btn .desc { font-size: .72rem; color: var(--ink-3); margin-left: auto; }
-  .gb-note { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
-  .gb-note p { font-size: .78rem; color: var(--ink-3); }
-  .gb-note a { color: var(--green); }
+  .gb-comments { margin-top: 20px; }
 </style>
