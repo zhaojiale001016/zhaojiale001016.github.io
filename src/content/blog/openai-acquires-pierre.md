@@ -2,7 +2,7 @@
 title: "OpenAI 收购 Pierre：AI 不仅会写代码，还要学会审代码"
 description: "昨天 OpenAI 官宣收购代码审查工具公司 Pierre，给 Codex 补上审查和分析能力。结合它自研的 Pando 源码系统，AI 编程的竞争正在从『写得快』转向『看得懂』"
 pubDate: 2026-11-05T17:30:00+08:00
-cover: /img/cover-openai-pierre.png
+cover: /img/inline/openai-acquires-pierre-1.jpg
 category: "技术资讯"
 tags:
   - OpenAI

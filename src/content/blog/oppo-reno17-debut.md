@@ -2,7 +2,7 @@
 title: "猫爪后盖 + 8000mAh：OPPO Reno17 外观首秀，这次中端机卷的不只是快充"
 description: "11 月 9 日 OPPO Reno17 系列外观正式亮相：3D 立体小猫图案后盖、全系 5000 万像素潜望长焦、6 秒长实况、标准版 8000mAh 大电池，11 月 16 日发布。Reno 这个曾经靠外观和轻薄吃饭的系列，正在影像和续航上补硬课"
 pubDate: 2026-11-09T18:00:00+08:00
-cover: /img/cover-oppo-reno17.png
+cover: /img/inline/oppo-reno17-debut-1.png
 category: "数码资讯"
 tags:
   - OPPO

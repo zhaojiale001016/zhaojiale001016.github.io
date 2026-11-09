@@ -2,7 +2,7 @@
 title: "程序员这个岗位正在拆成两半，本周的三条新闻拼出了全貌"
 description: "从时代周报的码农群像调查、Stripe 面向高中生的实习岗位，到 Claude Code 产品负责人加入 OpenAI，程序员就业市场的哑铃式分化正在加速"
 pubDate: 2026-11-05T18:00:00+08:00
-cover: /img/cover-job-market.png
+cover: /img/inline/programmer-job-market-2026-1.jpg
 category: "技术资讯"
 tags:
   - 技术资讯

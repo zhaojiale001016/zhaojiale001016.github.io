@@ -2,7 +2,7 @@
 title: "硬件卖不动的任天堂，把宝押给了第三方：Switch 2 未来一年阵容里藏着 FromSoftware 的独占"
 description: "财报说明会上任天堂公布了 Switch 2 未来一年第三方阵容：《黄昏血族》《生化危机：维罗妮卡》《最终幻想VII：启示录》都在列，还有《剑星 完全版》补位。硬件跌 41% 的日子，内容成了唯一的解药"
 pubDate: 2026-11-06T18:00:00+08:00
-cover: /img/cover-switch2-third-party.png
+cover: /img/inline/switch2-third-party-lineup-2027-1.jpg
 category: "游戏资讯"
 tags:
   - 任天堂

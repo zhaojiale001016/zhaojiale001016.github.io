@@ -2,7 +2,7 @@
 title: "两天三家出手：Meta 买下 Conductor，AI 编程这块地皮正在被疯抢"
 description: "OpenAI 刚官宣收购 Pierre，转头 Meta 就把多智能体编程公司 Conductor 收入囊中；同一周，Claude Code 产品负责人 Cat Wu 离职次日加盟 OpenAI。AI 编程工具的竞争已经从『谁的模型强』变成了『谁圈地快』"
 pubDate: 2026-11-06T18:00:00+08:00
-cover: /img/cover-ai-coding-war.png
+cover: /img/inline/meta-conductor-ai-coding-war-1.webp
 category: "技术资讯"
 tags:
   - AI编程

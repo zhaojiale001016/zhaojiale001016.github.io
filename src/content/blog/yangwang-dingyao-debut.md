@@ -2,7 +2,7 @@
 title: "208 万对标劳斯莱斯：仰望鼎曜阿布扎比全球首发，中国超豪华这次是认真的"
 description: "11 月 7 日晚，仰望首款超豪华行政轿车鼎曜在阿布扎比全球首发：5.6 米车长、137 颗宝石格栅、24K 真金车标、对开门、易四方 + 云辇 + 千公里续航，山河鼎韵限量版预订价 208 万元。同一天红旗 H9 也在国内开启预售——中国品牌的向上冲刺，正在两条战线同时打响"
 pubDate: 2026-11-09T18:00:00+08:00
-cover: /img/cover-yangwang-dingyao.png
+cover: /img/inline/yangwang-dingyao-debut-1.jpg
 category: "汽车资讯"
 tags:
   - 仰望

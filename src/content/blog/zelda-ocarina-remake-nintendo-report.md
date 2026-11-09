@@ -2,7 +2,7 @@
 title: "《时之笛》重制版今天发售，M 站 96 分：任天堂在财报下滑的日子，掏出了年度最佳候选"
 description: "11 月 5 日《塞尔达传说：时之笛》重制版登陆 Switch 2，OpenCritic 和 Metacritic 均分 96，暂列 2026 年榜首。同一天任天堂公布上半财年业绩，季度营业利润下滑 16%——一边是历史级的好评，一边是硬件卖不动的焦虑，任天堂的 11 月就是这么拧巴。"
 pubDate: 2026-11-05T18:00:00+08:00
-cover: /img/cover-zelda-ocarina.png
+cover: /img/inline/zelda-ocarina-remake-nintendo-report-1.jpg
 category: "游戏资讯"
 tags:
   - 任天堂

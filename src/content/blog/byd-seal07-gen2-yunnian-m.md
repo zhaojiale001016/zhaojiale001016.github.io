@@ -2,7 +2,7 @@
 title: "磁流变悬架打进 14 万价位：第二代海豹 07 上市，比亚迪又开始卷底盘了"
 description: "11 月 5 日比亚迪海洋网第二代海豹 07 上市，置换价 13.59 万元起。首搭云辇-M 智能磁流变车身控制系统、775km 续航加 5 分钟闪充——2026 年的收官阶段，卷的重点悄悄从智驾转回了底盘和补能"
 pubDate: 2026-11-06T18:00:00+08:00
-cover: /img/cover-byd-seal07.png
+cover: /img/inline/byd-seal07-gen2-yunnian-m-1.jpg
 category: "汽车资讯"
 tags:
   - 比亚迪

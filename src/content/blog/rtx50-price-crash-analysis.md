@@ -2,7 +2,7 @@
 title: "RTX 5080 九天跌回 1.4 万：显卡这轮过山车，跌下去的是价格，跌不掉的是溢价"
 description: "RTX 50 系在 11 连涨后连续回调，11 月 4 日 5080 最低价跌破 1.4 万，但全系平均溢价率仍有六成以上，5090D 比首发价还贵 152%。与此同时 AIC 品牌商又发出了新一轮涨价通知，内存价格同比涨了四倍。装机党现在最需要的是算清楚一笔账。"
 pubDate: 2026-11-05T18:00:00+08:00
-cover: /img/cover-rtx50.png
+cover: /img/inline/rtx50-price-crash-analysis-1.jpg
 category: "数码资讯"
 tags:
   - 显卡
