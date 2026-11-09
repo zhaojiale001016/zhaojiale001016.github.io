@@ -26,6 +26,9 @@ tags:
 
 还有个隐蔽的坑是测试同源。AI 既写实现又写测试，两边可能错在同一个地方。测试全绿，看着很安心，实际上边界情况根本没人真的读过。
 
+![代码生成越来越快，交付和验证能不能跟上成了新问题](/img/inline/ai-coding-review-cost-1.jpg)
+*图源：腾讯云开发者社区《GitHub 今年新增 400 万 CPU 核心：AI 快把代码仓库填满了》*
+
 ## GitHub 的服务器也在替这笔账买单
 
 审查只是人的成本，机器的成本也在涨。
@@ -33,6 +36,9 @@ tags:
 GitHub 披露，2026 年已经新增了 400 万 CPU 核心和 160 PB 存储。背景是：今年 9 月，开发者和 Agent 在平台上产生了 73.8 亿次提交，是去年同期的五倍多（数据来自[腾讯云开发者社区的整理](https://cloud.tencent.com.cn/developer/article/2775072)）。
 
 这里面有个很真实的场景：配置粗糙的 Agent 改个空格就推一次，报错换个变量名再推一次，把 GitHub Actions 当远程调试器用。一晚上功能没交付多少，git log 翻出几十页。每一次"再试一下"背后都是一轮环境初始化、依赖安装和自动化测试。个人省下的等待，变成团队共享 Runner 的排队。
+
+![AI 生成的海量代码正在挤爆 GitHub 的基础设施](/img/inline/ai-coding-review-cost-2.png)
+*图源：腾讯云开发者社区《GitHub 今年新增 400 万 CPU 核心：AI 快把代码仓库填满了》*
 
 ## 那到底该怎么用
 
@@ -45,3 +51,9 @@ Agent 要有"本地验证"的门槛。能在提交前跑完的检查就别推到
 考核指标得换。如果团队还拿提交次数和代码行数衡量产出，Agent 会轻松把数字做得很漂亮，交付原地踏步。值得追踪的是另一组数：一个需求经过几次无效重试、消耗多少 CI 分钟、审查者理解改动花了多久、上线后返工了没有。
 
 写代码这件事正在变便宜，变贵的是判断"这段代码该不该合进去"。这个趋势短期内看不到回头，早点适应比焦虑有用。
+
+## 参考来源
+
+- [腾讯云开发者社区：GitHub 今年新增 400 万 CPU 核心，AI 快把代码仓库填满了](https://cloud.tencent.com.cn/developer/article/2775072)
+- [新浪科技（量子位）：GitHub 不堪重负！OpenAI 收购替代品，A 社原地自研](http://finance.sina.cn/2026-11-07/detail-inixxcvw4637628.d.html)
+- [GitHub Blog: Building Git infrastructure for agent-scale development](https://github.blog/engineering/building-git-infrastructure-for-agent-scale-development/)

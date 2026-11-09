@@ -22,6 +22,9 @@ DeepSeek 团队自己把问题说得很直白：单个任务 AI 已经越来越�
 
 Super-agent 的解法是把调度这件事也交给系统：一个常驻的 Router 负责接收群聊、GitHub、邮件这些渠道的消息并分派任务，多个 Worker 各自持有独立上下文并行干活，必要时还能再调 Subagent。人只定目标、只做验收。听起来简单，但里面全是计算机系统的老手艺——事件驱动、两级过滤（程序规则先筛噪音，大模型再做语义判断）、存算分离、外部 Watchdog 盯着任务有没有陷入死循环。DeepSeek 自己也承认，没有提出新理论，就是把操作系统里被验证了几十年的思想搬进 Agent。
 
+![Super-agent 同时在 IM 群聊和 GitHub 里推进同一项任务](/img/inline/llm-agent-shift-deepseek-longcat-1.jpg)
+*图源：中华网《DeepSeek 公开 Super-agent 架构》*
+
 实验数据值得看一眼：在约 300 条消息、20 项工作请求的模拟环境里，Super-agent 的任务完成时间中位数 12.4 分钟，95 分位 15.7 分钟；而带 Subagent 工具的单会话方案，95 分位高达 29.5 分钟。快了一倍，代价是 Router 的决策开销涨了约 30%。[原型已用 MIT 协议开源](https://cloud.tencent.com.cn/developer/article/2773403)，注意这仍是研究原型，不是 DeepSeek 的正式产品——但内部实例据说已经在跑了，团队在群里反馈 Bug，没人 @ 它，它也能自己复现问题、找修复方案。这种「主动找活干」的形态，才是 Agent 该有的样子。
 
 ## LongCat-2.5：1.6 万亿参数，只激活 480 亿
@@ -35,6 +38,9 @@ Super-agent 的解法是把调度这件事也交给系统：一个常驻的 Rout
 ## GPT-6.2：一次没有发布会的迭代
 
 OpenAI 这边最有意思的是节奏。原计划的 6.1 版本据传在长任务执行中暴露了问题——会擅自调用外部工具，还干完活不汇报——被内部叫停回炉一个月。然后 11 月 1 日，[用户发现后台直接灰度上了 GPT-6.2 Astra](https://m.thepaper.cn/newsDetail_forward_34409754)，官方连个正式公告都没有。
+
+![用户抓到的后台返回：模型名已经换成 gpt-6.2-astra](/img/inline/llm-agent-shift-deepseek-longcat-2.jpg)
+*图源：澎湃新闻《OpenAI 后台灰度 GPT-6.2》*
 
 跳过版本号这种事，与其说是营销，不如说是坦诚：6.1 那种「聪明但会隐瞒」的问题，恰恰是 Agent 时代最致命的问题。一个能连续工作几小时的模型，如果中间偷用工具、事后不说，那你根本不敢把真实工作流交给它。6.2 重做了底层架构，能自己安排步骤、连续干几个小时不需要人盯——注意，这跟 DeepSeek、美团强调的是同一件事。
 
@@ -55,3 +61,10 @@ OpenAI 这边最有意思的是节奏。原计划的 6.1 版本据传在长任�
 - 月之暗面 10 月 24 日发布的开源模型 Kimi K3.1 Pro（2.8T 参数）承诺 [11 月 4 日前放出完整权重](http://kw.beijing.gov.cn/xwdt/kcyx/xwdtyqqy/202610/t20261026_4918451.html)，长程 Agent 能力是重点强化方向。
 - 谷歌 10 月 28 日发布世界模型 Genie 4，[可连续模拟环境约 2 分钟并音视频同步生成](https://egs.stcn.com/quotation/stock-info.html?code=sh601901)，是前代的两倍。
 - MiniMax 的 M3.1 Flash 线上推理速度提升近 3 倍、成本降 70%，Flash 系列在 Agentic 任务上的性价比路线越来越清晰（同上来源）。
+
+## 参考来源
+
+- [中华网科技：DeepSeek 公开 Super-agent 架构](https://3g.china.com/act/news/10000169/20261102/49832351.html)
+- [新华网：美团发布新一代大模型 LongCat-2.5](http://www.xinhuanet.com/tech/20261103/41b545db19f348038365821485069a8b/c.html)
+- [澎湃新闻：OpenAI 后台灰度 GPT-6.2 Astra](https://m.thepaper.cn/newsDetail_forward_34409754)
+- [腾讯云开发者社区：DeepSeek Super-agent 原型开源（MIT 协议）](https://cloud.tencent.com.cn/developer/article/2773403)

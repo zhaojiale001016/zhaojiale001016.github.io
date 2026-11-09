@@ -23,11 +23,17 @@ Codex 的强项是从零生成代码，弱项是面对存量代码——理解�
 
 收购官宣前 48 小时，OpenAI 还发了篇技术博客，公开了自研的源码控制后端 Pando——一个能同时处理人类提交、AI 补丁流、多智能体协同分支的系统，多个 Agent 同时改主干时不报 conflict，而是生成"语义冲突图谱"。把这三样摆在一起：Pierre 管感知，Pando 管调度，Codex 管生成。拼图的形状很清楚了。
 
+![Greg Brockman 介绍 Pando：推送延迟降约 80%，每天分发近 1 PB Git 数据](/img/inline/openai-acquires-pierre-1.jpg)
+*图源：新智元（36氪）《OpenAI 收购神秘团队，奥特曼想在 Codex 里再造一个 GitHub》*
+
 ## 为什么这事值得写一篇
 
 上周我在博客里聊过一个观点：AI 编程的效率瓶颈已经从"写"转移到"审"——生成越来越便宜，审查越来越贵。这笔收购相当于 OpenAI 用真金白银给这个判断投了票。
 
 开发者工具竞争的上半场比的是谁写得快，补全准不准、生成像不像人话。下半场的赛点换了：谁能把"写、查、审"收进同一个闭环。GitHub Copilot 有 GitHub 整个工作流托底，Claude Code 靠长上下文理解大仓库立足，OpenAI 现在的答案是把审查能力直接买进来。赛道上的每一家都在往"端到端"挤。
+
+![科技巨头争夺「程序员整张工作台」的核心布局对比](/img/inline/openai-acquires-pierre-2.jpg)
+*图源：新智元（36氪）《OpenAI 收购神秘团队，奥特曼想在 Codex 里再造一个 GitHub》*
 
 对日常写代码的人，可感知的变化大概有几个：Codex 插件会逐步默认开启更强的 diff 分析；PR 审查环节会被 AI 深度介入，不再只是生成阶段的助手；多 Agent 协同改同一个仓库会从演示变成日常功能。
 
@@ -38,6 +44,12 @@ Codex 的强项是从零生成代码，弱项是面对存量代码——理解�
 二是责任问题。Hacker News 上已经有 Git 维护者在问：当 diff 不只是字符比对而是语义推演，AI 的理解偏差算谁的 bug？如果审查 AI 把一段关键的加密逻辑误判为冗余折叠掉了，责任在工具还是在批准合并的人？OpenAI 的应对是让 Pierre 的核心库保持 MIT 开源、成立独立治理委员会，算是表了态，但问题本身不会因为表态消失。
 
 Pierre 仓库 README 的最后一行，在收购后改成了：This repo is now maintained by humans and AI agents — in that order. 人类排第一。但愿这句话一直是真的。
+
+## 参考来源
+
+- [OpenAI 官方公告：OpenAI to acquire Pierre Computer Company, Inc.](https://openai.com/index/openai-to-acquire-pierre/)
+- [新智元（36氪）：OpenAI 收购神秘团队，奥特曼想在 Codex 里再造一个 GitHub](https://eu.36kr.com/en/p/4056787186881670)
+- [OpenAI 工程博客：Scaling Git at OpenAI（Pando）](https://openai.com/index/scaling-git-at-openai/)
 
 ---
 

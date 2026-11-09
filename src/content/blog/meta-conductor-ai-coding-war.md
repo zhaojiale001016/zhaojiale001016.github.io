@@ -15,9 +15,15 @@ tags:
 
 先说 Meta 这单。据 [TechCrunch 报道](https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/)，Meta 已确认收购成立于 2024 年的 Conductor，交易金额未披露。这家公司很有意思——它做的不是底层模型，而是一个让你在多个并行工作空间里同时部署 AI Agent 的平台：一个项目拆成几块，几个智能体各管一摊，云端、本地、手机上都能跑。值得注意的是，Conductor 调用的底层模型来自 Anthropic 和 OpenAI，也就是说，它本质上是站在两家头部模型厂商肩膀上做编排层的。
 
+![扎克伯格在 Meta 发布会上，公司正通过收购补齐 AI 编程版图](/img/inline/meta-conductor-ai-coding-war-1.webp)
+*图源：TechCrunch《Meta acquires AI coding startup Conductor》*
+
 这个细节恰恰是 Meta 看中它的原因。Meta 自己的编程智能体 Muse Code 今年 8 月才推出，起步明显晚于 OpenAI 的 Codex 和 Anthropic 的 Claude Code，但增长不慢——官方披露 Muse 系列用户已突破 1000 万。买 Conductor 补的正是"多智能体并行协作"这一块短板。创始人 Charlie Holtz 在公告里说得很直白：团队将加入 Meta 超级智能实验室，跟首席 AI 官 Alexandr Wang 和产品负责人 Nat Friedman 一起，做"下一代交互界面"，明年年初有新东西。至于 Conductor 的老用户，云服务 11 月 20 日就关，本地版撑到明年年初——初创公司被收购后的标准剧本。
 
 再看挖角这出戏。据[潮新闻梳理](https://tidenews.com.cn/news.html?id=3606442)，Cat Wu 是 Claude Code 的创始产品经理，2024 年加入 Anthropic 时它还只是个内部实验工具，她陪着这个产品走完了从研究预览到年化收入 25 亿美元的全过程。美西时间 11 月 3 日她官宣离开 Anthropic，一天后官宣加入 OpenAI，出任核心产品（Core Products）产品管理负责人。有人问她是不是要休息一阵，她回了三个词："post agi!"。
+
+![Greg Brockman 发推欢迎 Cat Wu 加入 OpenAI 团队](/img/inline/meta-conductor-ai-coding-war-2.png)
+*图源：潮新闻《Claude Code 产品负责人离职次日加盟 OpenAI》*
 
 我的判断是，这单挖角比收购 Pierre 更值得琢磨。技术可以买、可以攒，但"把模型能力翻译成企业愿意持续付费的产品"这条路径，目前全行业被验证过的次数屈指可数。JetBrains 今年 8 月的调查显示，全球 39% 的专业开发者在工作中用 Claude Code，Codex 只有 16%；Menlo Ventures 的报告估算，Claude Code 和 Codex 合计拿走了约 340 亿美元编程工具市场的七成。OpenAI 有入口（周活 12 亿），但入口变不成收入，Codex 在外部组织的渗透率只有 17.3%。Cat Wu 在 Anthropic 干的正是 OpenAI 缺的那件事。
 
@@ -28,6 +34,12 @@ tags:
 对普通开发者来说，我不觉得这值得焦虑，但值得留意一个趋势：编程工具的入口正在快速收敛。你现在用的终端工具、编辑器插件、代码托管平台，半年后可能分属三个互相打仗的阵营，迁移成本会实实在在砸在每个人头上。我的建议很简单——工作流里尽量保留一层中立的 Git 仓库和标准协议，别让任何一个巨头的生态把你锁得太死。
 
 巨头圈地的时候，谁的地契最干净，谁活得最久。
+
+## 参考来源
+
+- [TechCrunch: Meta acquires AI coding startup Conductor](https://techcrunch.com/2026/11/04/meta-acquires-ai-coding-startup-conductor/)
+- [潮新闻：Claude Code 产品负责人 Cat Wu 离职次日加盟 OpenAI](https://tidenews.com.cn/news.html?id=3606442)
+- [中华网软件：Kimi K2.6-code-preview 上线](https://soft.china.com/article/2076961.html)
 
 ---
 

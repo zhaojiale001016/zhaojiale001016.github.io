@@ -20,6 +20,9 @@ GitHub Universe 2026 上周在旧金山开完，没能去现场，但这几天�
 
 这些曲线变陡的时间点，和 AI 编程工具普及的时间点基本是重合的。提交量的通胀，我在上一篇里聊过它的代价，这里不重复。
 
+![GitHub Universe 2026  keynote 现场](/img/inline/github-universe-2026-recap-1.jpg)
+*图源：DEV Community《GitHub Universe 2026: My Recap from San Francisco》*
+
 ## Copilot 不想只当助手了
 
 这届 Universe 的产品发布，主线是把 Copilot 从"帮你补全代码"往"协调整个交付流程"推。
@@ -27,6 +30,9 @@ GitHub Universe 2026 上周在旧金山开完，没能去现场，但这几天�
 新的 Copilot 应用里，Projects 负责跨仓库协调工作，Fusion 管模型选择，Automations 可以响应生产环境的信号自动触发任务，代码审查环节也被接进了这条链。配合能力在不同工具之间延续的 Session continuity，GitHub 想覆盖的明显是"从需求到上线"的全程，而不只是写代码那一段。
 
 另一件容易被忽略但可能更重要的事：GitHub 在重建底层的 Git 基础设施。一个月几十亿次提交的冲击下，老地基扛不住了。这件事没什么传播度，但决定了上面那些花活能不能跑得稳。
+
+![大会现场发布 Copilot Fusion 多模型编排能力](/img/inline/github-universe-2026-recap-2.jpg)
+*图源：DEV Community《GitHub Universe 2026: My Recap from San Francisco》*
 
 ## 闭幕主题演讲了一个相反的故事
 
@@ -41,3 +47,9 @@ GitHub Universe 2026 上周在旧金山开完，没能去现场，但这几天�
 一是平台在赌"工作流"而不是"生成"。代码生成能力各家迟早拉平，谁把生成前后的环节（规划、审查、部署、回滚）接住，谁才有护城河。这对我们做工具选型的启示是：别只比模型，要看工具在你整条流水线上的位置。
 
 二是"人的判断"正在被明确定价。闭幕主题把维护者、审查者、DevOps 工程师推到台前，等于官方承认了一件事：AI 能写代码之后，稀缺的是知道该写什么、敢为结果签字的人。这个趋势和最近招聘市场的变化完全对得上，下篇展开聊。
+
+## 参考来源
+
+- [DEV Community: GitHub Universe 2026 — My Recap from San Francisco](https://dev.to/playfulprogramming/github-universe-2026-my-recap-from-san-francisco-23hd)
+- [GitHub Blog: GitHub Universe 2026 — Evolving every layer of the stack](https://github.blog/news-insights/company-news/github-universe-2026-evolving-every-layer-of-the-stack/)
+- [GitHub Octoverse 2026 报告](https://github.blog/news-insights/octoverse/)
