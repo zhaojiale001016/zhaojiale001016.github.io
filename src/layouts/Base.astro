@@ -198,13 +198,13 @@ const nav = [
               fpsLimit: 60,
               interactivity: { events: { onHover: { enable: false }, onClick: { enable: false } } },
               particles: {
-                number: { value: 28, density: { enable: true } },
-                color: { value: ['#cfc8b8', '#c9d4c6', '#b9c9bb'] },
+                number: { value: 36, density: { enable: true } },
+                color: { value: ['#8fbf9a', '#7fb3a3', '#a8c68f'] },
                 shape: { type: 'circle' },
-                opacity: { value: 0.8 },
-                size: { value: { min: 1, max: 2.2 } },
+                opacity: { value: { min: 0.25, max: 0.55 }, animation: { enable: true, speed: 0.4, sync: false } },
+                size: { value: { min: 1.5, max: 3 } },
                 links: { enable: false },
-                move: { enable: true, speed: 0.35, direction: 'none', random: true, straight: false, outModes: { default: 'out' } }
+                move: { enable: true, speed: 0.8, direction: 'none', random: true, straight: false, outModes: { default: 'out' } }
               },
               detectRetina: true
             }

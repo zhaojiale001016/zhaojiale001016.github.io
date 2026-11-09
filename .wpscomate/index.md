@@ -57,8 +57,10 @@ Root: `豆芽博客`
     │       ├── byd-seal07-gen2-yunnian-m.md
     │       ├── codex-for-almost-everything.md
     │       ├── github-universe-2026-recap.md
+    │       ├── gpu-huaqiangbei-overseas-buyers.md
     │       ├── llm-agent-shift-deepseek-longcat.md
     │       ├── meta-conductor-ai-coding-war.md
+    │       ├── nba-bucks-worst-start.md
     │       ├── openai-acquires-pierre.md
     │       ├── oppo-reno17-debut.md
     │       ├── programmer-job-market-2026.md
