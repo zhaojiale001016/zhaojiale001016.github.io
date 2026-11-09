@@ -41,7 +41,7 @@ for (const p of posts) {
   <script id="graph-data" type="application/json" set:html={JSON.stringify({ nodes, edges })}></script>
   <script is:inline src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
   <script is:inline>
-    const gdata = JSON.parse(document.getElementById('graph-data')!.textContent!);
+    const gdata = JSON.parse(document.getElementById('graph-data').textContent);
     const { nodes, edges } = gdata;
     if (typeof d3 === 'undefined' || !nodes.length) return;
     const svg = d3.select('#graph'),
