@@ -33,7 +33,16 @@ body {
   flex-direction: column;
 }
 main { flex: 1; }
-/* canvas-nest 背景画布（z-index:-2，低于内容） */
+/* GIF 动态背景 + 可读性蒙层 */
+html { background: var(--paper) url('/img/bg.gif') center/cover no-repeat fixed; }
+@media (max-width: 768px) {
+  html { background-attachment: scroll; }
+}
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: rgba(242, 239, 231, .68);
+}
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 ::selection { background: var(--green-soft); color: var(--green); }

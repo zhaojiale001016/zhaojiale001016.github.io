@@ -103,8 +103,8 @@ const nav = [
     <script is:inline src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.js"></script>
-    <!-- canvas-nest 微动背景（粒子连线） -->
-    <script is:inline src="https://cdn.jsdelivr.net/npm/canvas-nest.js@2.0.4/dist/canvas-nest.js" color="140,180,150" opacity="0.14" count="55" zindex="-2"></script>
+    <!-- 指定看板娘模型：Shizuku（modelId=4） -->
+    <script is:inline>localStorage.setItem('modelId', '4');</script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/rough-notation@0.5.1/lib/rough-notation.iife.js"></script>
     <script is:inline define:vars={{ postIds }}>
       window.__POSTS = postIds;
