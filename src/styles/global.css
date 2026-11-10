@@ -41,7 +41,7 @@ html { background: var(--paper) url('/img/bg.gif') center/cover no-repeat fixed;
 body::before {
   content: "";
   position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background: rgba(242, 239, 231, .68);
+  background: rgba(242, 239, 231, .45);
 }
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
