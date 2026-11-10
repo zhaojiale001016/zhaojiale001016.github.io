@@ -25,7 +25,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
         </div>
         <div class="term-body">
           <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">./whoami</span></span>
-          <span class="out" id="typed-out"><span id="typed-text"></span></span>
+          <span class="out typed-out" id="typed-out"><span id="typed-text">你好，我是豆芽。写代码，也写代码背后的世界——前端、AI、游戏、硬件、篮球。</span></span>
           <h1>豆芽的技术博客</h1>
           <span class="line"><span class="prompt">➜ ~</span> <span class="cmd">stat ./posts --format=summary</span></span>
           <div class="stats">
@@ -46,7 +46,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
     </div>
 
     {featured && (
-      <a class="featured" href={`/posts/${featured.id}`} data-aos="fade-up">
+      <a class="featured" href={`/posts/${featured.id}`}>
         {featured.data.cover && <img class="cover" src={featured.data.cover} alt={featured.data.title} />}
         <div class="body">
           <div class="meta">
@@ -56,7 +56,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
           </div>
           <h3>{featured.data.title}</h3>
           <p class="desc">{featured.data.description}</p>
-          <span class="read-more">阅读全文{featured.id}</span>
+          <span class="read-more">阅读全文</span>
         </div>
       </a>
     )}
@@ -67,21 +67,20 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
       if (typeof Typed === 'undefined') return;
       new Typed('#typed-text', {
         strings: [
-          '你好，我是豆芽。写代码，也写代码背后的世界——<strong style="color:var(--green)">前端 × AI × 游戏 × 硬件 × 篮球</strong>，技术圈的每一场变局都逃不过这个终端。'
+          '你好，我是豆芽。写代码，也写代码背后的世界——前端、AI、游戏、硬件、篮球。'
         ],
-        typeSpeed: 40,
+        typeSpeed: 28,
         backSpeed: 0,
         loop: false,
         showCursor: true,
-        cursorChar: '▊',
-        contentType: 'html'
+        cursorChar: '▊'
       });
     });
   </script>
 
   <div class="grid" style="margin-top: 20px;">
       {pagePosts.map((p) => (
-        <article class="card" data-aos="fade-up" data-aos-delay={Math.min(100 * pagePosts.indexOf(p), 400)}>
+        <article class="card">
           {p.data.cover && (
             <a href={`/posts/${p.id}`}><img class="cover" src={p.data.cover} alt={p.data.title} loading="lazy" /></a>
           )}
@@ -94,7 +93,7 @@ const categories = [...new Set(posts.map((p) => p.data.category))];
             <h3><a href={`/posts/${p.id}`}>{p.data.title}</a></h3>
             <p class="desc">{p.data.description}</p>
             {p.data.tags.length > 0 && (
-              <div class="标签">{p.data.tags.slice(0, 3).map((t) => <a href={`/tags/${encodeURIComponent(t)}`}><span>{t}</span></a>)}</div>
+              <div class="tags">{p.data.tags.slice(0, 3).map((t) => <a href={`/tags/${encodeURIComponent(t)}`}><span>{t}</span></a>)}</div>
             )}
           </div>
         </article>

@@ -6,7 +6,7 @@ const friends = [
 ];
 ---
 
-<Base title="友链">
+<Base title="友链" index>
   <div class="wrap" style="padding-top: 44px; padding-bottom: 56px; max-width: 680px;">
     <div class="term">
       <div class="term-bar"><i></i><i></i><i></i><span class="title">豆芽@blog: ~/friends — zsh</span></div>
@@ -38,8 +38,8 @@ const friends = [
 
 <style>
   .friend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
-  .friend { display: flex; flex-direction: column; gap: 6px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; transition: border-color .15s, transform .15s; }
-  .friend:hover { border-color: var(--green); transform: translateY(-2px); }
+  .friend { display: flex; flex-direction: column; gap: 6px; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 14px 16px; transition: border-color .18s, box-shadow .18s; }
+  .friend:hover { border-color: var(--green); box-shadow: inset 3px 0 0 var(--green); }
   .friend b { font-size: .88rem; color: var(--green); }
   .friend span { font-size: .76rem; color: var(--ink-3); }
   @media (max-width: 520px) { .friend-grid { grid-template-columns: 1fr; } }

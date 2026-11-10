@@ -5,30 +5,32 @@ interface Props {
   title: string;
   description?: string;
   cover?: string;
+  index?: boolean;
 }
 
-const { title, description = '豆芽的技术博客：前端、AI、游戏、硬件、篮球与技术圈观察', cover } = Astro.props;
+const { title, description = '豆芽的技术博客：前端、AI、游戏、硬件、篮球与技术圈观察', cover, index = false } = Astro.props;
 const site = 'https://zhaojiale001016.github.io';
 const canonical = site + Astro.url.pathname;
 const ogImage = cover ? site + cover : undefined;
 const path = Astro.url.pathname;
-// 全站文章 id 列表（随机漫游用）
 import { getCollection } from 'astro:content';
-const postIds = (await getCollection('blog')).map((p) => p.id);
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime()
+);
+const postHrefs = posts.map((p) => `/posts/${p.id}`);
 // 构建信息：git 短哈希 + 构建时间
 import { execSync } from 'node:child_process';
 let commit = 'dev';
 try {
   commit = execSync('git rev-parse --short HEAD').toString().trim();
 } catch {}
-const buildTime = new Date().toISOString().slice(0, 16).replace('T', ' ');
+const sprout = ['   .', '  \\|/', ' --*--', '   |', '  / \\'].join('\n');
 const nav = [
   { href: '/', label: '首页' },
   { href: '/archives', label: '归档' },
   { href: '/tags', label: '标签' },
   { href: '/stats', label: '统计' },
   { href: '/subscribe', label: '订阅' },
-  { href: '/search', label: '搜索' },
   { href: '/about', label: '关于' },
 ];
 ---
@@ -39,13 +41,16 @@ const nav = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#157a3e" />
     <link rel="icon" type="image/png" href="/favicon.png" sizes="180x180" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <link rel="canonical" href={canonical} />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css" />
     <link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml" />
+    <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet" />
+    <script is:inline type="module" src="/pagefind/pagefind-component-ui.js"></script>
+    <script is:inline src="/pagefind/pagefind-highlight.js"></script>
     <meta property="og:type" content="website" />
     <meta property="og:title" content={`${title} · 豆芽的技术博客`} />
     <meta property="og:description" content={description} />
@@ -55,26 +60,79 @@ const nav = [
     <title>{title} · 豆芽的技术博客</title>
   </head>
   <body>
+    <a class="skip" href="#content">跳到正文</a>
+    <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas>
+    <script is:inline>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script>
     <header class="site-header">
       <div class="wrap">
         <a class="brand" href="/">
-          <span class="path glitch">豆芽@blog:~$</span> whoami<span class="cursor"></span>
+          <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span>
         </a>
-        <nav class="nav">
+        <div class="header-tools">
+          <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger>
+          <nav class="nav">
           {nav.map((n) => (
             <a href={n.href} class={path === n.href || (n.href !== '/' && path.startsWith(n.href)) ? 'active' : ''}>{n.label}</a>
           ))}
-        </nav>
+          </nav>
+        </div>
       </div>
     </header>
 
-    <main>
+    <main id="content" data-pagefind-body={index || undefined}>
       <slot />
     </main>
 
     <footer class="site-footer">
       <div class="wrap">
-        <div class="copy">© {new Date().getFullYear()} 豆芽 · exit code 0
+        <div class="copy">© {new Date().getFullYear()} 豆芽 · exit 0 · build {commit}
           <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span>
           <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span>
         </div>
@@ -89,8 +147,6 @@ const nav = [
           <span class="dot">·</span>
           <a href="/friends">友链</a>
           <span class="dot">·</span>
-          <a href="/graph">图谱</a>
-          <span class="dot">·</span>
           <a href="/now">now</a>
           <span class="dot">·</span>
           <a href="/guestbook">留言板</a>
@@ -98,104 +154,59 @@ const nav = [
         </div>
       </div>
     </footer>
+    <aside class="buddy" id="buddy">
+      <div class="buddy-bar">
+        <i></i><i></i><i></i>
+        <span>sprout@blog</span>
+        <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button>
+      </div>
+      <div class="buddy-body">
+        <pre class="buddy-art" aria-hidden="true">{sprout}</pre>
+        <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p>
+      </div>
+    </aside>
+    <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config>
+    <pagefind-modal></pagefind-modal>
     <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <!-- 特效库（必须先于主脚本加载） -->
-    <script is:inline src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.js"></script>
-    <!-- 指定看板娘模型：Shizuku（modelId=4） -->
-    <script is:inline>localStorage.setItem('modelId', '4');</script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/rough-notation@0.5.1/lib/rough-notation.iife.js"></script>
-    <script is:inline define:vars={{ postIds }}>
-      window.__POSTS = postIds;
-      // 键盘快捷键
-      let gPending = false, _escLast = 0;
-      const toast = (msg) => {
-        let t = document.getElementById('kbd-toast');
-        if (!t) {
-          t = document.createElement('div');
-          t.id = 'kbd-toast';
-          t.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#242b27;color:#f2efe7;padding:10px 18px;border-radius:8px;font-size:12px;z-index:200;font-family:inherit;white-space:pre;line-height:1.7';
-          document.body.appendChild(t);
-        }
-        t.textContent = msg;
-        t.style.display = 'block';
-        clearTimeout(t._h);
-        t._h = setTimeout(() => (t.style.display = 'none'), 2600);
-      };
+    <script>
+      import { listen } from 'quicklink';
+      listen({
+        limit: 8,
+        delay: 200,
+        ignores: [/\/rss/, (uri) => uri.includes('#')],
+      });
+    </script>
+    <script is:inline define:vars={{ postHrefs }}>
       const randomPost = () => {
-        if (!postIds.length) return;
-        const id = postIds[Math.floor(Math.random() * postIds.length)];
-        location.href = '/posts/' + id;
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
       };
       document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
       document.addEventListener('keydown', (e) => {
         const tag = document.activeElement?.tagName;
         if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
-        if (gPending) {
-          gPending = false;
-          const map = { h: '/', a: '/archives', t: '/tags', s: '/stats' };
-          if (map[e.key]) location.href = map[e.key];
-          return;
-        }
-        switch (e.key) {
-          case 'g': gPending = true; setTimeout(() => (gPending = false), 800); break;
-          case '/': e.preventDefault(); location.href = '/search'; break;
-          case 'r': randomPost(); break;
-          case 'ArrowLeft': {
-            const el = document.querySelector('.post-nav .pn:not(.right)');
-            if (el?.href) location.href = el.href;
-            break;
-          }
-          case 'ArrowRight': {
-            const el = document.querySelector('.post-nav .pn.right');
-            if (el?.href) location.href = el.href;
-            break;
-          }
-          case 'Escape': {
-            const now = Date.now();
-            if (now - _escLast < 500) {
-              toast('快捷键\n  /        搜索\n  r        随机看一篇\n  ← / →    上一篇 / 下一篇（文章页）\n  g h      首页\n  g a      归档\n  g t      标签\n  g s      统计');
-              _escLast = 0;
-            } else {
-              _escLast = now;
-            }
-            break;
-          }
-        }
-      });
-      // 双击页脚 exit code 彩蛋 + 彩带
-      document.querySelector('.copy')?.addEventListener('dblclick', () => {
-        toast('✨ 你发现了豆芽的秘密通道');
-        if (typeof confetti !== 'undefined') {
-          confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 }, colors: ['#43a047', '#2b8a9e', '#c7783c', '#66bb6a'] });
-        }
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
       });
 
-      // AOS 初始化（特效库已在主脚本前加载）
-      try {
-        if (typeof AOS !== 'undefined') {
-          AOS.init({ duration: 600, easing: 'ease-out', once: true, offset: 50 });
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
         }
-      } catch (e) { console.warn('AOS 初始化失败', e); }
-
-      // NProgress 页面加载
-      try {
-        if (typeof NProgress !== 'undefined') {
-          NProgress.configure({ showSpinner: false, trickleSpeed: 200 });
-          NProgress.start();
-          window.addEventListener('load', () => NProgress.done());
-        }
-      } catch (e) { console.warn('NProgress 初始化失败', e); }
-
-
-    </script>
-    <!-- Live2D 看板娘 -->
-    <script is:inline src="https://fastly.jsdelivr.net/npm/live2d-widgets@1.0.1/dist/autoload.js"></script>
-    <!-- 鼠标星星尾迹（tholman/cursor-effects） -->
-    <script type="module">
-      import { fairyDustCursor } from 'https://cdn.jsdelivr.net/npm/cursor-effects@latest/+esm';
-      new fairyDustCursor({ colors: ['#43a047', '#2b8a9e', '#66bb6a'] });
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
     </script>
 
     <script is:inline>

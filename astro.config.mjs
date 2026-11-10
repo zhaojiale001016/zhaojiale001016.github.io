@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import expressiveCode from 'astro-expressive-code';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCallouts from 'rehype-callouts';
+import rehypeExternalLinks from 'rehype-external-links';
 
 export default defineConfig({
   site: 'https://zhaojiale001016.github.io',
@@ -18,6 +19,7 @@ export default defineConfig({
     rehypePlugins: [
       rehypeCallouts,
       [rehypeAutolinkHeadings, { behavior: 'wrap', properties: { class: 'anchor' } }],
+      [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
     ],
   },
 });

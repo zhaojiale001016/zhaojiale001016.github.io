@@ -38,7 +38,7 @@ const fmt = (d: Date) =>
             <h3><a href={`/posts/${p.id}`}>{p.data.title}</a></h3>
             <p class="desc">{p.data.description}</p>
             {p.data.tags.length > 0 && (
-              <div class="标签">{p.data.tags.slice(0, 3).map((t: string) => <a href={`/tags/${encodeURIComponent(t)}`}><span>{t}</span></a>)}</div>
+              <div class="tags">{p.data.tags.slice(0, 3).map((t: string) => <a href={`/tags/${encodeURIComponent(t)}`}><span>{t}</span></a>)}</div>
             )}
           </div>
         </article>

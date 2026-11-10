@@ -3,56 +3,24 @@ import Base from '../../layouts/Base.astro';
 ---
 
 <Base title="搜索">
-  <div class="wrap" style="padding-top: 44px; padding-bottom: 48px; max-width: 860px;">
+  <div class="wrap" style="padding-top: 44px; padding-bottom: 48px; max-width: 860px;" data-pagefind-ignore>
     <div class="term">
       <div class="term-bar"><i></i><i></i><i></i><span class="title">豆芽@blog: ~/search — zsh</span></div>
       <div class="term-body">
         <span class="line"><span class="prompt">➜ ~/search</span> <span class="cmd">pagefind --source ./posts</span></span>
-        <div id="search" style="margin-top: 18px;"></div>
+        <pagefind-config instance="browse" bundle-path="/pagefind/" lang="zh-cn" faceted preload></pagefind-config>
+        <div class="search-tools">
+          <pagefind-filter-dropdown instance="browse" filter="category" label="分类" single-select></pagefind-filter-dropdown>
+          <pagefind-input instance="browse" placeholder="搜索标题、正文、标签"></pagefind-input>
+        </div>
+        <pagefind-summary instance="browse"></pagefind-summary>
+        <pagefind-results instance="browse"></pagefind-results>
       </div>
     </div>
   </div>
-
-  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
-  <script src="/pagefind/pagefind-ui.js" is:inline></script>
-  <script is:inline>
-    window.addEventListener('DOMContentLoaded', () => {
-      new PagefindUI({
-        element: '#search',
-        showSubResults: true,
-        showImages: false,
-        placeholder: '输入关键词，搜索标题 / 摘要 / 正文 / 标签…',
-        translations: {
-          placeholder: '输入关键词，搜索标题 / 摘要 / 正文 / 标签…',
-          clear_search: '清除',
-          load_more: '加载更多',
-          search_label: '站内搜索',
-          filters_label: '筛选',
-          zero_results: '没有找到「[SEARCH_TERM]」相关的内容',
-          many_results: '找到 [COUNT] 条「[SEARCH_TERM]」相关结果',
-          one_result: '找到 1 条「[SEARCH_TERM]」相关结果',
-          alt_search: '没有找到「[SEARCH_TERM]」，试试「[DIFFERENT_TERM]」',
-          search_suggestion: '没有找到「[SEARCH_TERM]」，试试以下搜索',
-          searching: '正在搜索「[SEARCH_TERM]」…',
-        },
-      });
-    });
-  </script>
 </Base>
 
-<style is:global>
-  /* Pagefind UI 适配米色终端主题 */
-  :root {
-    --pagefind-ui-scale: 0.9;
-    --pagefind-ui-primary: #1f7a4d;
-    --pagefind-ui-text: #242b27;
-    --pagefind-ui-background: #fbfaf4;
-    --pagefind-ui-border: #ddd6c3;
-    --pagefind-ui-tag: #eef3ee;
-    --pagefind-ui-border-width: 1px;
-    --pagefind-ui-border-radius: 8px;
-    --pagefind-ui-font: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
-  }
-  .pagefind-ui__result-link { color: #1f7a4d !important; }
-  .pagefind-ui__result-title { font-weight: 700; }
+<style>
+  .search-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 18px; }
+  .search-tools pagefind-input { flex: 1; min-width: 220px; }
 </style>
