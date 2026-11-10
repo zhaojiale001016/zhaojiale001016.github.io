@@ -33,15 +33,7 @@ body {
   flex-direction: column;
 }
 main { flex: 1; }
-/* 浅色网格底纹 */
-body::before {
-  content: "";
-  position: fixed; inset: 0; z-index: -1; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(21,122,62,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(21,122,62,.04) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
+/* canvas-nest 背景画布（z-index:-2，低于内容） */
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 ::selection { background: var(--green-soft); color: var(--green); }
@@ -222,8 +214,7 @@ img { max-width: 100%; display: block; }
 .callout-caution { border-left-color: #c62828; background: rgba(198,40,40,.06); }
 .callout-caution .callout-title { color: #c62828; }
 
-/* tsParticles 背景：位于静态网格之上、内容之下 */
-#tsparticles { z-index: 0; }
+
 
 main { position: relative; z-index: 1; }
 .site-header { position: relative; z-index: 2; }

@@ -103,7 +103,8 @@ const nav = [
     <script is:inline src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.js"></script>
-    <script is:inline src="https://cdn.jsdelivr.net/npm/tsparticles@3.5.0/tsparticles.bundle.min.js"></script>
+    <!-- canvas-nest 微动背景（粒子连线） -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/canvas-nest.js@2.0.4/dist/canvas-nest.js" color="140,180,150" opacity="0.14" count="55" zindex="-2"></script>
     <script is:inline src="https://cdn.jsdelivr.net/npm/rough-notation@0.5.1/lib/rough-notation.iife.js"></script>
     <script is:inline define:vars={{ postIds }}>
       window.__POSTS = postIds;
@@ -187,30 +188,7 @@ const nav = [
         }
       } catch (e) { console.warn('NProgress 初始化失败', e); }
 
-      // tsParticles 动态背景：fixed 全屏、稀疏慢速小点、低存在感
-      try {
-        if (typeof tsParticles !== 'undefined') {
-          tsParticles.load({
-            id: 'tsparticles',
-            options: {
-              fullScreen: { enable: true, zIndex: 0 },
-              background: { color: { value: 'transparent' } },
-              fpsLimit: 60,
-              interactivity: { events: { onHover: { enable: false }, onClick: { enable: false } } },
-              particles: {
-                number: { value: 36, density: { enable: true } },
-                color: { value: ['#8fbf9a', '#7fb3a3', '#a8c68f'] },
-                shape: { type: 'circle' },
-                opacity: { value: { min: 0.25, max: 0.55 }, animation: { enable: true, speed: 0.4, sync: false } },
-                size: { value: { min: 1.5, max: 3 } },
-                links: { enable: false },
-                move: { enable: true, speed: 0.8, direction: 'none', random: true, straight: false, outModes: { default: 'out' } }
-              },
-              detectRetina: true
-            }
-          });
-        }
-      } catch (e) { console.warn('tsParticles 初始化失败', e); }
+
     </script>
     <!-- Live2D 看板娘 -->
     <script is:inline src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
