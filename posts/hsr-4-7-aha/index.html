@@ -1,0 +1,144 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="《崩坏：星穹铁道》4.7 版本「此刻，将群星付之一笑」11 月 11 日上线，欢愉命途限定五星「星神★阿哈」首发可抽，配全新养成系统「奇缘星魂」与登录自选福利。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/hsr-4-7-aha/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="星穹铁道 4.7 上线：第一个能抽的星神阿哈登场，米哈游把「看戏的人」拉下场 · 豆芽的技术博客"><meta property="og:description" content="《崩坏：星穹铁道》4.7 版本「此刻，将群星付之一笑」11 月 11 日上线，欢愉命途限定五星「星神★阿哈」首发可抽，配全新养成系统「奇缘星魂」与登录自选福利。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/hsr-4-7-aha/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/hsr-4-7-aha-1.webp"><meta name="twitter:card" content="summary_large_image"><title>星穹铁道 4.7 上线：第一个能抽的星神阿哈登场，米哈游把「看戏的人」拉下场 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"星穹铁道 4.7 上线：第一个能抽的星神阿哈登场，米哈游把「看戏的人」拉下场","description":"《崩坏：星穹铁道》4.7 版本「此刻，将群星付之一笑」11 月 11 日上线，欢愉命途限定五星「星神★阿哈」首发可抽，配全新养成系统「奇缘星魂」与登录自选福利。","image":"https://zhaojiale001016.github.io/img/inline/hsr-4-7-aha-1.webp","datePublished":"2026-11-11T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:游戏资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%B8%B8%E6%88%8F%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>游戏资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>星穹铁道 4.7 上线：第一个能抽的星神…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./hsr-4-7-aha.md</span> <h1 data-astro-cid-egg7nqdx>星穹铁道 4.7 上线：第一个能抽的星神阿哈登场，米哈游把「看戏的人」拉下场</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%B8%B8%E6%88%8F%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>游戏资讯</a> <time data-astro-cid-egg7nqdx>2026-11-11</time> <span data-astro-cid-egg7nqdx>约 7 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/hsr-4-7-aha-1.webp" alt="星穹铁道 4.7 上线：第一个能抽的星神阿哈登场，米哈游把「看戏的人」拉下场" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>11 月 11 日早上，《崩坏：星穹铁道》4.7 版本「此刻，将群星付之一笑」正式上线，PS5、PC、移动端同步。维护 6 点开始，持续约 5 小时，各地开服时间在 11 点前后。</p>
+<p>这个版本最不一样的地方，是它把一个<strong>星神</strong>变成了可以抽的角色——限定五星「星神★阿哈」，欢愉·量子命途，配套光锥「当第一声『阿哈』响起」。</p>
+<p><img src="/img/inline/hsr-4-7-aha-1.webp" alt="4.7 版本主视觉「此刻，将群星付之一笑」">
+<em>图源：17173《〈崩坏：星穹铁道〉4.7 上线 首位星神阿哈登场》</em></p>
+<p>在崩铁的世界观里，星神是站在宇宙顶端、俯视众生悲喜的存在。此前你只能通过剧情侧面感受它们。现在「星神★阿哈」可以直接抽、直接编进队伍、直接上场输出——叙事上的最高权力，被做成了养成系统里的一格。</p>
+<h2 id="阿哈的战斗机制升格愿力和削血上限">阿哈的战斗机制：升格、愿力，和削血上限</h2>
+<p>按官方说明，这套设计围绕三条线展开：</p>
+<ul>
+<li><strong>升格</strong>：阿哈能使我方欢愉命途角色获得”升格”，每位欢愉角色解锁不同的战斗能力。等于是一个全队增益型核心，但增益内容随角色变化。</li>
+<li><strong>愿力</strong>：全队作战过程中持续为阿哈累积愿力，攒满可以启动终结技，对敌方全体造成欢愉伤害。</li>
+<li><strong>星神权能</strong>：我方攻击可以直接削减敌方生命上限。</li>
+</ul>
+<p>第三条是这套体系里最狠的设计。削血上限意味着对手的血条被强行拉低，伤害再高也打不死——先手触发，一波把对面血线压到斩杀线以下。配合欢愉命途本身的高爆发，这是个”三回合内结束比赛”的思路。</p>
+<p>阿哈还会领衔一个叫「阿哈时刻」的机制，加快欢愉技能的前摇演出节奏，并且能把欢愉角色”宣告为令使”。</p>
+<p><img src="/img/inline/hsr-4-7-aha-2.webp" alt="4.7 版本欢愉命途角色主视觉">
+<em>图源：17173《〈崩坏：星穹铁道〉4.7 上线 首位星神阿哈登场》</em></p>
+<h2 id="剧情二相乐园的终幕">剧情：二相乐园的终幕</h2>
+<p>4.7 是二相乐园（Planarcadia）故事线的高潮。设定里，阿哈的”幻月游戏”封印了上古巨兽「贪饕」上千个琥珀纪，如今贪饕即将全面苏醒。为阻止它吞噬宇宙，阿哈启动「钓猎贪饕」计划，召集八位谒者，上演”最后的幻月游戏”。</p>
+<p>新场景「点星船」也随之登场——一艘看起来像蛋糕的航舰，负责在星海中诱捕贪饕。官方形容它是”悲悼伶人的巡演花船，阿哈打造的奇妙乐园”。版本当天还公开了动画短片「月下的欢快葬礼」和新歌「无中生有」。</p>
+<p><img src="/img/inline/hsr-4-7-aha-3.webp" alt="新场景「点星船」">
+<em>图源：17173《〈崩坏：星穹铁道〉4.7 上线 首位星神阿哈登场》</em></p>
+<p>注意这个叙事结构：阿哈不是一个旁观者，他自己下场当导演，还要把主角拉进演出里。游戏里”看戏”的人，这次得亲自上台。</p>
+<h2 id="养成与福利老角色成了钩子">养成与福利：老角色成了钩子</h2>
+<p>4.7 同时上线了一套全新养成系统「奇缘星魂」（Affinitive Eidolon），首批开放给黄泉、丹恒·饮月和景元，收集对应的奇缘星魂后可以解锁追加技能、专属特效和插画。</p>
+<p>登录福利给得也实在：版本期间通过「魔术请柬」可以在黄泉、丹恒·饮月、景元三位限定五心中<strong>任选一个免费领取</strong>，并拿到对应角色的养成材料；「奇缘星幕」还能从三者的奇缘星魂里任选其一；签到「阿哈觉得你需要」可拿星轨专票×20。另外还有「归寂的馈赠」这类可以自定义一件满级五星遗器及其词条的道具。</p>
+<p>上半（11 月 11 日至 12 月 2 日）复刻银狼 LV.999、火花、爻光；下半（12 月 2 日起）复刻黄泉、丹恒·饮月、景元，阿哈卡池贯穿整个版本。活动包括「剧场版绒绒号：欢闹厨房」「星际和平盛典：成名之路」「奇库寻遗」，常驻玩法「货币战争」开启新赛季「入画奇航」。</p>
+<h2 id="我的判断">我的判断</h2>
+<p>这次更新本质上是<strong>叙事权力结构的转移</strong>，而不是一次单纯的强度更新。</p>
+<p>把星神做成可抽角色，米哈游是在给”宇宙观最高层”标价。好处是显而易见的：一个新角色池 + 一套新养成系统 + 登录三选一 + 20 张专票，这四件事叠在一起，短期拉回流的效率会相当高，尤其对那些在 4.0 之后流失的老玩家——你为了新角色回来，回来之后发现三个老限定角色也重新变得有内容可玩（奇缘星魂是给老角色的第二套养成，绑定的是他们最经典的三人组）。</p>
+<p>风险也摆在明面上。上半复刻三个欢愉角色（银狼 LV.999、火花、爻光），下半才轮到黄泉、丹恒·饮月、景元，玩家要等半个月；而”贪饕决战”是这版叙事的终点，打完之后的版本续航要靠新内容接住。阿哈削血上限这套机制强度不低，真上线两周后大概率会被削——4.7 属于典型的”版本初期强度虚高”，现在抽卡要留个心眼。</p>
+<p>如果你是老玩家，30 张专票 + 三选一的那个角色，建议先把「魔术请柬」用在<strong>你要补的命途缺口</strong>上，别急着抽阿哈。阿哈是强度工具，不是万能解。</p>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="http://news.17173.com/content/11112026/100350009.shtml" rel="noopener noreferrer" target="_blank">17173《〈崩坏：星穹铁道〉4.7 上线 首位星神阿哈登场》</a></li>
+<li><a href="https://www.hoyoverse.com/en-us/news/167259" rel="noopener noreferrer" target="_blank">HoYoverse 官方公告《Honkai: Star Rail Version 4.7 “Now, Lay Laughter to All Stars” Begins on November 11》</a></li>
+<li><a href="https://www.sina.cn/news/detail/5363659754440895.html" rel="noopener noreferrer" target="_blank">《崩坏：星穹铁道》官方跃迁公告（4.7 版本活动跃迁其一）</a></li>
+</ul>
+<h2 id="游戏圈快讯">游戏圈快讯</h2>
+<ul>
+<li>任天堂 Switch 2 版《Monster Hunter Wilds》主机组合确认 12 月 4 日发售，下载序号同步开放——<a href="https://www.nintendo.com/hk/topics" rel="noopener noreferrer" target="_blank">任天堂香港 TOPICS</a></li>
+<li>Steam 2026 年登陆的新游戏已达 21388 款，超过去年全年总数，筛选成本被 AI 拉低的作品进一步挤占曝光——<a href="https://www.sina.cn/news/detail/5355047468402812.html" rel="noopener noreferrer" target="_blank">IT之家报道</a></li>
+<li>米哈游同日开启《绝区零》3.3 版本「重返天空的旅程」，原神 7.2 版本「坏灭肇始之时」也已上线——<a href="https://www.hoyoverse.com/zh-cn" rel="noopener noreferrer" target="_blank">HoYoverse 官网</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/%E5%B4%A9%E5%9D%8F%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93" data-astro-cid-egg7nqdx>崩坏星穹铁道</a><a href="/tags/%E6%98%9F%E7%A5%9E%E9%98%BF%E5%93%88" data-astro-cid-egg7nqdx>星神阿哈</a><a href="/tags/%E6%AC%A2%E6%84%89%E5%91%BD%E9%80%94" data-astro-cid-egg7nqdx>欢愉命途</a><a href="/tags/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0" data-astro-cid-egg7nqdx>版本更新</a><a href="/tags/%E7%B1%B3%E5%93%88%E6%B8%B8" data-astro-cid-egg7nqdx>米哈游</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%204.7%20%E4%B8%8A%E7%BA%BF%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%83%BD%E6%8A%BD%E7%9A%84%E6%98%9F%E7%A5%9E%E9%98%BF%E5%93%88%E7%99%BB%E5%9C%BA%EF%BC%8C%E7%B1%B3%E5%93%88%E6%B8%B8%E6%8A%8A%E3%80%8C%E7%9C%8B%E6%88%8F%E7%9A%84%E4%BA%BA%E3%80%8D%E6%8B%89%E4%B8%8B%E5%9C%BA&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fhsr-4-7-aha" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93%204.7%20%E4%B8%8A%E7%BA%BF%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%B8%AA%E8%83%BD%E6%8A%BD%E7%9A%84%E6%98%9F%E7%A5%9E%E9%98%BF%E5%93%88%E7%99%BB%E5%9C%BA%EF%BC%8C%E7%B1%B3%E5%93%88%E6%B8%B8%E6%8A%8A%E3%80%8C%E7%9C%8B%E6%88%8F%E7%9A%84%E4%BA%BA%E3%80%8D%E6%8B%89%E4%B8%8B%E5%9C%BA&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fhsr-4-7-aha" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/hsr-4-7-aha" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/hsr-4-7-aha.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/hsr-4-7-aha.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/kimi-k26-code-preview" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合</span> </a> <a class="pn right" href="/posts/china-auto-oct-sales" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>中汽协 10 月数据：国内销量连降七个月，出口撑起 106 万辆，双 11 全行业改推「0 息」</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/valorant-mobile-xinpin" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>游戏资讯</span> <span class="t" data-astro-cid-egg7nqdx>无畏契约手游 11 月 26 日更新：迷核和悍狼一起到位，国服手游开始追版本了</span> <time data-astro-cid-egg7nqdx>2026-11-13</time> </a><a class="rel" href="/posts/switch2-third-party-lineup-2027" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>游戏资讯</span> <span class="t" data-astro-cid-egg7nqdx>硬件卖不动的任天堂，把宝押给了第三方：Switch 2 未来一年阵容里藏着 FromSoftware 的独占</span> <time data-astro-cid-egg7nqdx>2026-11-06</time> </a><a class="rel" href="/posts/zelda-ocarina-remake-nintendo-report" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>游戏资讯</span> <span class="t" data-astro-cid-egg7nqdx>《时之笛》重制版今天发售，M 站 96 分：任天堂在财报下滑的日子，掏出了年度最佳候选</span> <time data-astro-cid-egg7nqdx>2026-11-05</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#阿哈的战斗机制升格愿力和削血上限" class data-slug="阿哈的战斗机制升格愿力和削血上限" data-astro-cid-egg7nqdx>阿哈的战斗机制：升格、愿力，和削血上限</a><a href="#剧情二相乐园的终幕" class data-slug="剧情二相乐园的终幕" data-astro-cid-egg7nqdx>剧情：二相乐园的终幕</a><a href="#养成与福利老角色成了钩子" class data-slug="养成与福利老角色成了钩子" data-astro-cid-egg7nqdx>养成与福利：老角色成了钩子</a><a href="#我的判断" class data-slug="我的判断" data-astro-cid-egg7nqdx>我的判断</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a><a href="#游戏圈快讯" class data-slug="游戏圈快讯" data-astro-cid-egg7nqdx>游戏圈快讯</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

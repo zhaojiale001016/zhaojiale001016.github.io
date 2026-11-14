@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="豆芽的技术博客：前端、AI、游戏、硬件、篮球与技术圈观察"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/tags/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="标签 · 豆芽的技术博客"><meta property="og:description" content="豆芽的技术博客：前端、AI、游戏、硬件、篮球与技术圈观察"><meta property="og:url" content="https://zhaojiale001016.github.io/tags/"><meta name="twitter:card" content="summary_large_image"><title>标签 · 豆芽的技术博客</title><link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<style>.tag-cloud[data-astro-cid-os4i7owy]{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;align-items:baseline}.tag-cloud-item[data-astro-cid-os4i7owy]{display:inline-flex;gap:4px;align-items:baseline;padding:4px 10px;border-radius:6px;color:var(--cyan);transition:all .15s;line-height:1.4}.tag-cloud-item[data-astro-cid-os4i7owy] b[data-astro-cid-os4i7owy]{color:var(--green);font-size:.7em}.tag-cloud-item[data-astro-cid-os4i7owy]:hover{color:var(--green);background:#43a04714}
+</style></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class="active">标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content">  <div class="wrap" style="padding-top: 44px; padding-bottom: 48px; max-width: 860px;" data-astro-cid-os4i7owy> <div class="term" data-astro-cid-os4i7owy> <div class="term-bar" data-astro-cid-os4i7owy><i data-astro-cid-os4i7owy></i><i data-astro-cid-os4i7owy></i><i data-astro-cid-os4i7owy></i><span class="title" data-astro-cid-os4i7owy>豆芽@blog: ~/tags — zsh</span></div> <div class="term-body" data-astro-cid-os4i7owy> <span class="line" data-astro-cid-os4i7owy><span class="prompt" data-astro-cid-os4i7owy>➜ ~/tags</span> <span class="cmd" data-astro-cid-os4i7owy>ls -l | sort -k5 -rn</span></span> <span class="out" data-astro-cid-os4i7owy>total 106 个标签，点任意标签筛选文章</span> <div class="tag-cloud" data-astro-cid-os4i7owy> <a href="/tags/AI%E7%BC%96%E7%A8%8B" class="tag-cloud-item" style="font-size: 1.2999999999999998rem; opacity: 1" data-astro-cid-os4i7owy>
+#AI编程 <b data-astro-cid-os4i7owy>6</b> </a><a href="/tags/NBA" class="tag-cloud-item" style="font-size: 1.2999999999999998rem; opacity: 1" data-astro-cid-os4i7owy>
+#NBA <b data-astro-cid-os4i7owy>6</b> </a><a href="/tags/%E6%AF%94%E4%BA%9A%E8%BF%AA" class="tag-cloud-item" style="font-size: 1rem; opacity: 0.8" data-astro-cid-os4i7owy>
+#比亚迪 <b data-astro-cid-os4i7owy>3</b> </a><a href="/tags/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" class="tag-cloud-item" style="font-size: 1rem; opacity: 0.8" data-astro-cid-os4i7owy>
+#技术资讯 <b data-astro-cid-os4i7owy>3</b> </a><a href="/tags/OpenAI" class="tag-cloud-item" style="font-size: 1rem; opacity: 0.8" data-astro-cid-os4i7owy>
+#OpenAI <b data-astro-cid-os4i7owy>3</b> </a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B" class="tag-cloud-item" style="font-size: 1rem; opacity: 0.8" data-astro-cid-os4i7owy>
+#大模型 <b data-astro-cid-os4i7owy>3</b> </a><a href="/tags/%E6%96%87%E7%8F%AD%E4%BA%9A%E9%A9%AC" class="tag-cloud-item" style="font-size: 1rem; opacity: 0.8" data-astro-cid-os4i7owy>
+#文班亚马 <b data-astro-cid-os4i7owy>3</b> </a><a href="/tags/%E8%A7%82%E7%82%B9" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#观点 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/Anthropic" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#Anthropic <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/Agent" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#Agent <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/AI" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#AI <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/Codex" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#Codex <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#开发者工具 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E6%98%BE%E5%8D%A1" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#显卡 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/RTX50" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#RTX50 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E7%A1%AC%E4%BB%B6%E8%A1%8C%E6%83%85" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#硬件行情 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E9%9B%84%E9%B9%BF" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#雄鹿 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E5%87%AF%E5%B0%94%E7%89%B9%E4%BA%BA" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#凯尔特人 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E6%B9%96%E4%BA%BA" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#湖人 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E4%BB%BB%E5%A4%A9%E5%A0%82" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#任天堂 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E5%8B%87%E5%A3%AB" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#勇士 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E4%B8%9C%E5%A5%91%E5%A5%87" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#东契奇 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E4%B8%AD%E6%B1%BD%E5%8D%8F" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#中汽协 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#新能源汽车 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E6%B1%BD%E8%BD%A6%E5%87%BA%E5%8F%A3" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#汽车出口 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#版本更新 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E5%8D%8E%E4%B8%BA" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#华为 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E5%BA%93%E9%87%8C" class="tag-cloud-item" style="font-size: 0.8999999999999999rem; opacity: 0.7333333333333333" data-astro-cid-os4i7owy>
+#库里 <b data-astro-cid-os4i7owy>2</b> </a><a href="/tags/%E6%B5%B7%E8%B1%B907" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#海豹07 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E4%BA%91%E8%BE%87-M" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#云辇-M <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%96%B0%E8%83%BD%E6%BA%90" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#新能源 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/GitHub" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#GitHub <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/Meta" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#Meta <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/DeepSeek" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#DeepSeek <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E7%BE%8E%E5%9B%A2" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#美团 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/OPPO" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#OPPO <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/Reno17" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#Reno17 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#智能手机 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%BD%B1%E5%83%8F" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#影像 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/AI%E4%BB%A3%E7%90%86" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#AI代理 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%8D%8E%E5%BC%BA%E5%8C%97" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#华强北 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/AI%E7%AE%97%E5%8A%9B" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#AI算力 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E9%87%8C%E5%A4%AB%E6%96%AF" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#里夫斯 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/76%E4%BA%BA" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#76人 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%86%85%E5%AD%98" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#内存 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/DIY%E8%A3%85%E6%9C%BA" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#DIY装机 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E8%81%8C%E4%B8%9A%E5%8F%91%E5%B1%95" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#职业发展 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/Switch%202" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#Switch 2 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/FromSoftware" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#FromSoftware <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%B8%B8%E6%88%8F%E8%A1%8C%E4%B8%9A" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#游戏行业 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E4%BB%B0%E6%9C%9B" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#仰望 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E9%BC%8E%E6%9B%9C" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#鼎曜 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E8%B6%85%E8%B1%AA%E5%8D%8E%E8%BD%BF%E8%BD%A6" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#超豪华轿车 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/Switch2" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#Switch2 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%A1%9E%E5%B0%94%E8%BE%BE%E4%BC%A0%E8%AF%B4" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#塞尔达传说 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%97%B6%E4%B9%8B%E7%AC%9B" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#时之笛 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E8%B4%A2%E6%8A%A5" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#财报 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%B0%B1%E4%B8%9A" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#就业 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%94%BF%E7%AD%96" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#政策 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E7%A8%8B%E5%BA%8F%E5%91%98" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#程序员 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#人工智能 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%BC%97%E6%8B%89%E6%A0%BC" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#弗拉格 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%B1%BD%E8%BD%A6%E9%94%80%E9%87%8F" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#汽车销量 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%8F%8C11" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#双11 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%B4%A9%E5%9D%8F%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#崩坏星穹铁道 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%98%9F%E7%A5%9E%E9%98%BF%E5%93%88" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#星神阿哈 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%AC%A2%E6%84%89%E5%91%BD%E9%80%94" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#欢愉命途 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E7%B1%B3%E5%93%88%E6%B8%B8" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#米哈游 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/Kimi" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#Kimi <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#月之暗面 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E4%BF%9D%E7%BD%97%E4%B9%94%E6%B2%BB" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#保罗乔治 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%B0%BC%E5%85%8B%E6%96%AF" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#尼克斯 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/IPO" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#IPO <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/Claude" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#Claude <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E7%AE%97%E5%8A%9B" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#算力 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/OSTA%E6%98%9F%E8%8A%92" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#OSTA星芒 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E9%98%94%E7%9B%B4%E6%9D%BF" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#阔直板 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E9%BA%92%E9%BA%9F" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#麒麟 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%96%B0%E6%9C%BA" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#新机 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E7%94%B3%E4%BA%AC" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#申京 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E8%85%BE%E8%AE%AF" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#腾讯 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/CodeBuddy" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#CodeBuddy <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/WorkBuddy" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#WorkBuddy <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E4%BF%A1%E9%80%9A%E9%99%A2" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#信通院 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%87%AF%E5%BE%B7%C2%B7%E5%9D%8E%E5%AE%81%E5%AE%89" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#凯德·坎宁安 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%BA%95%E7%89%B9%E5%BE%8B%E6%B4%BB%E5%A1%9E" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#底特律活塞 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%8D%8E%E7%9B%9B%E9%A1%BF%E5%A5%87%E6%89%8D" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#华盛顿奇才 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E7%89%B9%E9%9B%B7%C2%B7%E6%9D%A8" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#特雷·杨 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%97%A0%E7%95%8F%E5%A5%91%E7%BA%A6" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#无畏契约 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%97%A0%E7%95%8F%E5%A5%91%E7%BA%A6%E6%89%8B%E6%B8%B8" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#无畏契约手游 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E8%BF%B7%E6%A0%B8" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#迷核 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%82%8D%E7%8B%BC" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#悍狼 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E9%97%AE%E7%95%8C" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#问界 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E8%B5%9B%E5%8A%9B%E6%96%AF" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#赛力斯 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E9%B8%BF%E8%92%99%E6%99%BA%E8%A1%8C" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#鸿蒙智行 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%96%B0%E8%BD%A6%E4%B8%8A%E5%B8%82" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#新车上市 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E7%99%BE%E5%BA%A6%E4%B8%96%E7%95%8C" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#百度世界 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%9D%8E%E5%BD%A6%E5%AE%8F" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#李彦宏 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%99%BA%E8%83%BD%E7%BB%84%E7%BB%87" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#智能组织 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E8%AF%8D%E5%85%83%E6%89%80" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#词元所 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%96%87%E5%BF%835.5" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#文心5.5 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E6%98%86%E4%BB%91%E8%8A%AF" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#昆仑芯 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E5%85%A8%E7%90%83%E8%BD%A6" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#全球车 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E9%97%AE%E7%95%8CM8" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#问界M8 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/%E9%A9%AC%E5%88%BA" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#马刺 <b data-astro-cid-os4i7owy>1</b> </a><a href="/tags/NBA%E6%9D%AF" class="tag-cloud-item" style="font-size: 0.7999999999999999rem; opacity: 0.6666666666666666" data-astro-cid-os4i7owy>
+#NBA杯 <b data-astro-cid-os4i7owy>1</b> </a> </div> </div> </div> </div>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html> 

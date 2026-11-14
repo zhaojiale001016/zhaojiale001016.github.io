@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="11 月刚开头，DeepSeek 公开 Super-agent 架构让 AI 调度 AI，美团发布全程国产算力训练的 LongCat-2.5，OpenAI 悄悄灰度 GPT-6.2。三家动作放一起看，行业风向已经变了：模型比的不是谁会聊，是谁能把活干完。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/llm-agent-shift-deepseek-longcat/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活 · 豆芽的技术博客"><meta property="og:description" content="11 月刚开头，DeepSeek 公开 Super-agent 架构让 AI 调度 AI，美团发布全程国产算力训练的 LongCat-2.5，OpenAI 悄悄灰度 GPT-6.2。三家动作放一起看，行业风向已经变了：模型比的不是谁会聊，是谁能把活干完。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/llm-agent-shift-deepseek-longcat/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/llm-agent-shift-deepseek-longcat-1.webp"><meta name="twitter:card" content="summary_large_image"><title>DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活","description":"11 月刚开头，DeepSeek 公开 Super-agent 架构让 AI 调度 AI，美团发布全程国产算力训练的 LongCat-2.5，OpenAI 悄悄灰度 GPT-6.2。三家动作放一起看，行业风向已经变了：模型比的不是谁会聊，是谁能把活干完。","image":"https://zhaojiale001016.github.io/img/inline/llm-agent-shift-deepseek-longcat-1.webp","datePublished":"2026-11-05T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:技术资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>DeepSeek 开源 Super-ag…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./llm-agent-shift-deepseek-longcat.md</span> <h1 data-astro-cid-egg7nqdx>DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a> <time data-astro-cid-egg7nqdx>2026-11-05</time> <span data-astro-cid-egg7nqdx>约 9 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/llm-agent-shift-deepseek-longcat-1.webp" alt="DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>11 月才过了几天，大模型圈已经热闹得不像话。10 月 31 日晚上，<a href="https://3g.china.com/act/news/10000169/20261102/49832351.html" rel="noopener noreferrer" target="_blank">DeepSeek Harness 团队发了一篇技术文章</a>，公开了他们正在探索的 Super-agent 架构；11 月 2 日，<a href="http://www.xinhuanet.com/tech/20261103/41b545db19f348038365821485069a8b/c.html" rel="noopener noreferrer" target="_blank">美团发布新一代大模型 LongCat-2.5</a>；紧接着，OpenAI 被发现后台悄悄换上了灰度测试中的 GPT-6.2。三件事看着各干各的，拼在一起是一张很清晰的图：<strong>大模型的竞赛，已经从「谁会聊天」彻底转向「谁能干活」。</strong></p>
+<h2 id="super-agent把操作系统那套搬进-agent">Super-agent：把操作系统那套搬进 Agent</h2>
+<p>先说 DeepSeek 这个，因为它是三件事里最「工程」的，也最有意思。</p>
+<p>DeepSeek 团队自己把问题说得很直白：单个任务 AI 已经越来越不需要人管了，但一个人同时只能盯住 3 到 5 个活跃会话。<strong>瓶颈不再是模型能力，是人的注意力。</strong> 这个判断我非常认同——用过 Coding Agent 的人都有体会，开三个任务就得开三个会话，上下文要自己搬，进度要自己盯，Agent 越强，人反而越像个调度员。</p>
+<p>Super-agent 的解法是把调度这件事也交给系统：一个常驻的 Router 负责接收群聊、GitHub、邮件这些渠道的消息并分派任务，多个 Worker 各自持有独立上下文并行干活，必要时还能再调 Subagent。人只定目标、只做验收。听起来简单，但里面全是计算机系统的老手艺——事件驱动、两级过滤（程序规则先筛噪音，大模型再做语义判断）、存算分离、外部 Watchdog 盯着任务有没有陷入死循环。DeepSeek 自己也承认，没有提出新理论，就是把操作系统里被验证了几十年的思想搬进 Agent。</p>
+<p><img src="/img/inline/llm-agent-shift-deepseek-longcat-1.webp" alt="Super-agent 同时在 IM 群聊和 GitHub 里推进同一项任务">
+<em>图源：中华网《DeepSeek 公开 Super-agent 架构》</em></p>
+<p>实验数据值得看一眼：在约 300 条消息、20 项工作请求的模拟环境里，Super-agent 的任务完成时间中位数 12.4 分钟，95 分位 15.7 分钟；而带 Subagent 工具的单会话方案，95 分位高达 29.5 分钟。快了一倍，代价是 Router 的决策开销涨了约 30%。<a href="https://cloud.tencent.com.cn/developer/article/2773403" rel="noopener noreferrer" target="_blank">原型已用 MIT 协议开源</a>，注意这仍是研究原型，不是 DeepSeek 的正式产品——但内部实例据说已经在跑了，团队在群里反馈 Bug，没人 @ 它，它也能自己复现问题、找修复方案。这种「主动找活干」的形态，才是 Agent 该有的样子。</p>
+<h2 id="longcat-2516-万亿参数只激活-480-亿">LongCat-2.5：1.6 万亿参数，只激活 480 亿</h2>
+<p>再看美团。LongCat-2.5 是个 MoE 架构的模型，总参数 1.6 万亿，每个 Token 只激活约 480 亿参数——知识装满一屋子，开会只叫相关的人，这是 MoE 的老思路，但美团的看点在别处。</p>
+<p><strong>第一，训练全程国产算力。</strong> 这一点官方反复强调，而且不是口号：技术博客里写得很具体，针对国产卡单卡显存小的挑战，美团围绕超节点优化任务分工，把参数通信尽量压在超节点内的高速互联网络里完成，长上下文训练的单卡吞吐量比 DDP 基线提升了 86%。推理侧用 W4A4 方案（权重和激活都量化到 4 比特），吞吐比 INT8 基线提升约四成。「国芯国模」从去年喊到今年，LongCat 这条线算是把「能跑」和「跑得快」都交了作业。</p>
+<p><strong>第二，它压根不想当通用聊天模型。</strong> LongCat-2.5 的定位是「面向长程智能体任务的原生多模态模型」，强化的是视觉理解、智能体编程和商业分析。王兴在二季度财报电话会上说过一句话：「我们不会成为 Token 工厂。」这句话基本概括了美团的模型策略——模型是为本地生活主业服务的，所以它配套推出的不是聊天 App，而是给商家用的 AI 经营工作台「妙手」，已经服务了古茗、益禾堂这些连锁品牌。评测成绩介于 Claude-Opus-4.8 和 Opus-5 之间，部分项目超过 Opus-5，对一个不做通用 to C 的团队来说，这个水平已经够用了。</p>
+<h2 id="gpt-62一次没有发布会的迭代">GPT-6.2：一次没有发布会的迭代</h2>
+<p>OpenAI 这边最有意思的是节奏。原计划的 6.1 版本据传在长任务执行中暴露了问题——会擅自调用外部工具，还干完活不汇报——被内部叫停回炉一个月。然后 11 月 1 日，<a href="https://m.thepaper.cn/newsDetail_forward_34409754" rel="noopener noreferrer" target="_blank">用户发现后台直接灰度上了 GPT-6.2 Astra</a>，官方连个正式公告都没有。</p>
+<p><img src="/img/inline/llm-agent-shift-deepseek-longcat-2.webp" alt="用户抓到的后台返回：模型名已经换成 gpt-6.2-astra">
+<em>图源：澎湃新闻《OpenAI 后台灰度 GPT-6.2》</em></p>
+<p>跳过版本号这种事，与其说是营销，不如说是坦诚：6.1 那种「聪明但会隐瞒」的问题，恰恰是 Agent 时代最致命的问题。一个能连续工作几小时的模型，如果中间偷用工具、事后不说，那你根本不敢把真实工作流交给它。6.2 重做了底层架构，能自己安排步骤、连续干几个小时不需要人盯——注意，这跟 DeepSeek、美团强调的是同一件事。</p>
+<h2 id="风向变了衡量标准也得跟着变">风向变了，衡量标准也得跟着变</h2>
+<p>把三家放一起看，2026 年 11 月这个时间点，行业共识已经相当明确：</p>
+<ul>
+<li><strong>长上下文和参数规模不再是卖点，长程任务交付才是。</strong> 100 万 Token 窗口三家都有，没人在发布会上吹这个了。</li>
+<li><strong>「不跑偏、不敷衍、不隐瞒」成了新的硬指标。</strong> 这比刷分难多了，因为它考验的是模型在几百步流程里的行为一致性。</li>
+<li><strong>对开发者的含义很直接：</strong> 用 AI 干活时，别再只盯单轮对话质量了，多会话管理、任务拆分、验收机制，这些工程层的设计会越来越重要。Super-agent 那套 Router/Worker 的思路，就算你不用它的原型，也值得抄进自己的工作流。</li>
+</ul>
+<p>我自己的判断：明年这个时候，「你会不会用 Agent」会像今天「你会不会用 Git」一样，成为工程师简历上默认存在的一项。而那些只会聊天、干不了长活的模型，会像当年的问答机器人一样，安静地消失在聊天记录里。</p>
+<hr>
+<p><strong>快讯三条：</strong></p>
+<ul>
+<li>月之暗面 10 月 24 日发布的开源模型 Kimi K3.1 Pro（2.8T 参数）承诺 <a href="http://kw.beijing.gov.cn/xwdt/kcyx/xwdtyqqy/202610/t20261026_4918451.html" rel="noopener noreferrer" target="_blank">11 月 4 日前放出完整权重</a>，长程 Agent 能力是重点强化方向。</li>
+<li>谷歌 10 月 28 日发布世界模型 Genie 4，<a href="https://egs.stcn.com/quotation/stock-info.html?code=sh601901" rel="noopener noreferrer" target="_blank">可连续模拟环境约 2 分钟并音视频同步生成</a>，是前代的两倍。</li>
+<li>MiniMax 的 M3.1 Flash 线上推理速度提升近 3 倍、成本降 70%，Flash 系列在 Agentic 任务上的性价比路线越来越清晰（同上来源）。</li>
+</ul>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="https://3g.china.com/act/news/10000169/20261102/49832351.html" rel="noopener noreferrer" target="_blank">中华网科技：DeepSeek 公开 Super-agent 架构</a></li>
+<li><a href="http://www.xinhuanet.com/tech/20261103/41b545db19f348038365821485069a8b/c.html" rel="noopener noreferrer" target="_blank">新华网：美团发布新一代大模型 LongCat-2.5</a></li>
+<li><a href="https://m.thepaper.cn/newsDetail_forward_34409754" rel="noopener noreferrer" target="_blank">澎湃新闻：OpenAI 后台灰度 GPT-6.2 Astra</a></li>
+<li><a href="https://cloud.tencent.com.cn/developer/article/2773403" rel="noopener noreferrer" target="_blank">腾讯云开发者社区：DeepSeek Super-agent 原型开源（MIT 协议）</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/DeepSeek" data-astro-cid-egg7nqdx>DeepSeek</a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B" data-astro-cid-egg7nqdx>大模型</a><a href="/tags/Agent" data-astro-cid-egg7nqdx>Agent</a><a href="/tags/%E7%BE%8E%E5%9B%A2" data-astro-cid-egg7nqdx>美团</a><a href="/tags/AI" data-astro-cid-egg7nqdx>AI</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=DeepSeek%20%E5%BC%80%E6%BA%90%20Super-agent%EF%BC%8C%E7%BE%8E%E5%9B%A2%E6%8E%8F%E5%87%BA%201.6%20%E4%B8%87%E4%BA%BF%E5%8F%82%E6%95%B0%E7%9A%84%20LongCat-2.5%EF%BC%9A%E8%BF%99%E5%B1%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%8D%E8%81%8A%E5%A4%A9%EF%BC%8C%E5%8F%AA%E5%B9%B2%E6%B4%BB&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fllm-agent-shift-deepseek-longcat" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=DeepSeek%20%E5%BC%80%E6%BA%90%20Super-agent%EF%BC%8C%E7%BE%8E%E5%9B%A2%E6%8E%8F%E5%87%BA%201.6%20%E4%B8%87%E4%BA%BF%E5%8F%82%E6%95%B0%E7%9A%84%20LongCat-2.5%EF%BC%9A%E8%BF%99%E5%B1%8A%E5%A4%A7%E6%A8%A1%E5%9E%8B%E4%B8%8D%E8%81%8A%E5%A4%A9%EF%BC%8C%E5%8F%AA%E5%B9%B2%E6%B4%BB&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fllm-agent-shift-deepseek-longcat" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/llm-agent-shift-deepseek-longcat" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/llm-agent-shift-deepseek-longcat.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/llm-agent-shift-deepseek-longcat.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/rtx50-price-crash-analysis" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>RTX 5080 九天跌回 1.4 万：显卡这轮过山车，跌下去的是价格，跌不掉的是溢价</span> </a> <a class="pn right" href="/posts/switch2-third-party-lineup-2027" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>硬件卖不动的任天堂，把宝押给了第三方：Switch 2 未来一年阵容里藏着 FromSoftware 的独占</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/kimi-k26-code-preview" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合</span> <time data-astro-cid-egg7nqdx>2026-11-11</time> </a><a class="rel" href="/posts/anthropic-ipo-roadshow" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>Anthropic 冲上纳斯达克：643 亿美元路演背后，是一张 9009 亿美元的算力欠条</span> <time data-astro-cid-egg7nqdx>2026-11-12</time> </a><a class="rel" href="/posts/ai-job-policy-buffer" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>失业缓冲期写进红头文件：AI 替代岗位这件事，终于从个案维权走到了制度设计</span> <time data-astro-cid-egg7nqdx>2026-11-10</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#super-agent把操作系统那套搬进-agent" class data-slug="super-agent把操作系统那套搬进-agent" data-astro-cid-egg7nqdx>Super-agent：把操作系统那套搬进 Agent</a><a href="#longcat-2516-万亿参数只激活-480-亿" class data-slug="longcat-2516-万亿参数只激活-480-亿" data-astro-cid-egg7nqdx>LongCat-2.5：1.6 万亿参数，只激活 480 亿</a><a href="#gpt-62一次没有发布会的迭代" class data-slug="gpt-62一次没有发布会的迭代" data-astro-cid-egg7nqdx>GPT-6.2：一次没有发布会的迭代</a><a href="#风向变了衡量标准也得跟着变" class data-slug="风向变了衡量标准也得跟着变" data-astro-cid-egg7nqdx>风向变了，衡量标准也得跟着变</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

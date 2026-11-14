@@ -1,0 +1,133 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="11 月 7 日 OpenAI 发布 Codex 重大更新：后台操控电脑、内置浏览器、图像生成、90+ 插件、记忆与定时自动化全部上车。当每周 300 万开发者在用的编程代理开始越过代码边界，AI 工具的下一战场已经不在 IDE 里了"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/codex-for-almost-everything/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="Codex 不再只是写代码的：OpenAI 这次更新，把 AI 编程工具推向了『通用代理』 · 豆芽的技术博客"><meta property="og:description" content="11 月 7 日 OpenAI 发布 Codex 重大更新：后台操控电脑、内置浏览器、图像生成、90+ 插件、记忆与定时自动化全部上车。当每周 300 万开发者在用的编程代理开始越过代码边界，AI 工具的下一战场已经不在 IDE 里了"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/codex-for-almost-everything/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/codex-for-almost-everything-1.webp"><meta name="twitter:card" content="summary_large_image"><title>Codex 不再只是写代码的：OpenAI 这次更新，把 AI 编程工具推向了『通用代理』 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Codex 不再只是写代码的：OpenAI 这次更新，把 AI 编程工具推向了『通用代理』","description":"11 月 7 日 OpenAI 发布 Codex 重大更新：后台操控电脑、内置浏览器、图像生成、90+ 插件、记忆与定时自动化全部上车。当每周 300 万开发者在用的编程代理开始越过代码边界，AI 工具的下一战场已经不在 IDE 里了","image":"https://zhaojiale001016.github.io/img/inline/codex-for-almost-everything-1.webp","datePublished":"2026-11-09T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:技术资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>Codex 不再只是写代码的：OpenA…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./codex-for-almost-everything.md</span> <h1 data-astro-cid-egg7nqdx>Codex 不再只是写代码的：OpenAI 这次更新，把 AI 编程工具推向了『通用代理』</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a> <time data-astro-cid-egg7nqdx>2026-11-09</time> <span data-astro-cid-egg7nqdx>约 7 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/codex-for-almost-everything-1.webp" alt="Codex 不再只是写代码的：OpenAI 这次更新，把 AI 编程工具推向了『通用代理』" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>这两年我一直在关注一个问题的走向：AI 编程工具到底会停在”更聪明的补全”，还是会变成别的什么东西。11 月 7 日 OpenAI 发布的 Codex 重大更新——官方标题叫 “Codex for (almost) everything”——给了我一个相当明确的答案：它不想继续做一个编程工具了。</p>
+<h2 id="这次更新到底说了什么">这次更新到底说了什么</h2>
+<p><img src="/img/inline/codex-for-almost-everything-1.webp" alt="OpenAI 发布 Codex 重大更新，官方开发者社区同步公告">
+<em>图源：OpenAI 开发者社区官方公告《Introducing the New Codex for (almost) everything》</em></p>
+<p>先摆事实。OpenAI 官方博客宣布，Codex 现在每周有超过 300 万开发者在用，而这次更新的核心，是把 Codex 的能力边界从”代码”扩展到了”整台电脑”和”整个开发流程”。具体拆开看有这么几块：</p>
+<ul>
+<li><strong>后台电脑操控（Computer Use）</strong>：Codex 可以用自己的光标去”看、点、打字”，直接操作你电脑上的应用。多个 agent 可以在同一台 Mac 上并行干活，还不干扰你正在用的其他软件。OpenAI 给的场景很实在：调试前端改动、测试应用，以及操作那些根本没有 API 的老软件。</li>
+<li><strong>内置浏览器</strong>：应用里加了 in-app browser，你可以直接在页面上圈点批注来给 agent 下指令。目前主要服务于前端和游戏开发，官方明确说未来要让 Codex 完整接管浏览器。</li>
+<li><strong>图像生成</strong>：接入 gpt-image-1.5，可以结合截图和代码生成产品概念图、前端设计稿、游戏素材，全程不离开工作流。</li>
+<li><strong>90+ 新插件</strong>：Atlassian Rovo 管 JIRA、CircleCI、CodeRabbit、GitLab Issues、Render、Remotion……把技能、应用集成和 MCP 服务器打包成插件，一次装齐。</li>
+<li><strong>记忆（preview）</strong>：Codex 开始记住你的偏好、纠错和历史上下文，跨会话生效。用 OpenAI 的话说，以前要靠一大段自定义指令才能换来的质量，现在靠积累。</li>
+<li><strong>自动化升级</strong>：automations 可以复用已有会话、保留上下文，还能给自己安排”未来的工作”——跨天、跨周地持续推进一个长期任务。</li>
+</ul>
+<p>再加上对 GitHub review 评论的直接处理、多终端标签页、SSH 连远程 devbox（alpha）、文件侧栏富预览这些工程细节，这次更新的密度确实高。</p>
+<h2 id="我的看法编程只是切入点代理才是终点">我的看法：编程只是切入点，代理才是终点</h2>
+<p>看完整个更新清单，我最大的感受是：<strong>“编程工具”这个定位已经装不下 Codex 了</strong>。</p>
+<p>回顾一下时间线会更清楚。前几天 OpenAI 刚官宣收购代码审查公司 Pierre，把 Trees、Diffs 这类审阅工具补进 Codex；再往前，Codex 走过了从”写代码”到”审 PR”再到”连接 Slack、Gmail、Notion 做跟进”的持续扩张。把收购和新功能连起来看，OpenAI 的路径几乎是明牌：先用编程这个刚需场景把开发者圈进来——因为写代码是验证 agent 能力最硬的场景——然后沿着软件开发生命周期一路向上下游延伸，最后越过软件本身，伸向”人每天在电脑上干的一切事”。</p>
+<p>这个逻辑其实和行业共识对上了：代码只是 agent 的训练场。真正值钱的不是”AI 帮你写函数”，而是”AI 拿着你的电脑、你的账号、你的工具链，替你把一件事从头做到尾”。Codex 这次更新里的每一项——电脑操控、浏览器、插件生态、记忆、定时任务——单独看都不算惊天动地，但拼在一起就是一个完整的”数字员工”骨架：能看、能动手、有记忆、有排班、会协作。</p>
+<h2 id="冷静的部分别急着唱衰-ide">冷静的部分：别急着唱衰 IDE</h2>
+<p>当然，我不打算只做气氛组。有几点值得泼冷水。</p>
+<p>一是<strong>可靠性问题</strong>。让 agent 操作整台电脑，意味着出错的面也从”生成一段代码”扩大到”点了不该点的东西”。多 agent 并行很酷，但权限、误操作、安全边界的治理，官方博客里只有视频演示，没有细节。对在企业环境里干活的人来说，“IT 部门会不会放行”可能比”功能强不强”更早决定它能不能落地。</p>
+<p>二是<strong>同质化竞争</strong>。Claude 的代理生态、Cursor 的多 agent、各家 IDE 的自动化，方向上都指向”通用代理”，Codex 这次并没有拿出别人完全没有的技术范式，更多是整合速度和分发优势——300 万周活开发者这个基本盘，确实是别人羡慕不来的。</p>
+<p>三是**“几乎一切”里的那个 almost**。标题里那个括号很诚实：今天的 Codex 操控电脑还只在后台、浏览器只管 localhost 应用、记忆还在 preview。从”能演示”到”敢托付”，中间隔着无数真实的脏活累活。</p>
+<h2 id="写在最后">写在最后</h2>
+<p>我判断这件事的意义要放长看：当编程代理开始操作浏览器、生成图像、管理 JIRA、记你的偏好，“AI 编程工具”这个词就快要完成历史使命了。下一阶段的比较项，不是谁补全代码更快，而是谁的 agent 能被放心地留在电脑里过夜干活。</p>
+<p>对开发者来说，我的建议很直接：别只盯着代码能力评测了，尽早把 Codex（或任何一家的同类产品）的 automations 和记忆功能用起来，去跑真实的长期任务。工具形态的切换窗口往往就这么一两年，早习惯的人，早一步知道新范式里什么是真本事、什么是演示效果。</p>
+<p>OpenAI 说 “What’s next” 还有一页没讲完。我想，答案大概率不是某个新模型，而是把这次更新里的每一块拼图，打磨到”日常敢用”的程度。</p>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="https://openai.com/index/codex-for-almost-everything/" rel="noopener noreferrer" target="_blank">OpenAI 官方博客：Codex for (almost) everything</a></li>
+<li><a href="https://community.openai.com/t/introducing-the-new-codex-for-almost-everything/1379125" rel="noopener noreferrer" target="_blank">OpenAI 开发者社区公告：Introducing the New Codex for (almost) everything</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/OpenAI" data-astro-cid-egg7nqdx>OpenAI</a><a href="/tags/Codex" data-astro-cid-egg7nqdx>Codex</a><a href="/tags/AI%E4%BB%A3%E7%90%86" data-astro-cid-egg7nqdx>AI代理</a><a href="/tags/%E5%BC%80%E5%8F%91%E8%80%85%E5%B7%A5%E5%85%B7" data-astro-cid-egg7nqdx>开发者工具</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=Codex%20%E4%B8%8D%E5%86%8D%E5%8F%AA%E6%98%AF%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%EF%BC%9AOpenAI%20%E8%BF%99%E6%AC%A1%E6%9B%B4%E6%96%B0%EF%BC%8C%E6%8A%8A%20AI%20%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%E6%8E%A8%E5%90%91%E4%BA%86%E3%80%8E%E9%80%9A%E7%94%A8%E4%BB%A3%E7%90%86%E3%80%8F&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fcodex-for-almost-everything" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=Codex%20%E4%B8%8D%E5%86%8D%E5%8F%AA%E6%98%AF%E5%86%99%E4%BB%A3%E7%A0%81%E7%9A%84%EF%BC%9AOpenAI%20%E8%BF%99%E6%AC%A1%E6%9B%B4%E6%96%B0%EF%BC%8C%E6%8A%8A%20AI%20%E7%BC%96%E7%A8%8B%E5%B7%A5%E5%85%B7%E6%8E%A8%E5%90%91%E4%BA%86%E3%80%8E%E9%80%9A%E7%94%A8%E4%BB%A3%E7%90%86%E3%80%8F&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fcodex-for-almost-everything" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/codex-for-almost-everything" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/codex-for-almost-everything.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/codex-for-almost-everything.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/gpu-huaqiangbei-overseas-buyers" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>老外扎堆华强北扫显卡：一天一价的行情背后，是全球算力荒的价差套利</span> </a> <a class="pn right" href="/posts/oppo-reno17-debut" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>猫爪后盖 + 8000mAh：OPPO Reno17 外观首秀，这次中端机卷的不只是快充</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/openai-acquires-pierre" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>OpenAI 收购 Pierre：AI 不仅会写代码，还要学会审代码</span> <time data-astro-cid-egg7nqdx>2026-11-05</time> </a><a class="rel" href="/posts/meta-conductor-ai-coding-war" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>两天三家出手：Meta 买下 Conductor，AI 编程这块地皮正在被疯抢</span> <time data-astro-cid-egg7nqdx>2026-11-06</time> </a><a class="rel" href="/posts/baidu-world-2026" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>百度世界 2026：李彦宏把 AI 下一幕定成「智能组织」，我更在意他顺手做的那个「模型交易所」</span> <time data-astro-cid-egg7nqdx>2026-11-14</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#这次更新到底说了什么" class data-slug="这次更新到底说了什么" data-astro-cid-egg7nqdx>这次更新到底说了什么</a><a href="#我的看法编程只是切入点代理才是终点" class data-slug="我的看法编程只是切入点代理才是终点" data-astro-cid-egg7nqdx>我的看法：编程只是切入点，代理才是终点</a><a href="#冷静的部分别急着唱衰-ide" class data-slug="冷静的部分别急着唱衰-ide" data-astro-cid-egg7nqdx>冷静的部分：别急着唱衰 IDE</a><a href="#写在最后" class data-slug="写在最后" data-astro-cid-egg7nqdx>写在最后</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

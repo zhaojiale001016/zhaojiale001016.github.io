@@ -1,0 +1,141 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="11 月 13 日中国信通院公布企业级前线部署工程（FDE）交付能力检验结果，腾讯 WorkBuddy 企业版、CodeBuddy 企业版两款产品首批通过并达到最高的三级要求，覆盖交付能力、知识资产、机制组织三大领域；同期腾讯披露 FDE 认证首期 280 名学员来自 105 家企业、覆盖 15 个行业，2027 年计划培养 1 万名 FDE 人才。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/codebuddy-fde-certification/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="CodeBuddy 首批通过信通院 FDE 检验：AI 编程的下一个战场，从补全质量转向交付能力 · 豆芽的技术博客"><meta property="og:description" content="11 月 13 日中国信通院公布企业级前线部署工程（FDE）交付能力检验结果，腾讯 WorkBuddy 企业版、CodeBuddy 企业版两款产品首批通过并达到最高的三级要求，覆盖交付能力、知识资产、机制组织三大领域；同期腾讯披露 FDE 认证首期 280 名学员来自 105 家企业、覆盖 15 个行业，2027 年计划培养 1 万名 FDE 人才。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/codebuddy-fde-certification/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/codebuddy-fde-certification-1.webp"><meta name="twitter:card" content="summary_large_image"><title>CodeBuddy 首批通过信通院 FDE 检验：AI 编程的下一个战场，从补全质量转向交付能力 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"CodeBuddy 首批通过信通院 FDE 检验：AI 编程的下一个战场，从补全质量转向交付能力","description":"11 月 13 日中国信通院公布企业级前线部署工程（FDE）交付能力检验结果，腾讯 WorkBuddy 企业版、CodeBuddy 企业版两款产品首批通过并达到最高的三级要求，覆盖交付能力、知识资产、机制组织三大领域；同期腾讯披露 FDE 认证首期 280 名学员来自 105 家企业、覆盖 15 个行业，2027 年计划培养 1 万名 FDE 人才。","image":"https://zhaojiale001016.github.io/img/inline/codebuddy-fde-certification-1.webp","datePublished":"2026-11-13T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:技术资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>CodeBuddy 首批通过信通院 FD…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./codebuddy-fde-certification.md</span> <h1 data-astro-cid-egg7nqdx>CodeBuddy 首批通过信通院 FDE 检验：AI 编程的下一个战场，从补全质量转向交付能力</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a> <time data-astro-cid-egg7nqdx>2026-11-13</time> <span data-astro-cid-egg7nqdx>约 10 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/codebuddy-fde-certification-1.webp" alt="CodeBuddy 首批通过信通院 FDE 检验：AI 编程的下一个战场，从补全质量转向交付能力" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>中国信通院最近公布了一批”企业级前线部署工程（FDE）交付能力”检验结果，<a href="http://www.xinhuanet.com/tech/20261113/8b71bfe85b614d5786f29c7ad0a3976e/c.html" rel="noopener noreferrer" target="_blank">新华网今天下午 17:31 报道</a>：腾讯 WorkBuddy 企业版、CodeBuddy 企业版两款产品<strong>首批通过检验，均”达到三级要求”，也就是最高等级</strong>，在交付能力、知识资产、机制组织三个能力领域都拿到了认可。</p>
+<p>这件事本身不炫，但它是这几天国内 AI 编程赛道里最有信息量的一条。</p>
+<h2 id="fde-到底是个什么东西">FDE 到底是个什么东西</h2>
+<p>先把概念说清楚，不然容易以为是某个厂商自造的营销词。</p>
+<p>FDE 是 Forward Deployed Engineering 的缩写，前线部署工程。定义来自<a href="http://www.xinhuanet.com/tech/20261113/8b71bfe85b614d5786f29c7ad0a3976e/c.html" rel="noopener noreferrer" target="_blank">新华网那篇报道</a>：把工程师派到业务一线，贯通业务调研、方案设计、数据接入、智能体编排、系统集成、上线运行与持续优化这些环节，让通用模型能力变成可交付、可度量、可复制的业务解决方案。</p>
+<p>关键在后半句：<strong>现场经验能不能沉淀成组织资产，并在下一次交付里被复用。</strong> 报道里那句”FDE 的价值不在于替产品永远救火，而在于把每一次救火的方法，逐渐写进产品”，是整个概念的核心。</p>
+<p>这套东西不是厂商自己发明的。工信部今年印发的相关通知里，明确鼓励服务商搭建 FDE 团队、扎根用户现场保障场景落地；信通院则依托 AIIA、CCSA TC601 等组织，推进覆盖”个人—项目—企业”的 FDE 标准体系建设。</p>
+<p>说白了，检验的是三件事：项目交付能力、知识资产沉淀能力、机制组织能力。不是”你的模型补全准不准”，而是”你能不能把一个企业的活儿真的干完，并且下次干得更快”。</p>
+<p><img src="/img/inline/codebuddy-fde-certification-2.png" alt="腾讯云 WorkBuddy 企业版的 Agent Harness 架构图">
+<em>图源：腾讯云官网《腾讯企业智能体 WorkBuddy Enterprise》</em></p>
+<h2 id="被检验的两款产品是什么来路">被检验的两款产品是什么来路</h2>
+<p><strong>WorkBuddy</strong> 是腾讯的全场景 AI 办公智能体，能自主规划执行任务并交付完整成果。企业版目前已服务 50% 的中国 500 强企业。在 2026 腾讯全球数字生态大会上，WorkBuddy 企业版宣布了四大核心能力升级：开放平台能力、企业级安全解决方案、可观测中心，以及 WorkBuddy 托管智能体（WMA）。</p>
+<p><strong>CodeBuddy</strong> 则是面向研发全流程的 AI 开发智能体，覆盖插件、IDE、CLI 三端形态，提供代码补全、多文件生成、智能评审、单元测试等能力，同时支持企业知识库和私有化部署。</p>
+<p>两者被放在同一批次里检验，其实说明了一件事：腾讯把”办公侧的 Agent”和”研发侧的 Agent”当成同一套交付方法论的两种落地。</p>
+<p><img src="/img/inline/codebuddy-fde-certification-1.webp" alt="腾讯云 WorkBuddy 企业版官方主视觉">
+<em>图源：腾讯云官网《腾讯企业智能体 WorkBuddy Enterprise》</em></p>
+<p>生态侧的数字更能说明这套方法跑到了什么规模：WorkBuddy 生态伙伴已超过 2000 家，其中六成以上是第一次和腾讯合作，落地 50 多个行业；毕马威与腾讯云联合打造了 FDE 服务模式。人才侧，10 月 24 日 FDE 人才培养计划暨 FDE 精英班在北京、深圳、成都三城同步开班，链路是”线下集训—90 天陪伴—能力认证”，面向所有人开放的腾讯云 FDE 认证从岗位导向、产品与工程、交付与验证、安全与复用四个维度建立能力框架；首期 280 名学员来自 105 家企业，覆盖建筑与不动产、医疗、制造、金融、零售、教育等 15 个行业。按规划，2027 年要办 200 场教学活动，在全国培养 1 万名 FDE 人才。</p>
+<h2 id="为什么这个检验出现在这个时候">为什么这个检验出现在这个时候</h2>
+<p>把镜头拉远一点，这半年国内 AI 编程的竞争已经换了赛道。</p>
+<p>一端是模型和产品的狂飙：阿里的 Qoder CN（原通义灵码，5 月 20 日更名）对外宣称超过 600 万开发者使用，并援引 IDC《中国 AI 编程市场份额，2025》报告称其以 47.6% 的营收份额居首，还入选了 Gartner 2026 企业级 AI Coding Agent 魔力象限的”挑战者”象限（<a href="https://www.aliyun.com/benefit/scene/qodercn" rel="noopener noreferrer" target="_blank">阿里云官方页面</a>）。另一端是百度的文心 5.5 Flash Preview，2800 亿总参数、每 Token 激活 140 亿、支持百万 Token 上下文，模型权重将于 11 月 25 日面向全球开源社区发布（<a href="http://www.xinhuanet.com/tech/20261111/183aa161e70b4942b622e10b5e3da605/c.html" rel="noopener noreferrer" target="_blank">新华网</a>）。</p>
+<p>另一头，企业侧的落地却一直没找到那把钥匙。企业买 AI 编程工具，试用阶段永远觉得不错，真正推到研发流程里就露馅：代码风格不合规、评审意见没法沉淀、出了事没人接得住。这正是 FDE 想解决的痛点。</p>
+<p>所以这个检验出现的时机挺妙：<strong>模型能力和价格战还在打，交付能力却开始被标准化了。</strong> 谁的现场工程能力被写进行业标准，谁就在下一轮企业采购里多一张牌照。</p>
+<h2 id="我怎么看">我怎么看</h2>
+<p><strong>第一，企业级 AI 工具的护城河正在从”模型能力”转向”组织资产”。</strong> 个人开发者用 Qoder、用 CodeBuddy，差别可能只在模型强弱；但一个企业用三年之后，差别在于：它沉淀了多少可复用的技能、连接器和行业方案，供应商换掉之后这些还在不在。这些东西没法靠烧钱买，只能靠交付现场一行一行攒。FDE 检验的三个维度——交付、知识资产、机制组织——恰好就是攒这三样东西的路径图。</p>
+<p><strong>第二，“0 失误”式的现场标准，会倒逼工具的可靠性要求。</strong> 企业现场交付和写 Demo 是两种活。Demo 允许失败一次，交付不允许。所以被检验的产品，内部大概率要加一层”现场可观测 + 失败可归因”的基础设施——腾讯这次同步升级的可观测中心和 WMA 托管智能体，多半不是凑数的功能。</p>
+<p><strong>第三，1 万名 FDE 人才这个目标，比任何产品功能都更能说明问题。</strong> 企业不缺工具，缺的是能把工具用进真实流程、还能把方法教给下一个人的人。往乐观了看，这是把 AI 落地从”头部集成商包办”变成”行业自有人会做”；往谨慎了看，1 万人的培养周期和 15 个行业的深度之间，还隔着很长的距离。</p>
+<p>至于我更关心的问题：三级检验的具体评分项没有完全公开，两家首批通过者的分数差距也看不到。<strong>当一份检验只有”通过”和”最高级”两个档位对外披露时，它离真正的可比性还差得远。</strong> 也许下半年会有更细的榜单出来。到那时，这轮检验才算真正开始有牙齿。</p>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="http://www.xinhuanet.com/tech/20261113/8b71bfe85b614d5786f29c7ad0a3976e/c.html" rel="noopener noreferrer" target="_blank">新华网《腾讯 WorkBuddy、CodeBuddy 通过中国信通院 FDE 检验》</a></li>
+<li><a href="http://m.toutiao.com/group/7707325973200519715/" rel="noopener noreferrer" target="_blank">头条号《腾讯 WorkBuddy、CodeBuddy 企业版通过信通院 FDE 最高等级检验》</a></li>
+<li><a href="https://cloud.tencent.com/product/workbuddy-enterprise" rel="noopener noreferrer" target="_blank">腾讯云《腾讯企业智能体 WorkBuddy Enterprise》</a></li>
+<li><a href="http://www.xinhuanet.com/tech/20261111/183aa161e70b4942b622e10b5e3da605/c.html" rel="noopener noreferrer" target="_blank">新华网《百度发布文心全新开源模型 编程、3D 建模、知识工作、内容创作等全面升级》</a></li>
+</ul>
+<h2 id="开发者圈快讯">开发者圈快讯</h2>
+<ul>
+<li>腾讯云 FDE 认证首期 280 名学员来自 105 家企业、覆盖 15 个行业，2027 年计划举办 200 场教学活动培养 1 万名 FDE 人才——<a href="http://www.xinhuanet.com/tech/20261113/8b71bfe85b614d5786f29c7ad0a3976e/c.html" rel="noopener noreferrer" target="_blank">新华网报道</a></li>
+<li>百度文心 5.5 Flash Preview 模型权重将于 11 月 25 日正式面向全球开源社区发布，API 定价输入忙时 2 元、闲时 1 元每百万 Token——<a href="http://www.xinhuanet.com/tech/20261111/183aa161e70b4942b622e10b5e3da605/c.html" rel="noopener noreferrer" target="_blank">新华网报道</a></li>
+<li>阿里 Qoder CN 页面显示超过 600 万开发者使用，并援引 IDC《中国 AI 编程市场份额，2025》称其营收份额 47.6% 居首——<a href="https://www.aliyun.com/benefit/scene/qodercn" rel="noopener noreferrer" target="_blank">阿里云官方页面</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/%E8%85%BE%E8%AE%AF" data-astro-cid-egg7nqdx>腾讯</a><a href="/tags/CodeBuddy" data-astro-cid-egg7nqdx>CodeBuddy</a><a href="/tags/WorkBuddy" data-astro-cid-egg7nqdx>WorkBuddy</a><a href="/tags/%E4%BF%A1%E9%80%9A%E9%99%A2" data-astro-cid-egg7nqdx>信通院</a><a href="/tags/AI%E7%BC%96%E7%A8%8B" data-astro-cid-egg7nqdx>AI编程</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=CodeBuddy%20%E9%A6%96%E6%89%B9%E9%80%9A%E8%BF%87%E4%BF%A1%E9%80%9A%E9%99%A2%20FDE%20%E6%A3%80%E9%AA%8C%EF%BC%9AAI%20%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%88%98%E5%9C%BA%EF%BC%8C%E4%BB%8E%E8%A1%A5%E5%85%A8%E8%B4%A8%E9%87%8F%E8%BD%AC%E5%90%91%E4%BA%A4%E4%BB%98%E8%83%BD%E5%8A%9B&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fcodebuddy-fde-certification" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=CodeBuddy%20%E9%A6%96%E6%89%B9%E9%80%9A%E8%BF%87%E4%BF%A1%E9%80%9A%E9%99%A2%20FDE%20%E6%A3%80%E9%AA%8C%EF%BC%9AAI%20%E7%BC%96%E7%A8%8B%E7%9A%84%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%88%98%E5%9C%BA%EF%BC%8C%E4%BB%8E%E8%A1%A5%E5%85%A8%E8%B4%A8%E9%87%8F%E8%BD%AC%E5%90%91%E4%BA%A4%E4%BB%98%E8%83%BD%E5%8A%9B&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fcodebuddy-fde-certification" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/codebuddy-fde-certification" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/codebuddy-fde-certification.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/codebuddy-fde-certification.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/nba-nov13-cunningham-52" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>坎宁安 52 分 11 助攻 0 失误：NBA 历史头一回，活塞双加时客场掀翻奇才</span> </a> <a class="pn right" href="/posts/nba-spurs-warriors-curry" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>马刺 123-85 掀翻勇士豪取 11 连胜登顶西部，库里要缺阵一个月：这不是一场普通爆冷</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/kimi-k26-code-preview" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合</span> <time data-astro-cid-egg7nqdx>2026-11-11</time> </a><a class="rel" href="/posts/meta-conductor-ai-coding-war" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>两天三家出手：Meta 买下 Conductor，AI 编程这块地皮正在被疯抢</span> <time data-astro-cid-egg7nqdx>2026-11-06</time> </a><a class="rel" href="/posts/github-universe-2026-recap" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>GitHub Universe 2026 散场后，我记下了这几个数字</span> <time data-astro-cid-egg7nqdx>2026-11-05</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#fde-到底是个什么东西" class data-slug="fde-到底是个什么东西" data-astro-cid-egg7nqdx>FDE 到底是个什么东西</a><a href="#被检验的两款产品是什么来路" class data-slug="被检验的两款产品是什么来路" data-astro-cid-egg7nqdx>被检验的两款产品是什么来路</a><a href="#为什么这个检验出现在这个时候" class data-slug="为什么这个检验出现在这个时候" data-astro-cid-egg7nqdx>为什么这个检验出现在这个时候</a><a href="#我怎么看" class data-slug="我怎么看" data-astro-cid-egg7nqdx>我怎么看</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a><a href="#开发者圈快讯" class data-slug="开发者圈快讯" data-astro-cid-egg7nqdx>开发者圈快讯</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

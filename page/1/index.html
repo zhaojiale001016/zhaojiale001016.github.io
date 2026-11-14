@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="豆芽的技术博客：前端、AI、游戏、硬件、篮球与技术圈观察"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/page/1/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="page 1 · 豆芽的技术博客"><meta property="og:description" content="豆芽的技术博客：前端、AI、游戏、硬件、篮球与技术圈观察"><meta property="og:url" content="https://zhaojiale001016.github.io/page/1/"><meta name="twitter:card" content="summary_large_image"><title>page 1 · 豆芽的技术博客</title><link rel="stylesheet" href="/_astro/about.CFfxUn7k.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content">  <div class="wrap" style="padding-top: 44px;"> <div class="section-head"> <h2>文章列表</h2> <a class="more" href="/archives">cat archives →</a> </div> <div class="grid"> <article class="card"> <a href="/posts/nba-nov12-lakers-warriors-spurs"><img class="cover" src="/img/inline/nba-nov12-lakers-warriors-spurs-3.jpg" alt="库里首节伤退，勇士 8 连胜断在火箭手上；文班亚马带着马刺豪取十连胜" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">体育资讯</span> <time>2026-11-12</time> </div> <h3><a href="/posts/nba-nov12-lakers-warriors-spurs">库里首节伤退，勇士 8 连胜断在火箭手上；文班亚马带着马刺豪取十连胜</a></h3> <p class="desc">11 月 12 日 NBA 常规赛：火箭 115-108 终结勇士 8 连胜，库里首节因伤退，杜兰特运动战总进球数超越奥尼尔；马刺 22 分逆转公牛豪取十连胜，文班亚马 32 分 9 篮板 5 盖帽；湖人 123-112 胜雄鹿，东契奇 32 分但末节崴脚。</p> <div class="tags"><a href="/tags/NBA"><span>NBA</span></a><a href="/tags/%E5%BA%93%E9%87%8C"><span>库里</span></a><a href="/tags/%E6%96%87%E7%8F%AD%E4%BA%9A%E9%A9%AC"><span>文班亚马</span></a></div> </div> </article><article class="card"> <a href="/posts/china-auto-oct-sales"><img class="cover" src="/img/inline/china-auto-oct-sales-1.webp" alt="中汽协 10 月数据：国内销量连降七个月，出口撑起 106 万辆，双 11 全行业改推「0 息」" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">汽车资讯</span> <time>2026-11-11</time> </div> <h3><a href="/posts/china-auto-oct-sales">中汽协 10 月数据：国内销量连降七个月，出口撑起 106 万辆，双 11 全行业改推「0 息」</a></h3> <p class="desc">10 月汽车产销 306.3 万/301.6 万辆同比降 8.8%/9.2%，国内销量同比降 26.6% 且降幅连续七个月超 20%；出口 106.6 万辆同比增 60.2%，新能源占比升至 64.3%。</p> <div class="tags"><a href="/tags/%E4%B8%AD%E6%B1%BD%E5%8D%8F"><span>中汽协</span></a><a href="/tags/%E6%B1%BD%E8%BD%A6%E9%94%80%E9%87%8F"><span>汽车销量</span></a><a href="/tags/%E6%96%B0%E8%83%BD%E6%BA%90%E6%B1%BD%E8%BD%A6"><span>新能源汽车</span></a></div> </div> </article><article class="card"> <a href="/posts/hsr-4-7-aha"><img class="cover" src="/img/inline/hsr-4-7-aha-1.webp" alt="星穹铁道 4.7 上线：第一个能抽的星神阿哈登场，米哈游把「看戏的人」拉下场" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">游戏资讯</span> <time>2026-11-11</time> </div> <h3><a href="/posts/hsr-4-7-aha">星穹铁道 4.7 上线：第一个能抽的星神阿哈登场，米哈游把「看戏的人」拉下场</a></h3> <p class="desc">《崩坏：星穹铁道》4.7 版本「此刻，将群星付之一笑」11 月 11 日上线，欢愉命途限定五星「星神★阿哈」首发可抽，配全新养成系统「奇缘星魂」与登录自选福利。</p> <div class="tags"><a href="/tags/%E5%B4%A9%E5%9D%8F%E6%98%9F%E7%A9%B9%E9%93%81%E9%81%93"><span>崩坏星穹铁道</span></a><a href="/tags/%E6%98%9F%E7%A5%9E%E9%98%BF%E5%93%88"><span>星神阿哈</span></a><a href="/tags/%E6%AC%A2%E6%84%89%E5%91%BD%E9%80%94"><span>欢愉命途</span></a></div> </div> </article><article class="card"> <a href="/posts/kimi-k26-code-preview"><img class="cover" src="/img/inline/kimi-k26-code-preview-1.webp" alt="Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">技术资讯</span> <time>2026-11-11</time> </div> <h3><a href="/posts/kimi-k26-code-preview">Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合</a></h3> <p class="desc">月之暗面低调上线专为 AI 编程优化的万亿参数模型 Kimi K2.6-code-preview，需 39 元/月会员计划才能在 Kimi Code 中使用；第三方评测 89 分，比 K2.5 提升 6 分但仍落后榜首。</p> <div class="tags"><a href="/tags/Kimi"><span>Kimi</span></a><a href="/tags/AI%E7%BC%96%E7%A8%8B"><span>AI编程</span></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B"><span>大模型</span></a></div> </div> </article><article class="card"> <a href="/posts/nba-nov11-george-bucks"><img class="cover" src="/img/inline/nba-nov11-george-bucks-1.webp" alt="乔治战旧主砍 36 分，雄鹿 7 连败：这个 NBA 比赛日属于两极分化" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">体育资讯</span> <time>2026-11-11</time> </div> <h3><a href="/posts/nba-nov11-george-bucks">乔治战旧主砍 36 分，雄鹿 7 连败：这个 NBA 比赛日属于两极分化</a></h3> <p class="desc">凯尔特人 123-101 客场射穿 76 人，乔治 36 分，塔图姆 21 分；尼克斯 117-85 送雄鹿 7 连败，唐斯开季 10 场全部两双创队史纪录；开拓者 123-103 终结雷霆 4 连胜。</p> <div class="tags"><a href="/tags/NBA"><span>NBA</span></a><a href="/tags/%E4%BF%9D%E7%BD%97%E4%B9%94%E6%B2%BB"><span>保罗乔治</span></a><a href="/tags/%E5%87%AF%E5%B0%94%E7%89%B9%E4%BA%BA"><span>凯尔特人</span></a></div> </div> </article><article class="card"> <a href="/posts/ai-job-policy-buffer"><img class="cover" src="/img/inline/ai-job-policy-buffer-1.webp" alt="失业缓冲期写进红头文件：AI 替代岗位这件事，终于从个案维权走到了制度设计" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">技术资讯</span> <time>2026-11-10</time> </div> <h3><a href="/posts/ai-job-policy-buffer">失业缓冲期写进红头文件：AI 替代岗位这件事，终于从个案维权走到了制度设计</a></h3> <p class="desc">国办发〔2026〕29 号文首次提出「失业缓冲期」，配合市场准入环节的就业风险评估和杭州中院 AI 替岗案判决，AI 冲击就业第一次有了前置安排的制度轮廓。</p> <div class="tags"><a href="/tags/AI"><span>AI</span></a><a href="/tags/%E5%B0%B1%E4%B8%9A"><span>就业</span></a><a href="/tags/%E6%94%BF%E7%AD%96"><span>政策</span></a></div> </div> </article><article class="card"> <a href="/posts/nba-nov10-wemby-warriors-mavericks"><img class="cover" src="/img/inline/nba-nov10-wemby-warriors-mavericks-1.webp" alt="文班亚马 25 分钟 40 分 9 盖帽，勇士 51 分把鹈鹕打崩：这个比赛日属于极端值" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">体育资讯</span> <time>2026-11-10</time> </div> <h3><a href="/posts/nba-nov10-wemby-warriors-mavericks">文班亚马 25 分钟 40 分 9 盖帽，勇士 51 分把鹈鹕打崩：这个比赛日属于极端值</a></h3> <p class="desc">马刺 122-96 太阳豪取九连胜，文班亚马只用 25 分钟砍下 40 分 11 篮板 9 盖帽；勇士 138-87 大胜鹈鹕创队史最大分差；湖人靠东契奇 32+8+10 取六连胜；独行侠新秀弗拉格 43 分绝杀步行者。</p> <div class="tags"><a href="/tags/NBA"><span>NBA</span></a><a href="/tags/%E6%96%87%E7%8F%AD%E4%BA%9A%E9%A9%AC"><span>文班亚马</span></a><a href="/tags/%E5%8B%87%E5%A3%AB"><span>勇士</span></a></div> </div> </article><article class="card"> <a href="/posts/oppo-reno17-debut"><img class="cover" src="/img/inline/oppo-reno17-debut-1.webp" alt="猫爪后盖 + 8000mAh：OPPO Reno17 外观首秀，这次中端机卷的不只是快充" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">数码资讯</span> <time>2026-11-09</time> </div> <h3><a href="/posts/oppo-reno17-debut">猫爪后盖 + 8000mAh：OPPO Reno17 外观首秀，这次中端机卷的不只是快充</a></h3> <p class="desc">11 月 9 日 OPPO Reno17 系列外观正式亮相：3D 立体小猫图案后盖、全系 5000 万像素潜望长焦、6 秒长实况、标准版 8000mAh 大电池，11 月 16 日发布。Reno 这个曾经靠外观和轻薄吃饭的系列，正在影像和续航上补硬课</p> <div class="tags"><a href="/tags/OPPO"><span>OPPO</span></a><a href="/tags/Reno17"><span>Reno17</span></a><a href="/tags/%E6%99%BA%E8%83%BD%E6%89%8B%E6%9C%BA"><span>智能手机</span></a></div> </div> </article> </div> <nav class="pager"> <a href="/">← 首页</a> <span class="cur">第 1 / 3 页</span> <a href="/page/2">较旧 →</a> </nav> </div>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>

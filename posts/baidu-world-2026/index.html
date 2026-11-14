@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="11 月 12 日百度世界 2026 在京开幕，李彦宏首次提出「组织进化三原则」与「智能组织」判断，并推出大模型交易平台「词元所」——上线一个月入驻供应资源超 100 个、日均调用 5000 万次、日均 Token 超 7000 亿；文心 5.5 Flash 预览版总参数 2800 亿、支持百万 Token 上下文，权重 11 月 25 日开源；百度智能云还发布天池 1024 卡超节点，昆仑芯 M100 已上市、M300 明年推出。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/baidu-world-2026/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="百度世界 2026：李彦宏把 AI 下一幕定成「智能组织」，我更在意他顺手做的那个「模型交易所」 · 豆芽的技术博客"><meta property="og:description" content="11 月 12 日百度世界 2026 在京开幕，李彦宏首次提出「组织进化三原则」与「智能组织」判断，并推出大模型交易平台「词元所」——上线一个月入驻供应资源超 100 个、日均调用 5000 万次、日均 Token 超 7000 亿；文心 5.5 Flash 预览版总参数 2800 亿、支持百万 Token 上下文，权重 11 月 25 日开源；百度智能云还发布天池 1024 卡超节点，昆仑芯 M100 已上市、M300 明年推出。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/baidu-world-2026/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/baidu-world-2026-1.webp"><meta name="twitter:card" content="summary_large_image"><title>百度世界 2026：李彦宏把 AI 下一幕定成「智能组织」，我更在意他顺手做的那个「模型交易所」 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"百度世界 2026：李彦宏把 AI 下一幕定成「智能组织」，我更在意他顺手做的那个「模型交易所」","description":"11 月 12 日百度世界 2026 在京开幕，李彦宏首次提出「组织进化三原则」与「智能组织」判断，并推出大模型交易平台「词元所」——上线一个月入驻供应资源超 100 个、日均调用 5000 万次、日均 Token 超 7000 亿；文心 5.5 Flash 预览版总参数 2800 亿、支持百万 Token 上下文，权重 11 月 25 日开源；百度智能云还发布天池 1024 卡超节点，昆仑芯 M100 已上市、M300 明年推出。","image":"https://zhaojiale001016.github.io/img/inline/baidu-world-2026-1.webp","datePublished":"2026-11-14T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:技术资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>百度世界 2026：李彦宏把 AI 下一…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./baidu-world-2026.md</span> <h1 data-astro-cid-egg7nqdx>百度世界 2026：李彦宏把 AI 下一幕定成「智能组织」，我更在意他顺手做的那个「模型交易所」</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a> <time data-astro-cid-egg7nqdx>2026-11-14</time> <span data-astro-cid-egg7nqdx>约 9 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/baidu-world-2026-1.webp" alt="百度世界 2026：李彦宏把 AI 下一幕定成「智能组织」，我更在意他顺手做的那个「模型交易所」" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>11 月 12 日，北京，百度世界 2026 开幕。开幕式上李彦宏抛出的判断有点反常：他没有讲参数、没有讲跑分，讲的是组织、岗位和流程怎么重排——<strong>AI 的下一幕是「智能组织」</strong>。</p>
+<p><img src="/img/inline/baidu-world-2026-1.webp" alt="百度世界 2026 开幕式主舞台，屏幕上写着&#x22;下一幕·智能组织&#x22;">
+<em>图源：科技日报《百度世界2026在京举办 李彦宏提出AI下一幕是智能组织》</em></p>
+<h2 id="三条原则其实是在谈一件很旧的事">三条原则，其实是在谈一件很旧的事</h2>
+<p>他给出的「组织进化三原则」是：打破岗位边界、沉淀隐性知识、设计流程闭环。配套的判断是，未来岗位会收敛成两类——负责造东西的 Builder，和负责让人愿意跟你做生意的 Seller。</p>
+<p>他用了一个工业史的类比：AI 之所以还没兑现想象中的经济效益，是因为<strong>只换了电机，没有重新设计工厂</strong>。“换一台 AI 新电机只是起点，重新设计新厂房才是分水岭。“这句话听着像鸡汤，但放到今天大多数公司「买了 Copilot 却没提高交付速度」的现状里，反而挺扎心。</p>
+<p><img src="/img/inline/baidu-world-2026-2.webp" alt="百度世界 2026 舞台上打出的「组织进化三原则」">
+<em>图源：新华网《李彦宏首提”组织进化三原则”，判断AI下一幕是智能组织》</em></p>
+<p>李彦宏顺手给出的内部数字，比三原则更有说服力：过去一年百度内部日活智能体数（DAA）从日均 0.5 万涨到 3.7 万，涨了 6 倍多；智能体每周完成的有效任务从 8.4 万个涨到 100 万个以上；内部建了 4300 个 Workspace，沉淀组织 Skill 超过 2 万个。这是把「一个人的经验变成整个组织的能力」当成一个可度量的指标在跑。</p>
+<h2 id="词元所一个把选模型变成商品的尝试">词元所：一个把”选模型”变成商品的尝试</h2>
+<p>我这次最在意的不是文心，而是<strong>词元所</strong>——百度正式推出的大模型交易平台。</p>
+<p>李彦宏的出发点很实在：今年前 9 个月几乎每天都有新模型发布，“同一款模型，有的贵有的便宜，来源五花八门，质量参差不齐。选来选去，就是不放心、不敢用。“而现有的词元中转站不对模型效果和稳定性负责，连真实性都无从考证。</p>
+<p>词元所主打「验真」与「征信」：模型指纹比对、能力测试、性能与可用性测试、定期抽检拨测、全链路实时监测调用，再据此给模型提供商建信用评级。上线一个月，入驻供应资源超 100 个，日均调用次数突破 5000 万，日均调用 Token 超 7000 亿。</p>
+<p>我的判断分两半。乐观的一半：模型调用正在变成一种<strong>有品级的商品</strong>，谁给模型定价、谁给模型打信用分，这层中间服务以前是空的，谁先占住生态位谁就握着调用量的入口。谨慎的一半：交易所的核心是定价权和仲裁权，如果百度既当裁判又当运动员，最后很容易退化成一个带评分体系的聚合跳转页。它能不能活成”交易所”，要看它敢不敢给自家模型打低分。</p>
+<p><img src="/img/inline/baidu-world-2026-3.webp" alt="李彦宏在百度世界 2026 开幕式上发言">
+<em>图源：新华网《李彦宏首提”组织进化三原则”，判断AI下一幕是智能组织》</em></p>
+<h2 id="文心-55-flash真正值得抄作业的是价格表">文心 5.5 Flash：真正值得抄作业的是价格表</h2>
+<p>文心 5.5 Flash 预览版总参数 2800 亿，每个 Token 激活 140 亿，支持最长 100 万 Token 上下文，宣称在 Terminal-Bench、AutomationBench 等基准上”有竞争力”。底层是混合稀疏注意力、多路由器 MoE、ECHO 多 Token 预测，还首次引入自研 RSI 技术——让 ERNIE Evolve 参与模型本身的推理优化，这条路线挺有意思。</p>
+<p>但对我这种天天在算 token 成本的人来说，更值得记的是价格和开源时间表：</p>
+<div class="callout" data-callout="tip" data-collapsible="false"><div class="callout-title"><div class="callout-title-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg></div><div class="callout-title-text">Tip</div></div><div class="callout-content"><p>文心 5.5 Flash Preview API 定价：每百万 Token 输入忙时 2 元、闲时 1 元，输出忙时 8 元、闲时 4 元，限时五折；模型权重将于 11 月 25 日面向全球开源社区发布。</p></div></div>
+<p>闲时 1 元的输入价，确实是往”高并发应用层”去的打法——和它宣称的每秒 200+ tokens 生成速度是配套的。至于 11 月 25 日的开源承诺能不能兑现、权重开放后社区会拿它做什么，得等那天再看，这里先打个问号。</p>
+<h2 id="芯云模体超节点和自研芯的进度条">芯云模体：超节点和自研芯的进度条</h2>
+<p>百度智能云这次发布了<strong>天池 1024 卡超节点</strong>，采用光引擎全光互联，卡间互联带宽较上一代提升 3 倍，单套超节点可支撑 5 万亿参数模型的训练，并能扩展到万卡规模，计划 2027 年上市。昆仑芯的路线也明确：主打性价比的 M100 已如期上市，旗舰款 M300 明年推出，2028 年还会有基于全新 N 架构的多颗芯片。</p>
+<p>智能体层面的升级更像”全家桶刷新”：百度搭子成为连接全系专业智能体的统一入口，全面开放 Harness 引擎和 Agent API；数字人一镜推出「短漫剧Studio」，走完创意、剧本、分镜到成片，成本约每秒 0.2 元；伐谋升级到 3.0，客户覆盖 41 个工业大类中的 25 个。</p>
+<p>还有一条被低估的信息：萝卜快跑已落地全球 28 座城市、里程超 3.5 亿公里，在迪拜、阿布扎比实现全无人商业化运营。李彦宏那句”今天的具身智能，大约相当于无人驾驶 2016 年的发展水平”，等于给行业提了个醒——别急着喊拐点。</p>
+<h2 id="我怎么看这场发布会">我怎么看这场发布会</h2>
+<p><strong>第一，词元所是全场最有想象力、也最不确定的一块。</strong> 大模型数量爆炸之后，真正的稀缺资源不是参数量，而是「可信」。谁能把可信度量化成价格，谁就掌握调用侧的定价权。</p>
+<p><strong>第二，Agent API 和 Harness 的开放，比新模型更值得开发者盯。</strong> 搭子团队半年迭代 160 多次，90% 的代码、50% 的对外传播物料由智能体生成——这个比例比任何跑分都更能说明组织形态被改造了多少。</p>
+<p><strong>第三，“智能组织”这个判断，我买一半账。</strong> 把流程闭环设计好确实能持续进化，但大多数公司当前的真问题不是流程不够闭环，而是<strong>没有可靠的度量标准</strong>，一旦「可衡量」不存在，Looping 只会越转越乱。这块百度没展开讲，反倒是我最想追问的地方。</p>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="http://www.xinhuanet.com/info/20261112/586da0794ff440b0a43199c9ebf1ab27/c.html" rel="noopener noreferrer" target="_blank">新华网《李彦宏首提”组织进化三原则”，判断AI下一幕是智能组织》</a></li>
+<li><a href="http://www.xinhuanet.com/tech/20261111/183aa161e70b4942b622e10b5e3da605/c.html" rel="noopener noreferrer" target="_blank">新华网《百度发布文心全新开源模型 编程、3D 建模、知识工作、内容创作等全面升级》</a></li>
+<li><a href="http://www.cnr.cn/bj/sijh/20261112/t20261112_527870324.shtml" rel="noopener noreferrer" target="_blank">央广网《百度多项AI成果在京发布》</a></li>
+<li><a href="http://www.stdaily.com/web/gdxw/2026-11/12/content_612203.html" rel="noopener noreferrer" target="_blank">科技日报《百度世界2026在京举办 李彦宏提出AI下一幕是智能组织》</a></li>
+</ul>
+<h2 id="开发者快讯">开发者快讯</h2>
+<ul>
+<li>词元所上线一个月入驻供应资源超 100 个，日均调用 5000 万次、日均 Token 超 7000 亿——<a href="http://www.cnr.cn/bj/sijh/20261112/t20261112_527870324.shtml" rel="noopener noreferrer" target="_blank">央广网</a></li>
+<li>文心 5.5 Flash Preview 权重 11 月 25 日全球开源，API 忙时输入 2 元/百万 Token——<a href="http://www.xinhuanet.com/tech/20261111/183aa161e70b4942b622e10b5e3da605/c.html" rel="noopener noreferrer" target="_blank">新华网</a></li>
+<li>天池 1024 卡超节点卡间带宽较上代提升 3 倍，单套可支撑 5 万亿参数训练——<a href="http://www.cnr.cn/bj/sijh/20261112/t20261112_527870324.shtml" rel="noopener noreferrer" target="_blank">央广网</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/%E7%99%BE%E5%BA%A6%E4%B8%96%E7%95%8C" data-astro-cid-egg7nqdx>百度世界</a><a href="/tags/%E6%9D%8E%E5%BD%A6%E5%AE%8F" data-astro-cid-egg7nqdx>李彦宏</a><a href="/tags/%E6%99%BA%E8%83%BD%E7%BB%84%E7%BB%87" data-astro-cid-egg7nqdx>智能组织</a><a href="/tags/%E8%AF%8D%E5%85%83%E6%89%80" data-astro-cid-egg7nqdx>词元所</a><a href="/tags/%E6%96%87%E5%BF%835.5" data-astro-cid-egg7nqdx>文心5.5</a><a href="/tags/%E6%98%86%E4%BB%91%E8%8A%AF" data-astro-cid-egg7nqdx>昆仑芯</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=%E7%99%BE%E5%BA%A6%E4%B8%96%E7%95%8C%202026%EF%BC%9A%E6%9D%8E%E5%BD%A6%E5%AE%8F%E6%8A%8A%20AI%20%E4%B8%8B%E4%B8%80%E5%B9%95%E5%AE%9A%E6%88%90%E3%80%8C%E6%99%BA%E8%83%BD%E7%BB%84%E7%BB%87%E3%80%8D%EF%BC%8C%E6%88%91%E6%9B%B4%E5%9C%A8%E6%84%8F%E4%BB%96%E9%A1%BA%E6%89%8B%E5%81%9A%E7%9A%84%E9%82%A3%E4%B8%AA%E3%80%8C%E6%A8%A1%E5%9E%8B%E4%BA%A4%E6%98%93%E6%89%80%E3%80%8D&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fbaidu-world-2026" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=%E7%99%BE%E5%BA%A6%E4%B8%96%E7%95%8C%202026%EF%BC%9A%E6%9D%8E%E5%BD%A6%E5%AE%8F%E6%8A%8A%20AI%20%E4%B8%8B%E4%B8%80%E5%B9%95%E5%AE%9A%E6%88%90%E3%80%8C%E6%99%BA%E8%83%BD%E7%BB%84%E7%BB%87%E3%80%8D%EF%BC%8C%E6%88%91%E6%9B%B4%E5%9C%A8%E6%84%8F%E4%BB%96%E9%A1%BA%E6%89%8B%E5%81%9A%E7%9A%84%E9%82%A3%E4%B8%AA%E3%80%8C%E6%A8%A1%E5%9E%8B%E4%BA%A4%E6%98%93%E6%89%80%E3%80%8D&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fbaidu-world-2026" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/baidu-world-2026" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/baidu-world-2026.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/baidu-world-2026.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/china-auto-export-global-car" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>全年出口冲 1000 万辆：中国车出海开始从「卖产品」切换到「卖体系」</span> </a> <span data-astro-cid-egg7nqdx></span> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/codebuddy-fde-certification" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>CodeBuddy 首批通过信通院 FDE 检验：AI 编程的下一个战场，从补全质量转向交付能力</span> <time data-astro-cid-egg7nqdx>2026-11-13</time> </a><a class="rel" href="/posts/anthropic-ipo-roadshow" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>Anthropic 冲上纳斯达克：643 亿美元路演背后，是一张 9009 亿美元的算力欠条</span> <time data-astro-cid-egg7nqdx>2026-11-12</time> </a><a class="rel" href="/posts/kimi-k26-code-preview" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合</span> <time data-astro-cid-egg7nqdx>2026-11-11</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#三条原则其实是在谈一件很旧的事" class data-slug="三条原则其实是在谈一件很旧的事" data-astro-cid-egg7nqdx>三条原则，其实是在谈一件很旧的事</a><a href="#词元所一个把选模型变成商品的尝试" class data-slug="词元所一个把选模型变成商品的尝试" data-astro-cid-egg7nqdx>词元所：一个把”选模型”变成商品的尝试</a><a href="#文心-55-flash真正值得抄作业的是价格表" class data-slug="文心-55-flash真正值得抄作业的是价格表" data-astro-cid-egg7nqdx>文心 5.5 Flash：真正值得抄作业的是价格表</a><a href="#芯云模体超节点和自研芯的进度条" class data-slug="芯云模体超节点和自研芯的进度条" data-astro-cid-egg7nqdx>芯云模体：超节点和自研芯的进度条</a><a href="#我怎么看这场发布会" class data-slug="我怎么看这场发布会" data-astro-cid-egg7nqdx>我怎么看这场发布会</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a><a href="#开发者快讯" class data-slug="开发者快讯" data-astro-cid-egg7nqdx>开发者快讯</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

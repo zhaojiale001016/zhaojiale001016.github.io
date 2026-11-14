@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="RTX 50 系在 11 连涨后连续回调，11 月 4 日 5080 最低价跌破 1.4 万，但全系平均溢价率仍有六成以上，5090D 比首发价还贵 152%。与此同时 AIC 品牌商又发出了新一轮涨价通知，内存价格同比涨了四倍。装机党现在最需要的是算清楚一笔账。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/rtx50-price-crash-analysis/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="RTX 5080 九天跌回 1.4 万：显卡这轮过山车，跌下去的是价格，跌不掉的是溢价 · 豆芽的技术博客"><meta property="og:description" content="RTX 50 系在 11 连涨后连续回调，11 月 4 日 5080 最低价跌破 1.4 万，但全系平均溢价率仍有六成以上，5090D 比首发价还贵 152%。与此同时 AIC 品牌商又发出了新一轮涨价通知，内存价格同比涨了四倍。装机党现在最需要的是算清楚一笔账。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/rtx50-price-crash-analysis/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/rtx50-price-crash-analysis-1.webp"><meta name="twitter:card" content="summary_large_image"><title>RTX 5080 九天跌回 1.4 万：显卡这轮过山车，跌下去的是价格，跌不掉的是溢价 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"RTX 5080 九天跌回 1.4 万：显卡这轮过山车，跌下去的是价格，跌不掉的是溢价","description":"RTX 50 系在 11 连涨后连续回调，11 月 4 日 5080 最低价跌破 1.4 万，但全系平均溢价率仍有六成以上，5090D 比首发价还贵 152%。与此同时 AIC 品牌商又发出了新一轮涨价通知，内存价格同比涨了四倍。装机党现在最需要的是算清楚一笔账。","image":"https://zhaojiale001016.github.io/img/inline/rtx50-price-crash-analysis-1.webp","datePublished":"2026-11-05T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:数码资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%95%B0%E7%A0%81%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>数码资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>RTX 5080 九天跌回 1.4 万：…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./rtx50-price-crash-analysis.md</span> <h1 data-astro-cid-egg7nqdx>RTX 5080 九天跌回 1.4 万：显卡这轮过山车，跌下去的是价格，跌不掉的是溢价</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%95%B0%E7%A0%81%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>数码资讯</a> <time data-astro-cid-egg7nqdx>2026-11-05</time> <span data-astro-cid-egg7nqdx>约 8 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/rtx50-price-crash-analysis-1.webp" alt="RTX 5080 九天跌回 1.4 万：显卡这轮过山车，跌下去的是价格，跌不掉的是溢价" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>最近打算装机的朋友，我劝你先把钱包按住，听我算一笔账。</p>
+<p>事情是这样的：RTX 50 系显卡在 10 月中下旬<a href="https://3g.china.com/act/news/10000169/20261103/49836076.html" rel="noopener noreferrer" target="_blank">连续涨了 11 个交易日</a>，华强北一度「一日一价」，RTX 5080 渠道价冲到近 2 万，5090 系被炒到 5 万以上，商户连报价单都「写不了」。然后从 10 月底开始掉头，连跌了一周多。11 月 4 日，<a href="https://post.m.smzdm.com/p/a6z4gx8e/" rel="noopener noreferrer" target="_blank">RTX 5080 的全网最低价跌破了 1.4 万</a>——九天前这个数字还是 19499 元。</p>
+<p><img src="/img/inline/rtx50-price-crash-analysis-1.webp" alt="华强北渠道里的 RTX 显卡，报价一度一天一变">
+<em>图源：中华网科技《RTX 50 系连续 11 个交易日上涨》</em></p>
+<p>一涨一跌，6011 元没了。看着很爽对吧？问题是，这轮下跌跌掉的只是恐慌性溢价的水分，<strong>真正的账还远没有还清。</strong></p>
+<h2 id="先把账摊开">先把账摊开</h2>
+<p>拿 11 月 4 日的全网最低价和国行首发价对比，差距是这样的：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>型号</th><th>最低价</th><th>首发价</th><th>溢价</th></tr></thead><tbody><tr><td>RTX 5090D 32GB</td><td>41599 元</td><td>16499 元</td><td>+152%</td></tr><tr><td>RTX 5080 16GB</td><td>13488 元</td><td>8299 元</td><td>+62.5%</td></tr><tr><td>RTX 5070 Ti 16GB</td><td>11288 元</td><td>6299 元</td><td>+79.2%</td></tr><tr><td>RTX 5070 12GB</td><td>7349 元</td><td>4599 元</td><td>+59.8%</td></tr><tr><td>RTX 5060 Ti 16GB</td><td>5549 元</td><td>3599 元</td><td>+54.2%</td></tr><tr><td>RX 9070 XT 16GB</td><td>5999 元</td><td>4999 元</td><td>+20%</td></tr></tbody></table>
+<p>数据来自<a href="https://post.m.smzdm.com/p/a6z4gx8e/" rel="noopener noreferrer" target="_blank">显卡日报的价格对账</a>，全系平均溢价率从高点 94% 回落到 64.66%。也就是说，5080 跌了六千块，你买它还是要比首发价多掏五千多。5090D 更夸张，跌掉一万，还剩两万五的账。</p>
+<p>这就是这轮行情最迷惑人的地方：<strong>跌得狠，不代表亏得少。</strong> 你比首发价多付的那部分，才是价格回归时要还的账。</p>
+<p><img src="/img/inline/rtx50-price-crash-analysis-2.jpg" alt="显卡日报 11 月 4 日对账图：5080 跌破 1.4 万">
+<em>图源：什么值得买《显卡日报：RTX 5080 全网最低价跌破 1.4 万》</em></p>
+<h2 id="涨价的根子不在显卡厂">涨价的根子不在显卡厂</h2>
+<p>很多人把这轮涨价归咎于黄牛和渠道封仓惜售——确实有这因素，华强北商户自己也承认「现在这个行情，让我们卖我们也不想卖」。但根子在上游。</p>
+<p>这轮涨价的传导链很清晰：AI 数据中心对 HBM 的需求爆发，存储原厂把七八成新增产能转向 HBM 和服务器 DRAM，消费级的 GDDR 产能被持续挤占，<a href="https://www.stcn.com/article/detail/4060874.html" rel="noopener noreferrer" target="_blank">原厂对英伟达的显存报价一路上调</a>，而板卡厂不能绕开英伟达自己买便宜显存，中间没有任何缓冲，成本直接砸进套装价。GDDR7 的报价比 GDDR6 更凶，所以 50 系涨得比 A 卡猛——RX 9070 XT 只溢价 20%，9070 GRE 甚至低于首发价，就是这个原因。</p>
+<p>内存这边更惨烈：<a href="https://news.zol.com.cn/1267/12674030.html" rel="noopener noreferrer" target="_blank">DDR5 16G×2 套条最低报价 1974 元</a>，去年同期大约 480 元，涨了四倍还多。CPU 反而是唯一持续走低的品类，7500F 已经杀回 599 元的历史低位。现在装机，钱全被内存和显卡吃掉了。</p>
+<p>更要命的是，跌了几天之后，<a href="https://m.weibo.cn/detail/5361531476772969" rel="noopener noreferrer" target="_blank">AIC 品牌商本周又确认了新一轮提价计划</a>：5090 D V2 单卡上调 2200-3300 元，5080 上调 2500-2800 元，理由除了显存荒又加了铜价上涨。行业分析认为 AMD 也可能在 11 月内跟进。这轮「回调」，随时可能被新一轮调价通知掀翻。</p>
+<h2 id="那现在到底买不买">那现在到底买不买</h2>
+<p>我的建议分三种人：</p>
+<p><strong>刚需（显卡坏了、机器等着用）</strong>：只看「少亏钱」，答案其实不在 RTX 50 里。RX 9070 GRE 12GB 现在 4049 元，比首发还便宜 3.6%，跑分比 7349 元的 RTX 5070 还高一点；9070 XT 16GB 5999 元，比 5070 便宜 1350 元，1440p 和 4K 下平均快约 25%。代价是光追和 DLSS 生态、以及 CUDA 工具链——靠 CUDA 吃饭的请自动忽略这条。</p>
+<p><strong>非要 N 卡</strong>：16GB 显存 N 卡里溢价最低的是 5060 Ti 16GB。真正该避开的是 5070 Ti——比首发贵 79%，只比 5080 便宜 2200 元，溢价反而高 17 个百分点，两头不讨好。至于 8GB 版的 5060 Ti，省 550 元买一张会被显存先卡死的卡，这笔账不用我帮你算。</p>
+<p><strong>不急的</strong>：等。两个变量值得盯——5080 24GB 版本能不能在 1 月发布（台媒说英伟达 10 月底还没给 AIC 设计资料，悬），以及 DRAM 现货价格的方向。业内的判断是 DRAM 供需紧张至少延续到 2027 年，实质回落要等新增产能投放。换句话说，这不会是最后一轮过山车。</p>
+<h2 id="一句大实话">一句大实话</h2>
+<p>这轮行情里最委屈的其实是普通装机党：游戏没多玩几个，装机的钱先翻了一倍。AI 挤兑算力，最后埋单的是玩游戏的——这逻辑荒诞，但真实发生了。如果你的老卡还能再战半年，我真心建议再战半年。等这一轮把 HBM 的产能账还完，比现在追一张溢价 60% 的卡划算得多。</p>
+<hr>
+<p><strong>快讯三条：</strong></p>
+<ul>
+<li>Valve 10 月 Steam 硬件调查：<a href="https://finance.sina.com.cn/tech/roll/2026-11-04/doc-inixqsyv0022467.shtml" rel="noopener noreferrer" target="_blank">RTX 3060 重夺最常见显卡位置（3.62%）</a>，RTX 5070 占比回落 2.3 个百分点，主因是中文区样本占比下降。</li>
+<li>中国渠道 RTX 50 系库存售罄，<a href="https://finance.sina.com.cn/tech/roll/2026-11-04/doc-inixqsyv0022467.shtml" rel="noopener noreferrer" target="_blank">部分厂商开始向经销商重新推荐 RTX 3060/3050 等老型号</a>，渠道预计老卡不降反升。</li>
+<li>处理器全线逼近历史低位：Ultra 7 270K Plus 散片 1859 元、9950X 散片 2707 元（<a href="https://news.zol.com.cn/1267/12674030.html" rel="noopener noreferrer" target="_blank">行情详情</a>），CPU 是当前装机唯一「正常」的大件。</li>
+</ul>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="https://3g.china.com/act/news/10000169/20261103/49836076.html" rel="noopener noreferrer" target="_blank">中华网科技：RTX 50 系显卡连续 11 个交易日上涨</a></li>
+<li><a href="https://post.m.smzdm.com/p/a6z4gx8e/" rel="noopener noreferrer" target="_blank">什么值得买：显卡日报，RTX 5080 最低价跌破 1.4 万</a></li>
+<li><a href="https://www.stcn.com/article/detail/4060874.html" rel="noopener noreferrer" target="_blank">证券时报：存储原厂上调对英伟达显存报价</a></li>
+<li><a href="https://news.zol.com.cn/1267/12674030.html" rel="noopener noreferrer" target="_blank">中关村在线：内存/CPU 装机行情</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/%E6%98%BE%E5%8D%A1" data-astro-cid-egg7nqdx>显卡</a><a href="/tags/RTX50" data-astro-cid-egg7nqdx>RTX50</a><a href="/tags/%E5%86%85%E5%AD%98" data-astro-cid-egg7nqdx>内存</a><a href="/tags/DIY%E8%A3%85%E6%9C%BA" data-astro-cid-egg7nqdx>DIY装机</a><a href="/tags/%E7%A1%AC%E4%BB%B6%E8%A1%8C%E6%83%85" data-astro-cid-egg7nqdx>硬件行情</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=RTX%205080%20%E4%B9%9D%E5%A4%A9%E8%B7%8C%E5%9B%9E%201.4%20%E4%B8%87%EF%BC%9A%E6%98%BE%E5%8D%A1%E8%BF%99%E8%BD%AE%E8%BF%87%E5%B1%B1%E8%BD%A6%EF%BC%8C%E8%B7%8C%E4%B8%8B%E5%8E%BB%E7%9A%84%E6%98%AF%E4%BB%B7%E6%A0%BC%EF%BC%8C%E8%B7%8C%E4%B8%8D%E6%8E%89%E7%9A%84%E6%98%AF%E6%BA%A2%E4%BB%B7&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Frtx50-price-crash-analysis" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=RTX%205080%20%E4%B9%9D%E5%A4%A9%E8%B7%8C%E5%9B%9E%201.4%20%E4%B8%87%EF%BC%9A%E6%98%BE%E5%8D%A1%E8%BF%99%E8%BD%AE%E8%BF%87%E5%B1%B1%E8%BD%A6%EF%BC%8C%E8%B7%8C%E4%B8%8B%E5%8E%BB%E7%9A%84%E6%98%AF%E4%BB%B7%E6%A0%BC%EF%BC%8C%E8%B7%8C%E4%B8%8D%E6%8E%89%E7%9A%84%E6%98%AF%E6%BA%A2%E4%BB%B7&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Frtx50-price-crash-analysis" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/rtx50-price-crash-analysis" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/rtx50-price-crash-analysis.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/rtx50-price-crash-analysis.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/programmer-job-market-2026" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>程序员这个岗位正在拆成两半，本周的三条新闻拼出了全貌</span> </a> <a class="pn right" href="/posts/llm-agent-shift-deepseek-longcat" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/gpu-huaqiangbei-overseas-buyers" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>数码资讯</span> <span class="t" data-astro-cid-egg7nqdx>老外扎堆华强北扫显卡：一天一价的行情背后，是全球算力荒的价差套利</span> <time data-astro-cid-egg7nqdx>2026-11-09</time> </a><a class="rel" href="/posts/huawei-osta-xingmang-debut" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>数码资讯</span> <span class="t" data-astro-cid-egg7nqdx>华为开了个新牌子：OSTA 星芒，11 月 20 日亮相，阔直板手机先来了</span> <time data-astro-cid-egg7nqdx>2026-11-12</time> </a><a class="rel" href="/posts/oppo-reno17-debut" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>数码资讯</span> <span class="t" data-astro-cid-egg7nqdx>猫爪后盖 + 8000mAh：OPPO Reno17 外观首秀，这次中端机卷的不只是快充</span> <time data-astro-cid-egg7nqdx>2026-11-09</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#先把账摊开" class data-slug="先把账摊开" data-astro-cid-egg7nqdx>先把账摊开</a><a href="#涨价的根子不在显卡厂" class data-slug="涨价的根子不在显卡厂" data-astro-cid-egg7nqdx>涨价的根子不在显卡厂</a><a href="#那现在到底买不买" class data-slug="那现在到底买不买" data-astro-cid-egg7nqdx>那现在到底买不买</a><a href="#一句大实话" class data-slug="一句大实话" data-astro-cid-egg7nqdx>一句大实话</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

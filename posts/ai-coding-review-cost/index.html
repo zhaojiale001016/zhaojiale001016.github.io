@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="AI 编程工具确实让代码生成变快了，但哈佛和多项行业调查显示，审查、返工和流水线成本正在吞噬这部分收益，瓶颈从生产端转移到了验证端"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/ai-coding-review-cost/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="AI 写代码省下的时间，正在审查环节加倍还回去 · 豆芽的技术博客"><meta property="og:description" content="AI 编程工具确实让代码生成变快了，但哈佛和多项行业调查显示，审查、返工和流水线成本正在吞噬这部分收益，瓶颈从生产端转移到了验证端"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/ai-coding-review-cost/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/ai-coding-review-cost-1.webp"><meta name="twitter:card" content="summary_large_image"><title>AI 写代码省下的时间，正在审查环节加倍还回去 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"AI 写代码省下的时间，正在审查环节加倍还回去","description":"AI 编程工具确实让代码生成变快了，但哈佛和多项行业调查显示，审查、返工和流水线成本正在吞噬这部分收益，瓶颈从生产端转移到了验证端","image":"https://zhaojiale001016.github.io/img/inline/ai-coding-review-cost-1.webp","datePublished":"2026-11-05T09:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:技术资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>AI 写代码省下的时间，正在审查环节加倍…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./ai-coding-review-cost.md</span> <h1 data-astro-cid-egg7nqdx>AI 写代码省下的时间，正在审查环节加倍还回去</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a> <time data-astro-cid-egg7nqdx>2026-11-05</time> <span data-astro-cid-egg7nqdx>约 5 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/ai-coding-review-cost-1.webp" alt="AI 写代码省下的时间，正在审查环节加倍还回去" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>这周看到一组数据，愣了一下。</p>
+<p>哈佛的学者追踪了 700 多家引入 AI 编程 Agent 的软件企业，结论挺反直觉的：代码提交量涨了 20% 到 30%，PR 数量多了 23%，但衡量真实产出的 Jira 任务完成率几乎没变。PR 从提交到合并的周期反而拉长了 49%，被打回修改的比例接近翻倍。</p>
+<p>另一头，BairesDev 调查了 705 名开发者：AI 平均每周帮人省下 13 小时编程时间，听着很美好。但 67% 的人说，审查 AI 生成代码花的时间反而变多了。</p>
+<p>省下的时间没有消失，只是换了个地方被花掉。</p>
+<h2 id="瓶颈不在生产端在验证端">瓶颈不在生产端，在验证端</h2>
+<p>这事细想不难理解。以前代码是稀缺品，写得慢，看得过来。现在 AI 十几分钟能吐出几千行，而一个人一分钟吃透一个函数已经算快。生产端加了马达，验证端还是两条腿走路，堵是必然的。</p>
+<p>更麻烦的是 AI 代码读起来更累。读同事写的代码，你能大概猜到他为什么这么写。AI 的代码没有”为什么”，只有结果。它还特别擅长局部最优：眼前这个问题解得很漂亮，但完全没有全局架构意识，一个模块一个模块堆上去，几个迭代之后就是一座没人敢动的代码山。</p>
+<p>还有个隐蔽的坑是测试同源。AI 既写实现又写测试，两边可能错在同一个地方。测试全绿，看着很安心，实际上边界情况根本没人真的读过。</p>
+<p><img src="/img/inline/ai-coding-review-cost-1.webp" alt="代码生成越来越快，交付和验证能不能跟上成了新问题">
+<em>图源：腾讯云开发者社区《GitHub 今年新增 400 万 CPU 核心：AI 快把代码仓库填满了》</em></p>
+<h2 id="github-的服务器也在替这笔账买单">GitHub 的服务器也在替这笔账买单</h2>
+<p>审查只是人的成本，机器的成本也在涨。</p>
+<p>GitHub 披露，2026 年已经新增了 400 万 CPU 核心和 160 PB 存储。背景是：今年 9 月，开发者和 Agent 在平台上产生了 73.8 亿次提交，是去年同期的五倍多（数据来自<a href="https://cloud.tencent.com.cn/developer/article/2775072" rel="noopener noreferrer" target="_blank">腾讯云开发者社区的整理</a>）。</p>
+<p>这里面有个很真实的场景：配置粗糙的 Agent 改个空格就推一次，报错换个变量名再推一次，把 GitHub Actions 当远程调试器用。一晚上功能没交付多少，git log 翻出几十页。每一次”再试一下”背后都是一轮环境初始化、依赖安装和自动化测试。个人省下的等待，变成团队共享 Runner 的排队。</p>
+<p><img src="/img/inline/ai-coding-review-cost-2.webp" alt="AI 生成的海量代码正在挤爆 GitHub 的基础设施">
+<em>图源：腾讯云开发者社区《GitHub 今年新增 400 万 CPU 核心：AI 快把代码仓库填满了》</em></p>
+<h2 id="那到底该怎么用">那到底该怎么用</h2>
+<p>我不觉得结论是”别用 AI 写代码”，那也太因噎废食了。但这几份调查放在一起，指向的做事方式其实挺清楚：</p>
+<p>审查要分流，别一视同仁。文案、样式、低风险改动，交给自动化测试和静态扫描就够了。涉及权限、支付、用户数据的改动，必须人来逐行看。逐行通读所有 AI 产出在生产环境里根本不可持续，承认这一点是第一步。</p>
+<p>Agent 要有”本地验证”的门槛。能在提交前跑完的检查就别推到 CI 上去跑，同类失败达到上限就停下来等人介入，而不是无限重试。这是协作礼貌，也是成本控制。</p>
+<p>考核指标得换。如果团队还拿提交次数和代码行数衡量产出，Agent 会轻松把数字做得很漂亮，交付原地踏步。值得追踪的是另一组数：一个需求经过几次无效重试、消耗多少 CI 分钟、审查者理解改动花了多久、上线后返工了没有。</p>
+<p>写代码这件事正在变便宜，变贵的是判断”这段代码该不该合进去”。这个趋势短期内看不到回头，早点适应比焦虑有用。</p>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="https://cloud.tencent.com.cn/developer/article/2775072" rel="noopener noreferrer" target="_blank">腾讯云开发者社区：GitHub 今年新增 400 万 CPU 核心，AI 快把代码仓库填满了</a></li>
+<li><a href="http://finance.sina.cn/2026-11-07/detail-inixxcvw4637628.d.html" rel="noopener noreferrer" target="_blank">新浪科技（量子位）：GitHub 不堪重负！OpenAI 收购替代品，A 社原地自研</a></li>
+<li><a href="https://github.blog/engineering/building-git-infrastructure-for-agent-scale-development/" rel="noopener noreferrer" target="_blank">GitHub Blog: Building Git infrastructure for agent-scale development</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a><a href="/tags/AI%E7%BC%96%E7%A8%8B" data-astro-cid-egg7nqdx>AI编程</a><a href="/tags/%E8%A7%82%E7%82%B9" data-astro-cid-egg7nqdx>观点</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=AI%20%E5%86%99%E4%BB%A3%E7%A0%81%E7%9C%81%E4%B8%8B%E7%9A%84%E6%97%B6%E9%97%B4%EF%BC%8C%E6%AD%A3%E5%9C%A8%E5%AE%A1%E6%9F%A5%E7%8E%AF%E8%8A%82%E5%8A%A0%E5%80%8D%E8%BF%98%E5%9B%9E%E5%8E%BB&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fai-coding-review-cost" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=AI%20%E5%86%99%E4%BB%A3%E7%A0%81%E7%9C%81%E4%B8%8B%E7%9A%84%E6%97%B6%E9%97%B4%EF%BC%8C%E6%AD%A3%E5%9C%A8%E5%AE%A1%E6%9F%A5%E7%8E%AF%E8%8A%82%E5%8A%A0%E5%80%8D%E8%BF%98%E5%9B%9E%E5%8E%BB&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fai-coding-review-cost" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/ai-coding-review-cost" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/ai-coding-review-cost.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/ai-coding-review-cost.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <span data-astro-cid-egg7nqdx></span> <a class="pn right" href="/posts/openai-acquires-pierre" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>OpenAI 收购 Pierre：AI 不仅会写代码，还要学会审代码</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/programmer-job-market-2026" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>程序员这个岗位正在拆成两半，本周的三条新闻拼出了全貌</span> <time data-astro-cid-egg7nqdx>2026-11-05</time> </a><a class="rel" href="/posts/github-universe-2026-recap" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>GitHub Universe 2026 散场后，我记下了这几个数字</span> <time data-astro-cid-egg7nqdx>2026-11-05</time> </a><a class="rel" href="/posts/codebuddy-fde-certification" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>CodeBuddy 首批通过信通院 FDE 检验：AI 编程的下一个战场，从补全质量转向交付能力</span> <time data-astro-cid-egg7nqdx>2026-11-13</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#瓶颈不在生产端在验证端" class data-slug="瓶颈不在生产端在验证端" data-astro-cid-egg7nqdx>瓶颈不在生产端，在验证端</a><a href="#github-的服务器也在替这笔账买单" class data-slug="github-的服务器也在替这笔账买单" data-astro-cid-egg7nqdx>GitHub 的服务器也在替这笔账买单</a><a href="#那到底该怎么用" class data-slug="那到底该怎么用" data-astro-cid-egg7nqdx>那到底该怎么用</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

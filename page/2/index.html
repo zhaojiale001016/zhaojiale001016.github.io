@@ -1,0 +1,96 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="豆芽的技术博客：前端、AI、游戏、硬件、篮球与技术圈观察"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/page/2/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="page 2 · 豆芽的技术博客"><meta property="og:description" content="豆芽的技术博客：前端、AI、游戏、硬件、篮球与技术圈观察"><meta property="og:url" content="https://zhaojiale001016.github.io/page/2/"><meta name="twitter:card" content="summary_large_image"><title>page 2 · 豆芽的技术博客</title><link rel="stylesheet" href="/_astro/about.CFfxUn7k.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content">  <div class="wrap" style="padding-top: 44px;"> <div class="section-head"> <h2>文章列表</h2> <a class="more" href="/archives">cat archives →</a> </div> <div class="grid"> <article class="card"> <a href="/posts/codex-for-almost-everything"><img class="cover" src="/img/inline/codex-for-almost-everything-1.webp" alt="Codex 不再只是写代码的：OpenAI 这次更新，把 AI 编程工具推向了『通用代理』" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">技术资讯</span> <time>2026-11-09</time> </div> <h3><a href="/posts/codex-for-almost-everything">Codex 不再只是写代码的：OpenAI 这次更新，把 AI 编程工具推向了『通用代理』</a></h3> <p class="desc">11 月 7 日 OpenAI 发布 Codex 重大更新：后台操控电脑、内置浏览器、图像生成、90+ 插件、记忆与定时自动化全部上车。当每周 300 万开发者在用的编程代理开始越过代码边界，AI 工具的下一战场已经不在 IDE 里了</p> <div class="tags"><a href="/tags/OpenAI"><span>OpenAI</span></a><a href="/tags/Codex"><span>Codex</span></a><a href="/tags/AI%E4%BB%A3%E7%90%86"><span>AI代理</span></a></div> </div> </article><article class="card"> <a href="/posts/gpu-huaqiangbei-overseas-buyers"><img class="cover" src="/img/inline/gpu-huaqiangbei-overseas-buyers-1.webp" alt="老外扎堆华强北扫显卡：一天一价的行情背后，是全球算力荒的价差套利" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">数码资讯</span> <time>2026-11-09</time> </div> <h3><a href="/posts/gpu-huaqiangbei-overseas-buyers">老外扎堆华强北扫显卡：一天一价的行情背后，是全球算力荒的价差套利</a></h3> <p class="desc">RTX 50 系连涨 11 个交易日后急跌，但真正值得看的是另一件事：俄罗斯、印度、中东客商挤进华强北柜台，商户外贸订单占比超 50%，深圳电脑零部件前三季度出口 3133 亿元增长 32.6%。显卡已经不只是 DIY 装机的零件，而是全球 AI 算力紧缺下的硬通货。</p> <div class="tags"><a href="/tags/%E6%98%BE%E5%8D%A1"><span>显卡</span></a><a href="/tags/%E5%8D%8E%E5%BC%BA%E5%8C%97"><span>华强北</span></a><a href="/tags/RTX50"><span>RTX50</span></a></div> </div> </article><article class="card"> <a href="/posts/nba-bucks-worst-start"><img class="cover" src="/img/inline/nba-bucks-worst-start-1.webp" alt="雄鹿 1 胜 9 负创 32 年最差开局，里夫斯 43 分带队登顶西部：这个比赛日信息量很大" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">体育资讯</span> <time>2026-11-09</time> </div> <h3><a href="/posts/nba-bucks-worst-start">雄鹿 1 胜 9 负创 32 年最差开局，里夫斯 43 分带队登顶西部：这个比赛日信息量很大</a></h3> <p class="desc">11 月 9 日的 NBA 常规赛像一次分层测试：凯尔特人 117-97 送雄鹿六连败，密尔沃基人打出 1993-94 赛季以来最差开局；东契奇缺阵的湖人靠里夫斯 43 分五连胜登顶西部；76 人 9 胜 2 负坐稳东部第一，詹姆斯 22 分创赛季新高。东西部的强弱版图，正在一天天变得清晰。</p> <div class="tags"><a href="/tags/NBA"><span>NBA</span></a><a href="/tags/%E9%9B%84%E9%B9%BF"><span>雄鹿</span></a><a href="/tags/%E5%87%AF%E5%B0%94%E7%89%B9%E4%BA%BA"><span>凯尔特人</span></a></div> </div> </article><article class="card"> <a href="/posts/yangwang-dingyao-debut"><img class="cover" src="/img/inline/yangwang-dingyao-debut-1.webp" alt="208 万对标劳斯莱斯：仰望鼎曜阿布扎比全球首发，中国超豪华这次是认真的" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">汽车资讯</span> <time>2026-11-09</time> </div> <h3><a href="/posts/yangwang-dingyao-debut">208 万对标劳斯莱斯：仰望鼎曜阿布扎比全球首发，中国超豪华这次是认真的</a></h3> <p class="desc">11 月 7 日晚，仰望首款超豪华行政轿车鼎曜在阿布扎比全球首发：5.6 米车长、137 颗宝石格栅、24K 真金车标、对开门、易四方 + 云辇 + 千公里续航，山河鼎韵限量版预订价 208 万元。同一天红旗 H9 也在国内开启预售——中国品牌的向上冲刺，正在两条战线同时打响</p> <div class="tags"><a href="/tags/%E4%BB%B0%E6%9C%9B"><span>仰望</span></a><a href="/tags/%E9%BC%8E%E6%9B%9C"><span>鼎曜</span></a><a href="/tags/%E6%AF%94%E4%BA%9A%E8%BF%AA"><span>比亚迪</span></a></div> </div> </article><article class="card"> <a href="/posts/byd-seal07-gen2-yunnian-m"><img class="cover" src="/img/inline/byd-seal07-gen2-yunnian-m-1.webp" alt="磁流变悬架打进 14 万价位：第二代海豹 07 上市，比亚迪又开始卷底盘了" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">汽车资讯</span> <time>2026-11-06</time> </div> <h3><a href="/posts/byd-seal07-gen2-yunnian-m">磁流变悬架打进 14 万价位：第二代海豹 07 上市，比亚迪又开始卷底盘了</a></h3> <p class="desc">11 月 5 日比亚迪海洋网第二代海豹 07 上市，置换价 13.59 万元起。首搭云辇-M 智能磁流变车身控制系统、775km 续航加 5 分钟闪充——2026 年的收官阶段，卷的重点悄悄从智驾转回了底盘和补能</p> <div class="tags"><a href="/tags/%E6%AF%94%E4%BA%9A%E8%BF%AA"><span>比亚迪</span></a><a href="/tags/%E6%B5%B7%E8%B1%B907"><span>海豹07</span></a><a href="/tags/%E4%BA%91%E8%BE%87-M"><span>云辇-M</span></a></div> </div> </article><article class="card"> <a href="/posts/meta-conductor-ai-coding-war"><img class="cover" src="/img/inline/meta-conductor-ai-coding-war-1.webp" alt="两天三家出手：Meta 买下 Conductor，AI 编程这块地皮正在被疯抢" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">技术资讯</span> <time>2026-11-06</time> </div> <h3><a href="/posts/meta-conductor-ai-coding-war">两天三家出手：Meta 买下 Conductor，AI 编程这块地皮正在被疯抢</a></h3> <p class="desc">OpenAI 刚官宣收购 Pierre，转头 Meta 就把多智能体编程公司 Conductor 收入囊中；同一周，Claude Code 产品负责人 Cat Wu 离职次日加盟 OpenAI。AI 编程工具的竞争已经从『谁的模型强』变成了『谁圈地快』</p> <div class="tags"><a href="/tags/AI%E7%BC%96%E7%A8%8B"><span>AI编程</span></a><a href="/tags/Meta"><span>Meta</span></a><a href="/tags/OpenAI"><span>OpenAI</span></a></div> </div> </article><article class="card"> <a href="/posts/switch2-third-party-lineup-2027"><img class="cover" src="/img/inline/switch2-third-party-lineup-2027-1.webp" alt="硬件卖不动的任天堂，把宝押给了第三方：Switch 2 未来一年阵容里藏着 FromSoftware 的独占" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">游戏资讯</span> <time>2026-11-06</time> </div> <h3><a href="/posts/switch2-third-party-lineup-2027">硬件卖不动的任天堂，把宝押给了第三方：Switch 2 未来一年阵容里藏着 FromSoftware 的独占</a></h3> <p class="desc">财报说明会上任天堂公布了 Switch 2 未来一年第三方阵容：《黄昏血族》《生化危机：维罗妮卡》《最终幻想VII：启示录》都在列，还有《剑星 完全版》补位。硬件跌 41% 的日子，内容成了唯一的解药</p> <div class="tags"><a href="/tags/%E4%BB%BB%E5%A4%A9%E5%A0%82"><span>任天堂</span></a><a href="/tags/Switch%202"><span>Switch 2</span></a><a href="/tags/FromSoftware"><span>FromSoftware</span></a></div> </div> </article><article class="card"> <a href="/posts/llm-agent-shift-deepseek-longcat"><img class="cover" src="/img/inline/llm-agent-shift-deepseek-longcat-1.webp" alt="DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活" loading="lazy"></a> <div class="body"> <div class="meta"> <span class="cat">技术资讯</span> <time>2026-11-05</time> </div> <h3><a href="/posts/llm-agent-shift-deepseek-longcat">DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活</a></h3> <p class="desc">11 月刚开头，DeepSeek 公开 Super-agent 架构让 AI 调度 AI，美团发布全程国产算力训练的 LongCat-2.5，OpenAI 悄悄灰度 GPT-6.2。三家动作放一起看，行业风向已经变了：模型比的不是谁会聊，是谁能把活干完。</p> <div class="tags"><a href="/tags/DeepSeek"><span>DeepSeek</span></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B"><span>大模型</span></a><a href="/tags/Agent"><span>Agent</span></a></div> </div> </article> </div> <nav class="pager"> <a href="/page/1">← 较新</a> <span class="cur">第 2 / 3 页</span> <a href="/page/3">较旧 →</a> </nav> </div>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>

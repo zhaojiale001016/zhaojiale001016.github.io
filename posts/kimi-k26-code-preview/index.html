@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="月之暗面低调上线专为 AI 编程优化的万亿参数模型 Kimi K2.6-code-preview，需 39 元/月会员计划才能在 Kimi Code 中使用；第三方评测 89 分，比 K2.5 提升 6 分但仍落后榜首。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/kimi-k26-code-preview/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合 · 豆芽的技术博客"><meta property="og:description" content="月之暗面低调上线专为 AI 编程优化的万亿参数模型 Kimi K2.6-code-preview，需 39 元/月会员计划才能在 Kimi Code 中使用；第三方评测 89 分，比 K2.5 提升 6 分但仍落后榜首。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/kimi-k26-code-preview/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/kimi-k26-code-preview-1.webp"><meta name="twitter:card" content="summary_large_image"><title>Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合","description":"月之暗面低调上线专为 AI 编程优化的万亿参数模型 Kimi K2.6-code-preview，需 39 元/月会员计划才能在 Kimi Code 中使用；第三方评测 89 分，比 K2.5 提升 6 分但仍落后榜首。","image":"https://zhaojiale001016.github.io/img/inline/kimi-k26-code-preview-1.webp","datePublished":"2026-11-11T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:技术资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>Kimi K2.6-code-previ…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./kimi-k26-code-preview.md</span> <h1 data-astro-cid-egg7nqdx>Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a> <time data-astro-cid-egg7nqdx>2026-11-11</time> <span data-astro-cid-egg7nqdx>约 8 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/kimi-k26-code-preview-1.webp" alt="Kimi K2.6-code-preview 上线：万亿参数模型挤进 39 元/月，AI 编程的价格战打到第二回合" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>这周国产大模型的更新节奏有点密。GLM-5.1 开源、MiniMax 2.7 开源，然后是月之暗面的 Kimi K2.6-code-preview——一个专门为 AI 编程调校的万亿参数模型，11 月 11 日前后上的线。</p>
+<p>但官方这次几乎没宣传。官网上只挂了一行”K2.6-code-preview 现已上线”，连”这次升级了什么”的说明都还没写全。反而是内测用户和各家媒体先把它扒了出来。</p>
+<p><img src="/img/inline/kimi-k26-code-preview-1.webp" alt="Kimi Code 界面标注 K2.6-code-preview 已上线">
+<em>图源：快科技《国产万亿大模型再升级 kimi 2.6-code来了：AI编程新选择 月费39起》</em></p>
+<h2 id="先把价格说清楚因为这是它最大的卖点">先把价格说清楚，因为这是它最大的卖点</h2>
+<p>要用 K2.6-code-preview，前提是开 Kimi 的会员计划，起步 <strong>39 元每月</strong>，在 Kimi Code 里调用。</p>
+<p>这个定价放在今天的市场里已经不算贵了。同期海外订阅 Claude / Codex 那一档的价格是它的好几倍，而且是美元。国产阵营这半年最明显的变化不是分数涨了多少，而是同一档能力的月费被摁着往下降了。</p>
+<p>不过有个细节值得留意：K2.6-code-preview 是 K2.5 的改进版，而 K2.5 本身已经是万亿参数。<a href="https://www.21jingji.com/article/20260422/herald/5ac0ce6cf7d0c8062db9381f59e8862f.html" rel="noopener noreferrer" target="_blank">K2.6 的开源版早在今年 4 月就发布过</a>，当时主打的是长程编码——不间断写 13 小时、改 4000 多行代码，以及 300 个子 Agent 并行调度。所以 K2.6-code 并不是从零起的新模型，而是把通用版里”写代码”这条最吃算力的路径单独抽出来，做成付费订阅里能给到的形态。</p>
+<h2 id="分数到底多少我更信这张表但更信它的局限">分数到底多少？我更信这张表，但更信它的局限</h2>
+<p>官方没有公布榜单成绩，于是内测圈子里流传了一份第三方评测（作者自评，任务集和评分口径都没有公开）：</p>
+<p><img src="/img/inline/kimi-k26-code-preview-2.webp" alt="第三方编程能力评测榜，Kimi 2.6 Code Preview 排第 10 得 89 分">
+<em>图源：快科技《国产万亿大模型再升级 kimi 2.6-code来了：AI编程新选择 月费39起》</em></p>
+<p>表里 K2.6-code-preview 得 89 分，K2.5 是 83 分，涨了 6 分。排在它前面的是 KAT-Coder-Prev-2（97）、GPT-5.4（97）、Opus 4.6（95）、Qwen3.6 Plus Preview（95）、GLM-5（94）、Claude Sonnet 4.6（93.5）、GPT-5.3 Codex（92.5）、Gemini 3.1 Pro Preview（92）。Claude Sonnet 4.6 排在它前面一位。</p>
+<p>内测者对这次升级的描述集中在三点：推理深度、Agent 的规划质量、以及多步工具调用时的可靠性。有开发者说它的思维链”有 Opus 的味道”——这评价有点微妙，意思是风格像，而不是水平追上了。</p>
+<p>我的判断更直接一点：89 分和 83 分这 6 分差距，在真实工程里几乎没有体感。真正决定”好不好用”的，是它在一个真实仓库里连续跑三小时会不会跑偏、工具调用失败率多高、上下文吃紧的时候会不会降智。这些东西任何榜单都测不出来。而这份第三方评测表最大的问题是不可复现——任务集、评分脚本、样本量都没公开，读者没法验证它到底测的是什么。</p>
+<h2 id="已经用上的人怎么说">已经用上的人怎么说</h2>
+<p>翻了一下社交平台上的实际反馈，评价偏正面但也说得很具体：</p>
+<p><img src="/img/inline/kimi-k26-code-preview-3.webp" alt="内测用户对 Kimi Coding Plan 的实际使用反馈">
+<em>图源：快科技《国产万亿大模型再升级 kimi 2.6-code来了：AI编程新选择 月费39起》</em></p>
+<p>被吐槽最多的不是能力，是节奏。“已经发布了，正在测试中感觉指令遵循还行”——注意”正在测试中”这几个字。一个刚上线的模型，用户给出的评价带着这么大的保留，说明它在指令遵循这类基础能力上大概率还没完全打磨好。</p>
+<p>指令遵循恰恰是 AI 编程里最要命的环节。模型再聪明，一旦在长任务里漏掉一条约束（少改一个文件、忘记跑测试、没按你要求的文件结构输出），整个 diff 就得返工。K2.5 时代的对比数据是 SWE-Bench Verified 76.8%、LiveCodeBench 85%，K2.6-code-preview 的官方成绩目前还看不到，这块只能等。</p>
+<h2 id="所以我怎么看这个发布">所以我怎么看这个发布</h2>
+<p>三句话：</p>
+<ol>
+<li><strong>方向对了</strong>。把通用大模型里最值钱的能力单独做成订阅版本，是把推理成本精准定价到愿意付费的人群身上——你不需要它写诗写文案，你只需要它改代码，那就按代码任务算钱。39 元的定价很精明。</li>
+<li><strong>宣传跟不上</strong>。一次模型更新，官网连 changelog 都还没写清楚，用户靠社区扒出来才知道有这东西。这对开发者生态是慢性损耗——你把口碑做出来了，但没人第一时间知道，功能上线一周后的讨论度会掉一大截。</li>
+<li><strong>榜单别太当真</strong>。那张表是好用的参考，但不是结论。国产模型现在的问题已经不是”够不够强”，而是”在不同任务形态下的稳定性够不够”，这个只能靠你自己的仓库测。</li>
+</ol>
+<p>如果你手上正好有能跑评测的仓库，39 块钱试一个月不亏。把它和订阅的 Claude Code 放一起，用同一批真实任务跑一遍，最后用你自己的代码库投票，比任何榜单都靠谱。</p>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="https://soft.china.com/article/2076961.html" rel="noopener noreferrer" target="_blank">快科技《国产万亿大模型再升级 kimi 2.6-code来了：AI编程新选择 月费39起》</a></li>
+<li><a href="https://www.21jingji.com/article/20260422/herald/5ac0ce6cf7d0c8062db9381f59e8862f.html" rel="noopener noreferrer" target="_blank">21世纪经济报道《月之暗面新模型 Kimi K2.6 发布并开源｜未来商业早参》</a></li>
+<li><a href="https://www.sina.cn/news/detail/5290167080323443.html" rel="noopener noreferrer" target="_blank">新浪科技《月之暗面发布开源 Kimi K2.6 模型，全面升级代码与 Agent 集群能力》</a></li>
+</ul>
+<h2 id="开发者圈快讯">开发者圈快讯</h2>
+<ul>
+<li>Python 3.16 的首个 alpha 又带来 <code>?.</code> 和 <code>??</code> 两个 PEP，pandas 3.1、Polars 2.0 也在这个月相继落地——<a href="https://realpython.com/python-news-november-2026/" rel="noopener noreferrer" target="_blank">Real Python 11 月 Python 新闻汇总</a></li>
+<li>Vite 的依赖预打包已经换用 Rolldown，冷启动比任何 JS 打包器都快一截——<a href="https://main.vitejs.dev/guide/features.html" rel="noopener noreferrer" target="_blank">Vite Features 文档</a></li>
+<li>工信部《“人工智能+软件”专项行动实施方案》落地，AI 编程工具已经分出 CLI、IDE 插件、AI 原生 IDE、云端智能体等六种形态——<a href="https://www.cet.com.cn/wzsy/cyzx/10558428.shtml" rel="noopener noreferrer" target="_blank">中国经济新闻网解读</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/Kimi" data-astro-cid-egg7nqdx>Kimi</a><a href="/tags/AI%E7%BC%96%E7%A8%8B" data-astro-cid-egg7nqdx>AI编程</a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B" data-astro-cid-egg7nqdx>大模型</a><a href="/tags/%E6%9C%88%E4%B9%8B%E6%9A%97%E9%9D%A2" data-astro-cid-egg7nqdx>月之暗面</a><a href="/tags/Agent" data-astro-cid-egg7nqdx>Agent</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=Kimi%20K2.6-code-preview%20%E4%B8%8A%E7%BA%BF%EF%BC%9A%E4%B8%87%E4%BA%BF%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9E%8B%E6%8C%A4%E8%BF%9B%2039%20%E5%85%83%2F%E6%9C%88%EF%BC%8CAI%20%E7%BC%96%E7%A8%8B%E7%9A%84%E4%BB%B7%E6%A0%BC%E6%88%98%E6%89%93%E5%88%B0%E7%AC%AC%E4%BA%8C%E5%9B%9E%E5%90%88&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fkimi-k26-code-preview" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=Kimi%20K2.6-code-preview%20%E4%B8%8A%E7%BA%BF%EF%BC%9A%E4%B8%87%E4%BA%BF%E5%8F%82%E6%95%B0%E6%A8%A1%E5%9E%8B%E6%8C%A4%E8%BF%9B%2039%20%E5%85%83%2F%E6%9C%88%EF%BC%8CAI%20%E7%BC%96%E7%A8%8B%E7%9A%84%E4%BB%B7%E6%A0%BC%E6%88%98%E6%89%93%E5%88%B0%E7%AC%AC%E4%BA%8C%E5%9B%9E%E5%90%88&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fkimi-k26-code-preview" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/kimi-k26-code-preview" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/kimi-k26-code-preview.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/kimi-k26-code-preview.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/nba-nov11-george-bucks" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>乔治战旧主砍 36 分，雄鹿 7 连败：这个 NBA 比赛日属于两极分化</span> </a> <a class="pn right" href="/posts/hsr-4-7-aha" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>星穹铁道 4.7 上线：第一个能抽的星神阿哈登场，米哈游把「看戏的人」拉下场</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/llm-agent-shift-deepseek-longcat" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活</span> <time data-astro-cid-egg7nqdx>2026-11-05</time> </a><a class="rel" href="/posts/codebuddy-fde-certification" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>CodeBuddy 首批通过信通院 FDE 检验：AI 编程的下一个战场，从补全质量转向交付能力</span> <time data-astro-cid-egg7nqdx>2026-11-13</time> </a><a class="rel" href="/posts/anthropic-ipo-roadshow" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>Anthropic 冲上纳斯达克：643 亿美元路演背后，是一张 9009 亿美元的算力欠条</span> <time data-astro-cid-egg7nqdx>2026-11-12</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#先把价格说清楚因为这是它最大的卖点" class data-slug="先把价格说清楚因为这是它最大的卖点" data-astro-cid-egg7nqdx>先把价格说清楚，因为这是它最大的卖点</a><a href="#分数到底多少我更信这张表但更信它的局限" class data-slug="分数到底多少我更信这张表但更信它的局限" data-astro-cid-egg7nqdx>分数到底多少？我更信这张表，但更信它的局限</a><a href="#已经用上的人怎么说" class data-slug="已经用上的人怎么说" data-astro-cid-egg7nqdx>已经用上的人怎么说</a><a href="#所以我怎么看这个发布" class data-slug="所以我怎么看这个发布" data-astro-cid-egg7nqdx>所以我怎么看这个发布</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a><a href="#开发者圈快讯" class data-slug="开发者圈快讯" data-astro-cid-egg7nqdx>开发者圈快讯</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>
