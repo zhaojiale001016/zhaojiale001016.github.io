@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <linearGradient id="categoryBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ea580c"/>
+      <stop offset="50%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <radialGradient id="categoryGlow" cx="40%" cy="60%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="categoryBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40"/>
+    </filter>
+    <pattern id="categoryHex" width="60" height="52" patternUnits="userSpaceOnUse">
+      <polygon points="30,4 52,17 52,35 30,48 8,35 8,17" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#categoryBg)"/>
+  <rect width="100%" height="100%" fill="url(#categoryHex)"/>
+  
+  <!-- 分类文件夹形状 -->
+  <g filter="url(#categoryBlur)">
+    <path d="M250,180 L350,180 L380,210 L500,210 L500,320 L250,320 Z" fill="#ffffff" fill-opacity="0.16"/>
+    <path d="M1300,280 L1400,280 L1430,310 L1550,310 L1550,420 L1300,420 Z" fill="#ffffff" fill-opacity="0.14"/>
+    <path d="M700,600 L800,600 L830,630 L950,630 L950,740 L700,740 Z" fill="#ffffff" fill-opacity="0.12"/>
+  </g>
+  
+  <rect x="0" y="0" width="100%" height="100%" fill="url(#categoryGlow)"/>
+  
+  <!-- 分层线条 -->
+  <g stroke="#fff" stroke-opacity="0.14" stroke-width="1.5" fill="none">
+    <rect x="200" y="400" width="300" height="2" rx="1"/>
+    <rect x="600" y="300" width="250" height="2" rx="1"/>
+    <rect x="1100" y="500" width="280" height="2" rx="1"/>
+    <rect x="400" y="700" width="320" height="2" rx="1"/>
+  </g>
+  
+  <!-- 分类图标装饰 -->
+  <g fill="#fff" fill-opacity="0.18">
+    <rect x="500" y="200" width="8" height="8" rx="2"/>
+    <rect x="520" y="200" width="8" height="8" rx="2"/>
+    <rect x="540" y="200" width="8" height="8" rx="2"/>
+    
+    <rect x="1200" y="400" width="8" height="8" rx="2"/>
+    <rect x="1220" y="400" width="8" height="8" rx="2"/>
+    <rect x="1240" y="400" width="8" height="8" rx="2"/>
+    
+    <rect x="800" y="800" width="8" height="8" rx="2"/>
+    <rect x="820" y="800" width="8" height="8" rx="2"/>
+    <rect x="840" y="800" width="8" height="8" rx="2"/>
+  </g>
+  
+  <!-- 装饰点 -->
+  <g fill="#fff" fill-opacity="0.2">
+    <circle cx="450" cy="350" r="2.5"/>
+    <circle cx="850" cy="450" r="2"/>
+    <circle cx="1350" cy="250" r="3"/>
+    <circle cx="650" cy="750" r="2"/>
+    <circle cx="1150" cy="650" r="2.5"/>
+  </g>
+</svg>
