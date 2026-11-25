@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="据博板堂消息，技嘉与华硕已在 11 月执行新一轮显卡成本价格调整，RTX 5080 系列成本价上调 1000 元、5060 系列上调 150 元。同期华强北行情从暴涨两成回落，但全系均价仍是建议零售价的 1.7 倍，存储端还在继续涨价。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/gpu-bom-cost-hike-nov/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="显卡工厂成本价又上调了：11 月技嘉华硕全线调价，跌下去的是溢价不是成本 · 豆芽的技术博客"><meta property="og:description" content="据博板堂消息，技嘉与华硕已在 11 月执行新一轮显卡成本价格调整，RTX 5080 系列成本价上调 1000 元、5060 系列上调 150 元。同期华强北行情从暴涨两成回落，但全系均价仍是建议零售价的 1.7 倍，存储端还在继续涨价。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/gpu-bom-cost-hike-nov/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/gpu-bom-cost-hike-nov-2.webp"><meta name="twitter:card" content="summary_large_image"><title>显卡工厂成本价又上调了：11 月技嘉华硕全线调价，跌下去的是溢价不是成本 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"显卡工厂成本价又上调了：11 月技嘉华硕全线调价，跌下去的是溢价不是成本","description":"据博板堂消息，技嘉与华硕已在 11 月执行新一轮显卡成本价格调整，RTX 5080 系列成本价上调 1000 元、5060 系列上调 150 元。同期华强北行情从暴涨两成回落，但全系均价仍是建议零售价的 1.7 倍，存储端还在继续涨价。","image":"https://zhaojiale001016.github.io/img/inline/gpu-bom-cost-hike-nov-2.webp","datePublished":"2026-11-16T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:数码资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%95%B0%E7%A0%81%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>数码资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>显卡工厂成本价又上调了：11 月技嘉华硕…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./gpu-bom-cost-hike-nov.md</span> <h1 data-astro-cid-egg7nqdx>显卡工厂成本价又上调了：11 月技嘉华硕全线调价，跌下去的是溢价不是成本</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%95%B0%E7%A0%81%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>数码资讯</a> <time data-astro-cid-egg7nqdx>2026-11-16</time> <span data-astro-cid-egg7nqdx>约 8 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/gpu-bom-cost-hike-nov-2.webp" alt="显卡工厂成本价又上调了：11 月技嘉华硕全线调价，跌下去的是溢价不是成本" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>11 月 14 日，<a href="https://www.ithome.com/1/027/178.htm" rel="noopener noreferrer" target="_blank">IT之家援引博板堂”视博合聚”的消息</a>：技嘉和华硕的显卡工厂已经执行了 11 月份的新一轮成本价格调整，覆盖面极广，中高端到入门全线上涨。</p>
+<h2 id="涨了多少一张表说清楚">涨了多少，一张表说清楚</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>显卡系列</th><th>技嘉</th><th>华硕</th></tr></thead><tbody><tr><td>RTX 5080 系列</td><td>+1000 元</td><td>+1000 元</td></tr><tr><td>RTX 5070 Ti 系列</td><td>+900 元</td><td>+800 元</td></tr><tr><td>RTX 5070 系列</td><td>+400 元</td><td>+300 元</td></tr><tr><td>RTX 5060 Ti（16G/8G）</td><td>+150 元</td><td>+150 元</td></tr><tr><td>RTX 5060 系列</td><td>+150 元</td><td>+150 元</td></tr><tr><td>RTX 3050 系列</td><td>+100 元</td><td>+100 元</td></tr><tr><td>RX 7650 GRE</td><td>+100 元</td><td>—</td></tr><tr><td>RX 9070 XT</td><td>—</td><td>+150 元</td></tr><tr><td>RX 9070 GRE</td><td>—</td><td>+100 元</td></tr></tbody></table>
+<p>这是<strong>工厂给代理商的成本价</strong>，不是零售价。渠道在成本价之上还要叠各级代理的利润和仓储，所以终端涨幅大概率比表上更大。中关村在线第二天（11 月 15 日）转载了同一张表，<a href="https://finance.sina.com.cn/roll/2026-11-15/doc-iniyupue9790391.shtml" rel="noopener noreferrer" target="_blank">新浪财经的版本</a>也能佐证。</p>
+<p><img src="/img/inline/gpu-bom-cost-hike-nov-1.webp" alt="显卡产品特写">
+<em>图源：腾讯新闻《高端显卡直降 4000 元！华强北价格跳水》</em></p>
+<h2 id="但零售端正在往回走">但零售端正在往回走</h2>
+<p>同一周的另一个方向更热闹。央视财经在<a href="http://www.cnr.cn/mspd/msyx/20261110/t20261110_527867710.shtml" rel="noopener noreferrer" target="_blank">央广网 11 月 10 日的报道</a>里复盘了这轮过山车：受”英伟达停产”传闻刺激，RTX 50 系列连涨 11 个交易日，RTX 5080 一度逼近 2 万元；10 月 28 日行情掉头，5080 回落到 1.6 万元，回调两成。RTX 5090 现货报价还在 5.1 万到 5.5 万元之间（官方初始价约 1.5 万至 1.6 万元），流通量最大的 RTX 5060 从两个月前的均价 2300 元涨到 4000 元以上。</p>
+<p>关键是那句总结：<strong>即便价格回落，RTX 50 系列全系均价仍是官方建议零售价的 1.7 倍，前期涨幅并未完全消化。</strong></p>
+<p>11 月 14 日腾讯新闻转载的一篇市场观察给了更细的数：<a href="https://view.inews.qq.com/a/20261114A067LO00" rel="noopener noreferrer" target="_blank">11 月 10 日前后 RTX 5080 从 1.8 万元回到 1.4 万元出头，RTX 5090 从 5 万元附近滑到 4.6 万元左右</a>。</p>
+<p><img src="/img/inline/gpu-bom-cost-hike-nov-2.webp" alt="华强北市场里的显卡实拍">
+<em>图源：腾讯新闻《高端显卡直降 4000 元！华强北价格跳水》</em></p>
+<div class="callout" data-callout="note" data-collapsible="false"><div class="callout-title"><div class="callout-title-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="2" x2="22" y2="6"></line><path d="M7.5 20.5 19 9l-4-4L3.5 16.5 2 22z"></path></svg></div><div class="callout-title-text">Note</div></div><div class="callout-content"><p>一句话概括这一周：<strong>零售价在跌，成本价在涨。</strong> 这两件事不矛盾——跌的是渠道前期囤货溢出来的那部分情绪，成本往上走是因为上游颗粒和芯片的真实成本没有降。</p></div></div>
+<h2 id="成本为什么还在往上走">成本为什么还在往上走</h2>
+<p>根子在显存。集邦咨询的判断是，AI 芯片对 HBM 的需求把存储原厂的产能吸走了，三星、海力士、美光把更多晶圆转向 HBM，消费级的 GDDR6/GDDR7 产能被挤占，颗粒报价跟着上行。英伟达自己的财报更能说明问题：2027 财年第二季度总营收 962 亿美元，其中数据中心业务 890 亿美元，占比 92.5%。</p>
+<p>一张旗舰卡上焊着 16 颗 GDDR7，按现货价格折算，光显存就占了官方建议零售价的 16% 左右，高端型号上这部分物料成本甚至能占到整卡物料总成本的 80%。</p>
+<p><img src="/img/inline/gpu-bom-cost-hike-nov-3.webp" alt="显卡主板上的 GPU 核心与显存颗粒">
+<em>图源：腾讯新闻《高端显卡直降 4000 元！华强北价格跳水》</em></p>
+<p>所以现在显卡和存储是<strong>两个方向</strong>：显卡的溢价在松动，存储还在涨。南方都市报 11 月 13 日走访华强北给出的对比很扎心——1TB 硬盘从去年的 355 元涨到 850 元（+139%），16GB DDR5 内存从 450 元涨到 1600 元（+255%），32GB DDR5 从 900 元涨到 3800 元（+322%）；去年 5000 元能配的游戏主机，现在要 8000 到 10000 元。</p>
+<h2 id="装机的人该怎么做">装机的人该怎么做</h2>
+<p><strong>别用”显卡要跌了”推整机要降价。</strong> 这两件事的驱动因素不同：显卡跌的是溢价，内存固态涨的是供给。真正在掏空整机预算的是存储，不是显卡。</p>
+<p><strong>高端卡：急用就买，别囤。</strong> 渠道商自己都在说”不建议囤”，价格一天一个价，早晚报价都不一样。溢价还有七成左右，短期难回官方价，但继续跌的空间也有限，成本价已经往上走了。</p>
+<p><strong>中端卡：按需入手。</strong> RTX 5060、5060 Ti 这类走量型号溢价本来就薄，跌也只动两三百块，需求明确就买，别等”暴跌”。</p>
+<p><strong>存储：现在别囤，但可以先占位。</strong> Q4 一般型 DRAM 合约价预计环比涨 10% 到 15%，涨幅在收窄但方向没变。如果整机计划在年前做，内存和固态的价格要先锁定，而不是等显卡便宜。</p>
+<p><strong>最后一条给还在用旧卡的人</strong>：据 TechSpot 统计，2026 年 8 月到 10 月全球显卡平均价格分别上涨 15%、7%、10%。同时国内网吧数量从 2023 年的 7.77 万家涨到 2025 年的 12.26 万家，行业营收从 534 亿冲到 1016.8 亿。<strong>装机自由确实在变贵，但”不装机”也是成本</strong>——这是很多人忽略的一笔账。</p>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="https://www.ithome.com/1/027/178.htm" rel="noopener noreferrer" target="_blank">IT之家《消息称华硕 / 技嘉显卡工厂已执行最新成本价格调整政策：RTX5080 系列涨 1000 元、5060 涨 150 元》</a></li>
+<li><a href="http://www.cnr.cn/mspd/msyx/20261110/t20261110_527867710.shtml" rel="noopener noreferrer" target="_blank">央广网《11 连涨后急跌！华强北显卡”一天一个价”》（来源：央视财经）</a></li>
+<li><a href="https://view.inews.qq.com/a/20261114A067LO00" rel="noopener noreferrer" target="_blank">腾讯新闻《高端显卡直降 4000 元！华强北价格跳水，现在真的买得起了吗？》</a></li>
+<li><a href="https://view.inews.qq.com/k/20261113A0AWFX00" rel="noopener noreferrer" target="_blank">腾讯新闻《“暴跌 4000 元”冲上热搜，华强北商家：价格每天都不一样，不建议囤》（来源：南方都市报）</a></li>
+</ul>
+<h2 id="数码圈快讯">数码圈快讯</h2>
+<ul>
+<li>OPPO Reno17 系列今晚 19 点发布，Pro 版曝 2 亿像素主摄 + 天玑 8550 SUPER + 7200mAh，标准版骁龙 7 Gen4 + 8000mAh，全系下放潜望长焦——<a href="https://tech.ifeng.com/c/8y5hU1cig6a" rel="noopener noreferrer" target="_blank">凤凰网科技</a></li>
+<li>英伟达 RTX Spark 正式上市，128GB 统一内存、最高 1 Petaflop FP4 算力，主打本地跑模型和全天候跑 agent——<a href="https://www.nvidia.com/en-us/geforce/" rel="noopener noreferrer" target="_blank">NVIDIA GeForce 官网</a></li>
+<li>存储端继续涨：集邦预计四季度企业级 SSD 合约价再涨 15% 至 20%，HBM 产能缺口要延续到 2028 年前后——<a href="https://view.inews.qq.com/a/20261114A067LO00" rel="noopener noreferrer" target="_blank">腾讯新闻</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/%E6%98%BE%E5%8D%A1" data-astro-cid-egg7nqdx>显卡</a><a href="/tags/%E6%8A%80%E5%98%89" data-astro-cid-egg7nqdx>技嘉</a><a href="/tags/%E5%8D%8E%E7%A1%95" data-astro-cid-egg7nqdx>华硕</a><a href="/tags/%E6%98%BE%E5%AD%98" data-astro-cid-egg7nqdx>显存</a><a href="/tags/%E7%A1%AC%E4%BB%B6%E8%A1%8C%E6%83%85" data-astro-cid-egg7nqdx>硬件行情</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=%E6%98%BE%E5%8D%A1%E5%B7%A5%E5%8E%82%E6%88%90%E6%9C%AC%E4%BB%B7%E5%8F%88%E4%B8%8A%E8%B0%83%E4%BA%86%EF%BC%9A11%20%E6%9C%88%E6%8A%80%E5%98%89%E5%8D%8E%E7%A1%95%E5%85%A8%E7%BA%BF%E8%B0%83%E4%BB%B7%EF%BC%8C%E8%B7%8C%E4%B8%8B%E5%8E%BB%E7%9A%84%E6%98%AF%E6%BA%A2%E4%BB%B7%E4%B8%8D%E6%98%AF%E6%88%90%E6%9C%AC&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fgpu-bom-cost-hike-nov" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=%E6%98%BE%E5%8D%A1%E5%B7%A5%E5%8E%82%E6%88%90%E6%9C%AC%E4%BB%B7%E5%8F%88%E4%B8%8A%E8%B0%83%E4%BA%86%EF%BC%9A11%20%E6%9C%88%E6%8A%80%E5%98%89%E5%8D%8E%E7%A1%95%E5%85%A8%E7%BA%BF%E8%B0%83%E4%BB%B7%EF%BC%8C%E8%B7%8C%E4%B8%8B%E5%8E%BB%E7%9A%84%E6%98%AF%E6%BA%A2%E4%BB%B7%E4%B8%8D%E6%98%AF%E6%88%90%E6%9C%AC&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fgpu-bom-cost-hike-nov" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/gpu-bom-cost-hike-nov" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/gpu-bom-cost-hike-nov.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/gpu-bom-cost-hike-nov.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/mh-wilds-switch2-launch" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>怪物猎人荒野上 Switch 2：12 月 4 日开卖，早鸟 25%，跨平台狩猎</span> </a> <a class="pn right" href="/posts/nba-streaks-break" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>马刺 12 连胜、湖人 9 连胜接连断掉：NBA 的连胜神话这两晚集体退潮</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/gpu-huaqiangbei-overseas-buyers" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>数码资讯</span> <span class="t" data-astro-cid-egg7nqdx>老外扎堆华强北扫显卡：一天一价的行情背后，是全球算力荒的价差套利</span> <time data-astro-cid-egg7nqdx>2026-11-09</time> </a><a class="rel" href="/posts/rtx50-price-crash-analysis" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>数码资讯</span> <span class="t" data-astro-cid-egg7nqdx>RTX 5080 九天跌回 1.4 万：显卡这轮过山车，跌下去的是价格，跌不掉的是溢价</span> <time data-astro-cid-egg7nqdx>2026-11-05</time> </a><a class="rel" href="/posts/huawei-mate-x8-launch" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>数码资讯</span> <span class="t" data-astro-cid-egg7nqdx>华为 Mate X8 发布：4.2mm、12000nits、四卡三待，大折叠这次卷的是&quot;平&quot;</span> <time data-astro-cid-egg7nqdx>2026-11-25</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#涨了多少一张表说清楚" class data-slug="涨了多少一张表说清楚" data-astro-cid-egg7nqdx>涨了多少，一张表说清楚</a><a href="#但零售端正在往回走" class data-slug="但零售端正在往回走" data-astro-cid-egg7nqdx>但零售端正在往回走</a><a href="#成本为什么还在往上走" class data-slug="成本为什么还在往上走" data-astro-cid-egg7nqdx>成本为什么还在往上走</a><a href="#装机的人该怎么做" class data-slug="装机的人该怎么做" data-astro-cid-egg7nqdx>装机的人该怎么做</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a><a href="#数码圈快讯" class data-slug="数码圈快讯" data-astro-cid-egg7nqdx>数码圈快讯</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/huawei-mate-x8-launch","/posts/nba-cup-mavs-nuggets-flagg","/posts/battery-cylinder-lfp-shift","/posts/byd-tang-gen3-launch","/posts/jensen-huang-nvidia-return","/posts/nba-nov24-blazers-76ers","/posts/game-industry-nov23","/posts/nba-nov23-jokic-gidde","/posts/week47-new-cars-launch","/posts/nba-nov22-wemby-herro-50","/posts/nvidia-crash-gpu-price","/posts/vercel-ui-sdk","/posts/byd-tai9-folding-cockpit","/posts/nba-nov21-cup-harden51","/posts/gpt62-qwen4max-launch","/posts/gta6-first-day-2458w","/posts/nba-nov20-lillard-milwaukee","/posts/osta-o1-pro-launch","/posts/xiangjie-v8-launch","/posts/gemini4-neon-anthropic-ipo","/posts/guangzhou-autoshow-2026-preview","/posts/nba-nov19-grizzlies-sixers-bulls","/posts/gta6-launch-day","/posts/huawei-mate90-air-thin","/posts/nba-streaks-break","/posts/gpu-bom-cost-hike-nov","/posts/mh-wilds-switch2-launch","/posts/nba-nov16-knicks-sixers","/posts/week46-new-cars-launch","/posts/storybook11-agent-skills","/posts/deepseek-fullstack-api","/posts/ev-battery-fullchain-shift","/posts/nba-nov14-record-night","/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

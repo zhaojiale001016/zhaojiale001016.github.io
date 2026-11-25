@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="亿纬锂能 11 月 21 日公告把 21GWh 三元大圆柱乘用车项目改为 8GWh 圆柱磷酸铁锂项目，投资总额从 52.03 亿调减至 28.01 亿。高工产研数据显示上半年国内大圆柱出货 8.2 亿支、同比增 114.3%，全极耳铁锂大圆柱占比达 61%；AI 数据中心备电、两轮车换电和户储正在改写圆柱电池的需求版图。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/battery-cylinder-lfp-shift/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="亿纬锂能砍掉 24 亿改口径：圆柱电池的路线之争，三元大圆柱半年被铁锂翻盘 · 豆芽的技术博客"><meta property="og:description" content="亿纬锂能 11 月 21 日公告把 21GWh 三元大圆柱乘用车项目改为 8GWh 圆柱磷酸铁锂项目，投资总额从 52.03 亿调减至 28.01 亿。高工产研数据显示上半年国内大圆柱出货 8.2 亿支、同比增 114.3%，全极耳铁锂大圆柱占比达 61%；AI 数据中心备电、两轮车换电和户储正在改写圆柱电池的需求版图。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/battery-cylinder-lfp-shift/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/battery-cylinder-lfp-shift-1.webp"><meta name="twitter:card" content="summary_large_image"><title>亿纬锂能砍掉 24 亿改口径：圆柱电池的路线之争，三元大圆柱半年被铁锂翻盘 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"亿纬锂能砍掉 24 亿改口径：圆柱电池的路线之争，三元大圆柱半年被铁锂翻盘","description":"亿纬锂能 11 月 21 日公告把 21GWh 三元大圆柱乘用车项目改为 8GWh 圆柱磷酸铁锂项目，投资总额从 52.03 亿调减至 28.01 亿。高工产研数据显示上半年国内大圆柱出货 8.2 亿支、同比增 114.3%，全极耳铁锂大圆柱占比达 61%；AI 数据中心备电、两轮车换电和户储正在改写圆柱电池的需求版图。","image":"https://zhaojiale001016.github.io/img/inline/battery-cylinder-lfp-shift-1.webp","datePublished":"2026-11-25T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:汽车资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%B1%BD%E8%BD%A6%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>汽车资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>亿纬锂能砍掉 24 亿改口径：圆柱电池的…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./battery-cylinder-lfp-shift.md</span> <h1 data-astro-cid-egg7nqdx>亿纬锂能砍掉 24 亿改口径：圆柱电池的路线之争，三元大圆柱半年被铁锂翻盘</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%B1%BD%E8%BD%A6%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>汽车资讯</a> <time data-astro-cid-egg7nqdx>2026-11-25</time> <span data-astro-cid-egg7nqdx>约 9 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/battery-cylinder-lfp-shift-1.webp" alt="亿纬锂能砍掉 24 亿改口径：圆柱电池的路线之争，三元大圆柱半年被铁锂翻盘" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>11 月 21 日晚，亿纬锂能发了一份公告，把成都那个原本要做 21GWh 乘用车大圆柱的项目改了：材料路线从 46 系三元大圆柱切换成圆柱磷酸铁锂，产能规划收缩到 8GWh，投资总额从 52.03 亿元砍到 28.01 亿元，调减约 24.02 亿元。</p>
+<p>公告里有一句话是整件事的核心：“锂电池的需求增长，不仅来自新能源车、储能等增量市场的自然扩张，更来自对存量电池技术体系的替代性渗透。”</p>
+<p>翻译成人话：圆柱电池的增量，正在从”乘用车”跑到别的地方去了。</p>
+<h2 id="半年时间三元大圆柱的主导权被翻掉">半年时间，三元大圆柱的主导权被翻掉</h2>
+<p>先把数据摆出来。高工产研的数据是：2026 年上半年国内磷酸铁锂动力电池装机 268.7GWh、份额 80.3%，三元锂 65.1GWh、份额约 19.5%，铁锂对三元的体量优势已经扩大到四倍以上。</p>
+<p>但真正夸张的是圆柱内部。上半年国内大圆柱出货 8.2 亿支，同比增长 114.3%，其中<strong>全极耳磷酸铁锂大圆柱占比达到 61%</strong>。三元大圆柱长期占主导的格局，半年之内被翻了过来。</p>
+<p><img src="/img/inline/battery-cylinder-lfp-shift-1.webp" alt="大圆柱电芯在产线上的排列">
+<em>图源：汽车之家车家号《三元锂装车占比跌至14.1%，铁锂凭什么挤走它？》</em></p>
+<p>增量从哪来？60 系铁锂大圆柱，集中爆发在电动两轮车换电网络、电摩整车和户用储能三个场景，多氟多、新能安是主要推手。动力电池产业创新联盟 9 月的数据也能看出同一件事：当月装车量 87.2GWh，三元只有 12.3GWh、占比 14.1%、同比下降 10.9%，铁锂 74.5GWh、占比 85.5%、同比增长 19.9%。</p>
+<p><img src="/img/inline/battery-cylinder-lfp-shift-2.jpg" alt="磷酸铁锂电池的晶体结构示意">
+<em>图源：汽车之家车家号《三元锂装车占比跌至14.1%，铁锂凭什么挤走它？》</em></p>
+<h2 id="为什么铁锂在圆柱上突然好用了">为什么铁锂在圆柱上突然好用了</h2>
+<p>过去铁锂在大圆柱上是不占优的。铁锂电导率低，做成大直径电芯内阻大，快充和大电流输出都吃亏。三元在长续航高端车型上是默认选择。</p>
+<p>破局点是全极耳设计。把极耳从传统的点接触改成整面接触，电流路径被拓宽，内阻降下来，低电导率的短板被部分抵消，大直径铁锂圆柱也能做到持续快充和持续大电流输出。</p>
+<p>成本账更直接。铁锂正极每吨约 3.5 万元，三元正极依赖的镍钴锰或镍钴铝每吨约 11 万元；以 60kWh 电池包算，铁锂版本采购成本比三元低 1.2 万到 2.4 万元。IEA《全球电动车展望 2026》估算的口径是，2026 年 9 月铁锂包均价约 95 美元/kWh，三元包 130 到 150 美元。</p>
+<p>在整车年降压力一层层往下压的当口，这两三万块的差价就是选型的分水岭。</p>
+<p><img src="/img/inline/battery-cylinder-lfp-shift-3.webp" alt="锂电正极材料颗粒特写">
+<em>图源：汽车之家车家号《三元锂装车占比跌至14.1%，铁锂凭什么挤走它？》</em></p>
+<h2 id="但三元没有退场它换了赛道">但三元没有退场，它换了赛道</h2>
+<p>场景分化比路线替代更接近真相。</p>
+<p>乘用车这边，中创新航的 R46 铁锂大圆柱已经量产，配套吉利、东风的混动车型，走的是插混高功率工况的逻辑——插混能先于纯电贡献 46 系订单。国轩高科的 46 系平台同时覆盖铁锂到三元，低空飞行器产品用混合固液体系大圆柱，单体能量密度做到 330Wh/kg，指向 eVTOL 和重载无人机这种独立于车用的市场。宁德时代为宝马”新世代”平台供应的 46 系大圆柱仍然锚定高端乘用车，宝马沈阳第六代动力电池项目已经在 2026 年 10 月进入量产。</p>
+<p>真正的新增量来自 AI 数据中心。AI 服务器算力和功耗一路往上，BBU（电池备用电源单元）对瞬时大功率输出和热安全性的要求变得极硬。三星 SDI 在 2026 年 9 月首次公开面向 BBU 的圆柱形 LFP 电芯，同月 LG 新能源与三星 SDI 都规划在 2027 年二季度量产 2170 规格铁锂圆柱，明确瞄准 AI 服务器应急电源。三星 SDI 三季度业绩也印证了这个方向：销售额 4.6856 万亿韩元、同比增长 52.6%，营业利润创近 12 个季度新高，官方把增长归因于 ESS 和 BBU 产品的放量。</p>
+<p>松下 4680 的量产则一拖再拖，主要客户迟迟没有最终批准，实际供应仍以特斯拉自产为主。</p>
+<h2 id="我的判断这不是路线之争是场景重排">我的判断：这不是路线之争，是场景重排</h2>
+<p>三个判断。</p>
+<p>第一，圆柱电池的竞争已经不看化学体系，看<strong>场景</strong>。高端长续航乘用车仍然需要三元，插混高功率可以用铁锂，两轮车换电和户储对成本与循环寿命的权重压倒能量密度，AI 数据中心备用电源则对安全性和日历寿命提出另一套要求。亿纬这次把 21GWh 三元乘用车收缩成 8GWh 铁锂多场景，本质是减少对单一场景单一体系的押注。</p>
+<p>第二，电芯定义权在往车企那边挪。亿纬把新项目做成柔性产线，可兼容多个型号共线生产；车企这边则越来越多参与电芯定义。电池占整车成本 30% 到 40%，二线电池企业报价通常比头部低 10% 到 20%，联合生产后还有下探空间——这既是降本，也是把供应链从”黑盒采购”变成自己可控的部分。</p>
+<p>第三，铁锂的短板没消失，只是被场景选择暂时绕开了。</p>
+<p><img src="/img/inline/battery-cylinder-lfp-shift-4.jpg" alt="冰雪环境下的测试车辆">
+<em>图源：汽车之家车家号《三元锂装车占比跌至14.1%，铁锂凭什么挤走它？》</em></p>
+<p>零下 20 摄氏度时铁锂电池容量衰减约 30%，北方用户冬天实际续航达成率是要打折的。铁锂要往更贵、要求更高的车型上走，低温和能量密度这两门课还得补。</p>
+<p>顺带一句不相干的：今天凌晨把这份公告顶到头条的标题很直白——“弃三元、投铁锂”。但从公告文本看，公司自己用的表述是”顺应大直径圆柱磷酸铁锂电池的多场景应用趋势”。前者是结论，后者是过程，用词差得很远。</p>
+<h2 id="快讯">快讯</h2>
+<ul>
+<li>亿纬锂能 11 月 20 日董事会审议通过募投项目变更，尚需提交股东会审议，中信证券核查无异议。<a href="https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-11-21/9c637692-f839-4133-92aa-d5bec96f66de.PDF" rel="noopener noreferrer" target="_blank">深交所公告原文</a></li>
+<li>三星 SDI 与 LG 新能源均规划 2027 年二季度量产 2170 规格铁锂圆柱，瞄准 AI 服务器应急电源。<a href="https://kr.mofcom.gov.cn/jmxw/art/2026/art_f999ae5b6c01474390e231ccc49ecf7c.html" rel="noopener noreferrer" target="_blank">商务部驻大韩使馆经商处</a></li>
+<li>2026 年 9 月国内动力电池装车 87.2GWh，三元占比降至 14.1%，1—9 月累计出口 199.7GWh、同比增长 54.7%。<a href="http://chejiahao.autohome.com.cn/info/26944221" rel="noopener noreferrer" target="_blank">汽车之家车家号</a></li>
+</ul>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="http://www.eeo.com.cn/2026/1125/1101894.shtml" rel="noopener noreferrer" target="_blank">亿纬锂能募资项目大转身：“弃三元、投铁锂”，整体调减约 24 亿元（经济观察网）</a></li>
+<li><a href="https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-11-21/9c637692-f839-4133-92aa-d5bec96f66de.PDF" rel="noopener noreferrer" target="_blank">关于变更部分募投项目及投资总额的公告（亿纬锂能，深交所披露）</a></li>
+<li><a href="http://chejiahao.autohome.com.cn/info/26944221" rel="noopener noreferrer" target="_blank">三元锂装车占比跌至 14.1%，铁锂凭什么挤走它？（汽车之家车家号）</a></li>
+<li><a href="https://kr.mofcom.gov.cn/jmxw/art/2026/art_f999ae5b6c01474390e231ccc49ecf7c.html" rel="noopener noreferrer" target="_blank">LG 新能源、三星 SDI 角逐 AI 服务器备用电源市场（商务部驻大韩使馆经商处）</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/%E5%8A%A8%E5%8A%9B%E7%94%B5%E6%B1%A0" data-astro-cid-egg7nqdx>动力电池</a><a href="/tags/%E7%A3%B7%E9%85%B8%E9%93%81%E9%94%82" data-astro-cid-egg7nqdx>磷酸铁锂</a><a href="/tags/%E5%A4%A7%E5%9C%86%E6%9F%B1" data-astro-cid-egg7nqdx>大圆柱</a><a href="/tags/%E4%BA%BF%E7%BA%AC%E9%94%82%E8%83%BD" data-astro-cid-egg7nqdx>亿纬锂能</a><a href="/tags/AI%E6%95%B0%E6%8D%AE%E4%B8%AD%E5%BF%83" data-astro-cid-egg7nqdx>AI数据中心</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=%E4%BA%BF%E7%BA%AC%E9%94%82%E8%83%BD%E7%A0%8D%E6%8E%89%2024%20%E4%BA%BF%E6%94%B9%E5%8F%A3%E5%BE%84%EF%BC%9A%E5%9C%86%E6%9F%B1%E7%94%B5%E6%B1%A0%E7%9A%84%E8%B7%AF%E7%BA%BF%E4%B9%8B%E4%BA%89%EF%BC%8C%E4%B8%89%E5%85%83%E5%A4%A7%E5%9C%86%E6%9F%B1%E5%8D%8A%E5%B9%B4%E8%A2%AB%E9%93%81%E9%94%82%E7%BF%BB%E7%9B%98&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fbattery-cylinder-lfp-shift" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=%E4%BA%BF%E7%BA%AC%E9%94%82%E8%83%BD%E7%A0%8D%E6%8E%89%2024%20%E4%BA%BF%E6%94%B9%E5%8F%A3%E5%BE%84%EF%BC%9A%E5%9C%86%E6%9F%B1%E7%94%B5%E6%B1%A0%E7%9A%84%E8%B7%AF%E7%BA%BF%E4%B9%8B%E4%BA%89%EF%BC%8C%E4%B8%89%E5%85%83%E5%A4%A7%E5%9C%86%E6%9F%B1%E5%8D%8A%E5%B9%B4%E8%A2%AB%E9%93%81%E9%94%82%E7%BF%BB%E7%9B%98&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fbattery-cylinder-lfp-shift" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/battery-cylinder-lfp-shift" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/battery-cylinder-lfp-shift.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/battery-cylinder-lfp-shift.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/byd-tang-gen3-launch" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>比亚迪第三代唐今晚上市：22.5 万起全系激光雷达，但最贵那台续航反而少 80 公里</span> </a> <a class="pn right" href="/posts/nba-cup-mavs-nuggets-flagg" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>独行侠客场 120-101 掀翻掘金：弗拉格 24+6+12，NBA 杯三连胜</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/ev-battery-fullchain-shift" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>汽车资讯</span> <span class="t" data-astro-cid-egg7nqdx>车企不想再当「采购方」了：小米理想扎堆入股欣旺达，动力电池进入全链路负责时代</span> <time data-astro-cid-egg7nqdx>2026-11-15</time> </a><a class="rel" href="/posts/byd-tang-gen3-launch" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>汽车资讯</span> <span class="t" data-astro-cid-egg7nqdx>比亚迪第三代唐今晚上市：22.5 万起全系激光雷达，但最贵那台续航反而少 80 公里</span> <time data-astro-cid-egg7nqdx>2026-11-24</time> </a><a class="rel" href="/posts/week47-new-cars-launch" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>汽车资讯</span> <span class="t" data-astro-cid-egg7nqdx>一周 9 款新车：换电打到 5.2 万，激光雷达装进 12 万的小车</span> <time data-astro-cid-egg7nqdx>2026-11-23</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#半年时间三元大圆柱的主导权被翻掉" class data-slug="半年时间三元大圆柱的主导权被翻掉" data-astro-cid-egg7nqdx>半年时间，三元大圆柱的主导权被翻掉</a><a href="#为什么铁锂在圆柱上突然好用了" class data-slug="为什么铁锂在圆柱上突然好用了" data-astro-cid-egg7nqdx>为什么铁锂在圆柱上突然好用了</a><a href="#但三元没有退场它换了赛道" class data-slug="但三元没有退场它换了赛道" data-astro-cid-egg7nqdx>但三元没有退场，它换了赛道</a><a href="#我的判断这不是路线之争是场景重排" class data-slug="我的判断这不是路线之争是场景重排" data-astro-cid-egg7nqdx>我的判断：这不是路线之争，是场景重排</a><a href="#快讯" class data-slug="快讯" data-astro-cid-egg7nqdx>快讯</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/huawei-mate-x8-launch","/posts/nba-cup-mavs-nuggets-flagg","/posts/battery-cylinder-lfp-shift","/posts/byd-tang-gen3-launch","/posts/jensen-huang-nvidia-return","/posts/nba-nov24-blazers-76ers","/posts/game-industry-nov23","/posts/nba-nov23-jokic-gidde","/posts/week47-new-cars-launch","/posts/nba-nov22-wemby-herro-50","/posts/nvidia-crash-gpu-price","/posts/vercel-ui-sdk","/posts/byd-tai9-folding-cockpit","/posts/nba-nov21-cup-harden51","/posts/gpt62-qwen4max-launch","/posts/gta6-first-day-2458w","/posts/nba-nov20-lillard-milwaukee","/posts/osta-o1-pro-launch","/posts/xiangjie-v8-launch","/posts/gemini4-neon-anthropic-ipo","/posts/guangzhou-autoshow-2026-preview","/posts/nba-nov19-grizzlies-sixers-bulls","/posts/gta6-launch-day","/posts/huawei-mate90-air-thin","/posts/nba-streaks-break","/posts/gpu-bom-cost-hike-nov","/posts/mh-wilds-switch2-launch","/posts/nba-nov16-knicks-sixers","/posts/week46-new-cars-launch","/posts/storybook11-agent-skills","/posts/deepseek-fullstack-api","/posts/ev-battery-fullchain-shift","/posts/nba-nov14-record-night","/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

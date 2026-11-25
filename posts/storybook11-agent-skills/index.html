@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Storybook 11 beta 带来官方 Agent Skills 与无头 CLI，Vercel 同期推出内置 50 多种 UI 行为的 UI SDK。前端工具链开始认真给 AI 编程代理准备上下文，这意味着组件库的文档从此不只是给人看的。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/storybook11-agent-skills/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="Storybook 11 beta 把组件文档改造成了 AI 编程的燃料 · 豆芽的技术博客"><meta property="og:description" content="Storybook 11 beta 带来官方 Agent Skills 与无头 CLI，Vercel 同期推出内置 50 多种 UI 行为的 UI SDK。前端工具链开始认真给 AI 编程代理准备上下文，这意味着组件库的文档从此不只是给人看的。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/storybook11-agent-skills/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/storybook11-agent-skills-4.webp"><meta name="twitter:card" content="summary_large_image"><title>Storybook 11 beta 把组件文档改造成了 AI 编程的燃料 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Storybook 11 beta 把组件文档改造成了 AI 编程的燃料","description":"Storybook 11 beta 带来官方 Agent Skills 与无头 CLI，Vercel 同期推出内置 50 多种 UI 行为的 UI SDK。前端工具链开始认真给 AI 编程代理准备上下文，这意味着组件库的文档从此不只是给人看的。","image":"https://zhaojiale001016.github.io/img/inline/storybook11-agent-skills-4.webp","datePublished":"2026-11-16T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:技术资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>Storybook 11 beta 把组…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./storybook11-agent-skills.md</span> <h1 data-astro-cid-egg7nqdx>Storybook 11 beta 把组件文档改造成了 AI 编程的燃料</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a> <time data-astro-cid-egg7nqdx>2026-11-16</time> <span data-astro-cid-egg7nqdx>约 10 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/storybook11-agent-skills-4.webp" alt="Storybook 11 beta 把组件文档改造成了 AI 编程的燃料" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>用 AI 写前端组件，我最常遇到的麻烦不是模型不听话，而是它根本不知道你们项目里已经有什么。</p>
+<p>需求是”做一个带搜索、多选、远程加载的级联选择器”，它能给你生成一个能跑的漂亮组件——然后你会发现，这组件三个月前就有人写过，只是躺在 <code>components/legacy/</code> 里，文档还没更新。AI 从源码里猜 API，猜错了就用最原始的 <code>fetch</code> 重写一遍，重复组件就这么长了出来。</p>
+<p>11 月 9 日，<a href="https://storybook.js.org/blog/storybook-11-beta/" rel="noopener noreferrer" target="_blank">Storybook 11 beta 发布</a>，官方给的说法很直接：Coding agents can build UI quickly, but without context a lot of it is slop。它承认了这个问题，然后把解法做成了功能。</p>
+<h2 id="这次-beta-到底加了什么">这次 beta 到底加了什么</h2>
+<p>两个官方 skill 是核心。<code>ui-workflow</code> 带 agent 走完”用你们的组件写 UI → 补 story → 跑测试 → 准备给人审”这一圈；<code>component-docs</code> 负责在动手之前先查组件的 API、元数据和代码示例，官方强调是 token-efficient 的格式。技能会随升级或新项目自动安装，也上架到了 skills.sh，同时提供 Claude 和 Codex 的插件。</p>
+<p><img src="/img/inline/storybook11-agent-skills-2.webp" alt="Storybook 官方给出的上下文与产出对照图">
+<em>图源：Storybook 官方博客《Storybook 11 beta》</em></p>
+<p>配套的是一个无头 CLI，<code>npx storybook@next tools docs list</code> 能列出全部组件和文档，<code>tools docs show --id</code> 直接看单个组件，不需要起一个完整的 Storybook 实例。</p>
+<p><img src="/img/inline/storybook11-agent-skills-3.webp" alt="Storybook 官方绘制的 Agent 工作流示意图">
+<em>图源：Storybook 官方博客《Storybook 11 beta》</em></p>
+<p>更实用的两个命令是 <code>storybook tools test run</code> 和 <code>storybook tools review create</code>。前者跑基于 Vitest 的功能与可访问性测试，agent 自己看失败信息、改、再跑；后者直接生成一份浏览器评审页，把改动组件和受影响页面的 story 分组汇总，附上改动摘要和关键状态，人打开就能看。</p>
+<p><img src="/img/inline/storybook11-agent-skills-4.webp" alt="Storybook 生成的组件改动评审界面">
+<em>图源：Storybook 官方博客《Storybook 11 beta》</em></p>
+<p>几个数字值得记：包体积比 v10 小了 25%，大型项目的冷启动 docgen 上下文投递比 v10 快约 10 倍（以 Chromatic 为例），官方说等 TypeScript 7.1 稳定后还能再快 2 倍。story 格式升级到 CSF 4，完全类型安全，配了 codemod 可以增量迁移，CSF 3 继续兼容。框架侧 React 换成 <code>react-component-meta</code> 提取元数据，Svelte 5 的提取也更准，还多了 <code>@storybook/angular-vite</code>。</p>
+<p>MCP 依然支持，但官方现在更推荐 skills——理由很实在：skill 不需要你本地跑着一个 Storybook 实例。</p>
+<div class="expressive-code"><link rel="stylesheet" href="/_astro/ec.s6kbu.css"><script type="module" src="/_astro/ec.0vx5m.js"></script><figure class="frame"><figcaption class="header"></figcaption><pre data-language="mermaid"><code><div class="ec-line"><div class="code"><span style="--0:#BF3441">flowchart</span><span style="--0:#24292E"> </span><span style="--0:#6F42C1">LR</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#AE4B07">A</span><span style="--0:#BF3441">[</span><span style="--0:#032F62">人类给出意图</span><span style="--0:#BF3441">]</span><span style="--0:#24292E"> </span><span style="--0:#BF3441">--></span><span style="--0:#24292E"> </span><span style="--0:#AE4B07">B</span><span style="--0:#BF3441">[</span><span style="--0:#032F62">component</span><span style="--0:#24292E">-</span><span style="--0:#032F62">docs 查组件 API</span><span style="--0:#BF3441">]</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#AE4B07">B </span><span style="--0:#BF3441">--></span><span style="--0:#24292E"> </span><span style="--0:#AE4B07">C</span><span style="--0:#BF3441">[</span><span style="--0:#032F62">agent 用既有组件拼装 UI</span><span style="--0:#BF3441">]</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#AE4B07">C </span><span style="--0:#BF3441">--></span><span style="--0:#24292E"> </span><span style="--0:#AE4B07">D</span><span style="--0:#BF3441">[</span><span style="--0:#032F62">storybook tools test run</span><span style="--0:#BF3441">]</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#AE4B07">D </span><span style="--0:#BF3441">-->|</span><span style="--0:#032F62">失败</span><span style="--0:#BF3441">|</span><span style="--0:#24292E"> </span><span style="--0:#AE4B07">C</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#AE4B07">D </span><span style="--0:#BF3441">-->|</span><span style="--0:#032F62">通过</span><span style="--0:#BF3441">|</span><span style="--0:#24292E"> </span><span style="--0:#AE4B07">E</span><span style="--0:#BF3441">[</span><span style="--0:#032F62">storybook tools review create</span><span style="--0:#BF3441">]</span></div></div><div class="ec-line"><div class="code"><span class="indent">    </span><span style="--0:#AE4B07">E </span><span style="--0:#BF3441">--></span><span style="--0:#24292E"> </span><span style="--0:#AE4B07">F</span><span style="--0:#BF3441">[</span><span style="--0:#032F62">人类评审交付</span><span style="--0:#BF3441">]</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="flowchart LR    A[人类给出意图] --> B[component-docs 查组件 API]    B --> C[agent 用既有组件拼装 UI]    C --> D[storybook tools test run]    D -->|失败| C    D -->|通过| E[storybook tools review create]    E --> F[人类评审交付]"><div></div></button></div></figure></div>
+<h2 id="vercel-那边动作更直接">Vercel 那边，动作更直接</h2>
+<p>几乎同一时间，Vercel Labs 放出了 <a href="https://www.techaimag.com/ai-news/vercel-launches-ui-sdk-for-ai-coding-agents" rel="noopener noreferrer" target="_blank">Vercel UI SDK 的 beta 版</a>：50 多种打磨过的 UI 行为（弹性过渡、表单错误抖动、卡片堆叠展开之类），Apache-2.0 协议，支持 React、Vue、Svelte、Solid 和 Web Components，自带无障碍支持，还留了一个让 agent 直接操控界面的桥接层。</p>
+<p><img src="/img/inline/storybook11-agent-skills-5.webp" alt="Tech AI Magazine 关于 Vercel UI SDK 的报道配图">
+<em>图源：Tech AI Magazine《Vercel Launches UI SDK for AI Coding Agents》</em></p>
+<p>思路和 Storybook 其实是同一个：不再让模型从零手写 CSS 和交互逻辑，而是给它一套”行为积木”去组装。提示词里写一句”用弹性行为实现这个模态框”，agent 就会去调 SDK 里的模块，而不是瞎编一段 CSS。</p>
+<h2 id="我怎么看这件事">我怎么看这件事</h2>
+<p><strong>前端工具链正在从”给人提供 IDE”转向”给 agent 提供上下文”。</strong></p>
+<p>Storybook 火了七八年，它的定位一直是组件的 Playground 和文档站。现在它把自己改造成了一份<strong>可被程序查询的知识库</strong>：组件叫什么、props 有哪些、有哪些状态、代码示例长什么样，全都能被命令行取出来。这跟当年把 README 变成结构化 API 文档是同一类升级，只是这次消费方从搜索引擎换成了 agent。</p>
+<p>Vercel 更进一步，它连”交互该长什么样”都标准化了。AI 写 UI 最大的短板从来不是 HTML 结构，而是那些没人写进文档的细节：按钮按下要缩多少、错误提示怎么抖、列表项悬停的过渡时长。这些经验过去散落在每个团队的手艺里，现在有人把它们打包成 50 多个可复用的行为块。</p>
+<p>给团队三条建议：</p>
+<ol>
+<li><strong>先让组件库能被查到。</strong> 升级成本很低，但前提是你的组件有 story、有 props 描述。文档质量决定 agent 的输出上限。</li>
+<li><strong>别只测”能不能跑”。</strong> <code>tools review create</code> 的价值在于把验收从”看 diff”变成”看界面”。</li>
+<li><strong>先在试点项目上验证。</strong> 官方说了这是 beta，正式版在 12 月。不同团队的设计系统差异很大，别一上来就全量切。</li>
+</ol>
+<p>别把这两件事和”AI 会写代码了”混为一谈。模型生成能力涨得很快，但工程上真正的瓶颈一直是上下文供给和验收闭环。Storybook 和 Vercel 做的都是把”人类知识”翻译成”机器可读的规约”——不性感，但收益是复利的。</p>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="https://storybook.js.org/blog/storybook-11-beta/" rel="noopener noreferrer" target="_blank">Storybook 官方博客《Storybook 11 beta》</a></li>
+<li><a href="https://azeemhassni.com/blog/wire-storybook-11-beta-agent-skills/" rel="noopener noreferrer" target="_blank">Azeem Hassni《Storybook 11 beta ships official skills for coding agents》</a></li>
+<li><a href="https://www.techaimag.com/ai-news/vercel-launches-ui-sdk-for-ai-coding-agents" rel="noopener noreferrer" target="_blank">Tech AI Magazine《Vercel Launches UI SDK for AI Coding Agents》</a></li>
+<li><a href="http://m.toutiao.com/group/7708027044478616090/" rel="noopener noreferrer" target="_blank">今日头条《Vercel UI SDK：让 AI 写代码更懂交互》</a></li>
+</ul>
+<h2 id="开发者圈快讯">开发者圈快讯</h2>
+<ul>
+<li>llama.cpp 正式发布 1.0.0，Simon Willison 当天就把它接进了本地 LLM 工具链，Datasette 也顺势支持了 OpenAI 兼容端点，可以直接对接 LM Studio 或 Ollama——<a href="https://simonwillison.net/tags/llm/" rel="noopener noreferrer" target="_blank">Simon Willison</a></li>
+<li>谷歌推出 Gemini 4 家族最便宜的 Hydrogen，输入 $1.50/M、输出 $7.50/M，成为 Gemini 搜索的免费层模型；12 月 1 日起 Carbon 与 Argon 集体翻倍——<a href="https://simonwillison.net/tags/llm/" rel="noopener noreferrer" target="_blank">Simon Willison</a></li>
+<li>Vercel 的 Chat SDK 新增 json-render，agent 写一份 JSON 规范就能把生成式 UI 推成 Slack 的 Block Kit、Teams 的 Adaptive Cards——<a href="https://vercel.com/changelog/json-render-and-chat-sdk-agents" rel="noopener noreferrer" target="_blank">Vercel Changelog</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/Storybook" data-astro-cid-egg7nqdx>Storybook</a><a href="/tags/AI%20%E7%BC%96%E7%A8%8B" data-astro-cid-egg7nqdx>AI 编程</a><a href="/tags/Agent%20Skills" data-astro-cid-egg7nqdx>Agent Skills</a><a href="/tags/Vercel" data-astro-cid-egg7nqdx>Vercel</a><a href="/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96" data-astro-cid-egg7nqdx>前端工程化</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=Storybook%2011%20beta%20%E6%8A%8A%E7%BB%84%E4%BB%B6%E6%96%87%E6%A1%A3%E6%94%B9%E9%80%A0%E6%88%90%E4%BA%86%20AI%20%E7%BC%96%E7%A8%8B%E7%9A%84%E7%87%83%E6%96%99&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fstorybook11-agent-skills" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=Storybook%2011%20beta%20%E6%8A%8A%E7%BB%84%E4%BB%B6%E6%96%87%E6%A1%A3%E6%94%B9%E9%80%A0%E6%88%90%E4%BA%86%20AI%20%E7%BC%96%E7%A8%8B%E7%9A%84%E7%87%83%E6%96%99&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fstorybook11-agent-skills" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/storybook11-agent-skills" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/storybook11-agent-skills.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/storybook11-agent-skills.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/deepseek-fullstack-api" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>DeepSeek 把自家 App 拆开卖：全家桶 API 开放，开发者可以直接 1:1 复刻官方应用</span> </a> <a class="pn right" href="/posts/week46-new-cars-launch" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>一周 13 款新车：11 万级装上城市 NOA，合资开始打价格战</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/vercel-ui-sdk" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>Vercel 把界面拆成「行为」：UI SDK beta 让 Agent 不只会造 UI，还能反过来操作 UI</span> <time data-astro-cid-egg7nqdx>2026-11-22</time> </a><a class="rel" href="/posts/gemini4-neon-anthropic-ipo" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>谷歌 Gemini 4 Neon 上线，Anthropic 83 美元定价创 IPO 纪录</span> <time data-astro-cid-egg7nqdx>2026-11-19</time> </a><a class="rel" href="/posts/gpt62-qwen4max-launch" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>GPT-6.2 降价 20%，Qwen4-Max 单任务成本砍掉 58%：这周大模型比的其实不是谁最强</span> <time data-astro-cid-egg7nqdx>2026-11-21</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#这次-beta-到底加了什么" class data-slug="这次-beta-到底加了什么" data-astro-cid-egg7nqdx>这次 beta 到底加了什么</a><a href="#vercel-那边动作更直接" class data-slug="vercel-那边动作更直接" data-astro-cid-egg7nqdx>Vercel 那边，动作更直接</a><a href="#我怎么看这件事" class data-slug="我怎么看这件事" data-astro-cid-egg7nqdx>我怎么看这件事</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a><a href="#开发者圈快讯" class data-slug="开发者圈快讯" data-astro-cid-egg7nqdx>开发者圈快讯</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/huawei-mate-x8-launch","/posts/nba-cup-mavs-nuggets-flagg","/posts/battery-cylinder-lfp-shift","/posts/byd-tang-gen3-launch","/posts/jensen-huang-nvidia-return","/posts/nba-nov24-blazers-76ers","/posts/game-industry-nov23","/posts/nba-nov23-jokic-gidde","/posts/week47-new-cars-launch","/posts/nba-nov22-wemby-herro-50","/posts/nvidia-crash-gpu-price","/posts/vercel-ui-sdk","/posts/byd-tai9-folding-cockpit","/posts/nba-nov21-cup-harden51","/posts/gpt62-qwen4max-launch","/posts/gta6-first-day-2458w","/posts/nba-nov20-lillard-milwaukee","/posts/osta-o1-pro-launch","/posts/xiangjie-v8-launch","/posts/gemini4-neon-anthropic-ipo","/posts/guangzhou-autoshow-2026-preview","/posts/nba-nov19-grizzlies-sixers-bulls","/posts/gta6-launch-day","/posts/huawei-mate90-air-thin","/posts/nba-streaks-break","/posts/gpu-bom-cost-hike-nov","/posts/mh-wilds-switch2-launch","/posts/nba-nov16-knicks-sixers","/posts/week46-new-cars-launch","/posts/storybook11-agent-skills","/posts/deepseek-fullstack-api","/posts/ev-battery-fullchain-shift","/posts/nba-nov14-record-night","/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>

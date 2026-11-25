@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="11 月 13 日晚 DeepSeek 开放全家桶应用 API：联网搜索、深度思考搜索、文件输入、阅读链接、安全校验全部可开参数调用，Search / Fetch / OCR / ASR / TTS 拆成独立接口按次计费，官方还开源了 chat-demo 演示客户端。"><link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#157a3e"><link rel="icon" type="image/png" href="/favicon.png" sizes="180x180"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/favicon.png"><link rel="canonical" href="https://zhaojiale001016.github.io/posts/deepseek-fullstack-api/"><link rel="alternate" type="application/rss+xml" title="豆芽的技术博客" href="/rss.xml"><link href="/pagefind/pagefind-component-ui.css" rel="stylesheet"><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script src="/pagefind/pagefind-highlight.js"></script><meta property="og:type" content="website"><meta property="og:title" content="DeepSeek 把自家 App 拆开卖：全家桶 API 开放，开发者可以直接 1:1 复刻官方应用 · 豆芽的技术博客"><meta property="og:description" content="11 月 13 日晚 DeepSeek 开放全家桶应用 API：联网搜索、深度思考搜索、文件输入、阅读链接、安全校验全部可开参数调用，Search / Fetch / OCR / ASR / TTS 拆成独立接口按次计费，官方还开源了 chat-demo 演示客户端。"><meta property="og:url" content="https://zhaojiale001016.github.io/posts/deepseek-fullstack-api/"><meta property="og:image" content="https://zhaojiale001016.github.io/img/inline/deepseek-fullstack-api-4.webp"><meta name="twitter:card" content="summary_large_image"><title>DeepSeek 把自家 App 拆开卖：全家桶 API 开放，开发者可以直接 1:1 复刻官方应用 · 豆芽的技术博客</title><style>.medium-zoom-overlay{opacity:0;will-change:opacity;transition:opacity .3s;position:fixed;inset:0}.medium-zoom--opened .medium-zoom-overlay{cursor:pointer;cursor:zoom-out;opacity:1}.medium-zoom-image{cursor:pointer;cursor:zoom-in;transition:transform .3s cubic-bezier(.2,0,.2,1)!important}.medium-zoom-image--hidden{visibility:hidden}.medium-zoom-image--opened{cursor:pointer;cursor:zoom-out;will-change:transform;position:relative}@media(prefers-reduced-motion:reduce){.medium-zoom-image,.medium-zoom-overlay{transition:none!important}}
+</style>
+<link rel="stylesheet" href="/_astro/about.CFfxUn7k.css">
+<link rel="stylesheet" href="/_astro/_slug_.DTk8__7j.css"></head> <body> <a class="skip" href="#content">跳到正文</a> <canvas id="site-bg" class="site-bg" aria-hidden="true"></canvas> <script>
+      (() => {
+        const canvas = document.getElementById('site-bg');
+        const ctx = canvas?.getContext('2d', { alpha: false });
+        if (!ctx) return;
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const dpr = Math.min(devicePixelRatio || 1, 2);
+        let w = 0, h = 0;
+        const glyphs = ['.', '$', '>', '_', '#', '/', '~'];
+        const fit = () => {
+          w = innerWidth;
+          h = innerHeight;
+          canvas.width = Math.floor(w * dpr);
+          canvas.height = Math.floor(h * dpr);
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        };
+        const paint = (sec) => {
+          ctx.globalAlpha = 1;
+          ctx.fillStyle = '#f2efe6';
+          ctx.fillRect(0, 0, w, h);
+          ctx.font = '13px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace';
+          ctx.fillStyle = 'rgba(21,122,62,0.16)';
+          const col = 16;
+          const row = 22;
+          const cols = Math.ceil(w / col);
+          const rows = Math.ceil(h / row);
+          const shift = reduce ? 0 : Math.floor(sec * 1.5);
+          for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+              if ((r * 3 + c) % 6 !== 0) continue;
+              ctx.fillText(glyphs[(r + c + shift) % glyphs.length], c * col, r * row + 14);
+            }
+          }
+          if (!reduce && Math.floor(sec * 2) % 2 === 0) {
+            ctx.fillStyle = 'rgba(21,122,62,0.38)';
+            ctx.fillRect((Math.floor(sec * 4) % cols) * col, (rows - 2) * row, 9, 14);
+          }
+        };
+        const frame = (now) => {
+          paint((now || 0) / 1000);
+          if (!reduce && document.visibilityState !== 'hidden') requestAnimationFrame(frame);
+        };
+        fit();
+        addEventListener('resize', () => { fit(); if (reduce) paint(0); });
+        document.addEventListener('visibilitychange', () => { if (!reduce && document.visibilityState === 'visible') requestAnimationFrame(frame); });
+        requestAnimationFrame(frame);
+      })();
+    </script> <header class="site-header"> <div class="wrap"> <a class="brand" href="/"> <span class="path">豆芽@blog:~$</span> whoami<span class="cursor"></span> </a> <div class="header-tools"> <pagefind-modal-trigger placeholder="find" shortcut="/"></pagefind-modal-trigger> <nav class="nav"> <a href="/" class>首页</a><a href="/archives" class>归档</a><a href="/tags" class>标签</a><a href="/stats" class>统计</a><a href="/subscribe" class>订阅</a><a href="/about" class>关于</a> </nav> </div> </div> </header> <main id="content" data-pagefind-body="true">  <div class="article-layout" data-astro-cid-egg7nqdx> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"DeepSeek 把自家 App 拆开卖：全家桶 API 开放，开发者可以直接 1:1 复刻官方应用","description":"11 月 13 日晚 DeepSeek 开放全家桶应用 API：联网搜索、深度思考搜索、文件输入、阅读链接、安全校验全部可开参数调用，Search / Fetch / OCR / ASR / TTS 拆成独立接口按次计费，官方还开源了 chat-demo 演示客户端。","image":"https://zhaojiale001016.github.io/img/inline/deepseek-fullstack-api-4.webp","datePublished":"2026-11-15T10:00:00.000Z","author":{"@type":"Person","name":"豆芽","url":"https://zhaojiale001016.github.io/about"},"publisher":{"@type":"Organization","name":"豆芽的技术博客","logo":{"@type":"ImageObject","url":"https://zhaojiale001016.github.io/icon-192.png"}}}</script> <article class="article" data-pagefind-filter="category:技术资讯" data-astro-cid-egg7nqdx> <div class="article-head" data-astro-cid-egg7nqdx> <nav class="breadcrumb" aria-label="面包屑" data-astro-cid-egg7nqdx> <a href="/" data-astro-cid-egg7nqdx>首页</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <a href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a><span class="sep" data-astro-cid-egg7nqdx>/</span> <span class="cur" data-astro-cid-egg7nqdx>DeepSeek 把自家 App 拆开卖…</span> </nav> <span class="path" data-astro-cid-egg7nqdx>➜ ~/posts $ cat ./deepseek-fullstack-api.md</span> <h1 data-astro-cid-egg7nqdx>DeepSeek 把自家 App 拆开卖：全家桶 API 开放，开发者可以直接 1:1 复刻官方应用</h1> <div class="meta" style="margin-top: 16px; margin-bottom: 0;" data-astro-cid-egg7nqdx> <a class="cat" href="/categories/%E6%8A%80%E6%9C%AF%E8%B5%84%E8%AE%AF" data-astro-cid-egg7nqdx>技术资讯</a> <time data-astro-cid-egg7nqdx>2026-11-15</time> <span data-astro-cid-egg7nqdx>约 9 分钟读完</span> <span id="busuanzi_container_page_pv" data-astro-cid-egg7nqdx>· 阅读 <span id="busuanzi_value_page_pv" data-astro-cid-egg7nqdx>-</span> 次</span>  </div> </div> <img class="cover" src="/img/inline/deepseek-fullstack-api-4.webp" alt="DeepSeek 把自家 App 拆开卖：全家桶 API 开放，开发者可以直接 1:1 复刻官方应用" loading="lazy" data-astro-cid-egg7nqdx> <div class="prose" data-astro-cid-egg7nqdx> <p>11 月 13 日晚上 22 点 19 分，DeepSeek 官方公众号发了一则公告，标题朴素得有点反常——《DeepSeek 发布全家桶应用 API》。</p>
+<p><img src="/img/inline/deepseek-fullstack-api-3.webp" alt="DeepSeek 官方发布全家桶应用 API 的公告原文">
+<em>图源：DeepSeek 微信公众号《DeepSeek 发布全家桶应用 API》</em></p>
+<p>公告第一段就把话说透了：在 DeepSeek App 里面，联网搜索、文件输入、阅读链接、语音交互、安全校验这些能力，是和模型推理配合着跑出来的；但你想在自己的 App 里做出类似体验，除了接 API，还得自己去对接外部工具、处理调用衔接，“往往还需耗费大量精力”。</p>
+<p>现在，这些胶水活儿，DeepSeek 帮你干了。</p>
+<h2 id="到底开放了什么">到底开放了什么</h2>
+<p>官方口径很清楚：<code>deepseek-flash</code>（也就是 V4.1-Flash）已经在 <strong>Messages、Responses、Chat Completions</strong> 三类接口下支持这些能力，工具调用和上下文拼接全部由服务端完成：</p>
+<ul>
+<li><strong>联网搜索</strong>（<code>deepseek_web_search</code>）：非思考模式下，模型根据提问自动发起网页或图片搜索，并在回答里附上引用；思考模式下，模型能在多步推理中自主联网搜索、阅读链接，再结合拿到的信息继续推理。</li>
+<li><strong>深度思考搜索</strong>：就是上面那条的加强版，重点在”多步推理中自主检索”。</li>
+<li><strong>文件输入</strong>：PDF、Office 文档、图片，服务端完成纯文本提取或图文混排解析，拼进上下文。</li>
+<li><strong>阅读链接</strong>（<code>deepseek_read_url</code>）：模型自动识别用户消息里的链接，抓取网页内容后结合上下文作答。</li>
+<li><strong>模型安全</strong>：开启安全校验参数后提供基础风控，命中风险时返回拒答标识。</li>
+</ul>
+<p>更关键的是，这些底层能力<strong>还支持作为独立接口单独调用</strong>：Search、Fetch、OCR、ASR、TTS。官方给的学习应用例子很直白——OCR 识别试卷，交给模型讲题；ASR 把语音转成文字，模型理解需求，TTS 再把答案念出来。</p>
+<h2 id="价格表比功能表更值得看">价格表比功能表更值得看</h2>
+<p><img src="/img/inline/deepseek-fullstack-api-1.webp" alt="DeepSeek 工具 API 定价表">
+<em>图源：DeepSeek 官方《DeepSeek 发布全家桶应用 API》</em></p>
+<p>调用扩展能力，除了 Token 费用之外，还要按次收工具费：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>项目</th><th>价格</th></tr></thead><tbody><tr><td>文字 / 图片搜索</td><td>5 元 / 千次</td></tr><tr><td>网页抓取</td><td>5 元 / 千次</td></tr><tr><td>文字识别（OCR）</td><td>1.5 元 / 千页</td></tr><tr><td>语音识别（ASR）</td><td>0.39 元 / 小时（原价 0.78，限时 5 折）</td></tr><tr><td>语音合成（TTS）</td><td>1.5 元 / 万字符（原价 3.0，限时 5 折）</td></tr></tbody></table>
+<p>我自己算了一下账：一次典型的深度研究任务，模型来回搜索、读链接几十次很常见，搜索按 0.005 元一次算，单次研究光工具费就是几毛钱到一两块。<strong>这意味着一旦你的产品重度依赖联网搜索，工具费完全有可能盖过 Token 费本身</strong>，而且它是按调用次数走、不会因为你缓存了什么而变便宜。所以定价表不是附录，是核心参数。</p>
+<h2 id="还顺手送了个开源-demo">还顺手送了个开源 Demo</h2>
+<p>DeepSeek 不只是开放接口，还用这套新 API 写了一个轻量对话客户端并开源，支持直接导入历史对话。</p>
+<p><img src="/img/inline/deepseek-fullstack-api-4.webp" alt="GitHub 上开源的 deepseek-ai/chat-demo 仓库">
+<em>图源：GitHub 仓库页 deepseek-ai/chat-demo</em></p>
+<p>仓库是 MIT 协议，star 数已经接近 600，fork 过百，版本停在 v0.1.1。官方给的体验入口是 cdn.deepseek.com/chat-demo。这个 Demo 的意义不在于产品，而在于它把”这套 API 到底能做出什么东西”变成了一个可以直接抄的起点——过去这层样板代码每个团队都要自己写一遍。</p>
+<h2 id="我怎么看这件事">我怎么看这件事</h2>
+<p><strong>第一，这是把”应用层胶水”标准化了，而且是最脏最累的那一层。</strong></p>
+<p>大模型 API 这两年卷得热闹，榜单分数早就不值钱了，真正的工程量早就转移到了模型周围那一圈：搜索引擎怎么接、PDF 怎么解析、工具调用的顺序怎么编排、上下文怎么拼、失败了怎么重试。这些活儿没有一件有技术含量，但每一件都能耗掉一个小团队两周。DeepSeek 这次等于官方承认了这一点，然后把这一圈打包成接口卖给你。</p>
+<p>对独立开发者和小团队，这是实打实的成本削减：以前要做”能联网、能读文档、能说话”的完整应用，你至少得同时维护搜索、解析、语音三条外部供应链；现在是一个 Base URL。</p>
+<p><strong>第二，“1:1 复刻 DeepSeek App”这句话，比功能清单更值得琢磨。</strong></p>
+<p>DeepSeek Harness 负责人崔添翼在官方公告里写：<em>“下一个超级 App 不必是面向所有人的一个超级 App。现在，每个人都有能力创造一个超级 App。下一个超级 App 也可以是只属于你一个人的超级 App。”</em></p>
+<p>翻译一下：大厂正在主动放弃”封闭 App 护城河”这层防线，转而去做底座。对开发者是好事——你能用极低成本做出过去只有大厂才做得出的体验。但反过来想，<strong>套壳 DeepSeek 的门槛现在几乎为零</strong>，差异化必然从”能力”转移到”产品定义”。最后能活下来的不会是功能最多的那个，而是把一个具体问题解决得最狠的那个。</p>
+<p><strong>第三，有个成本不在定价表里，得自己算。</strong></p>
+<p>官方写得很明白：如果对外提供应用服务，应务必开启安全校验参数，并自行承担内容安全审核、大模型登记、AI 标识等义务。这部分的人力、备案、法务成本，没有任何一条 API 价格能覆盖。做 To C 的团队，这笔钱要提前算进模型。</p>
+<p><strong>第四，别被”全家桶”三个字带偏。</strong></p>
+<p>这次开放的本质是<strong>工具层的标准化</strong>，不是模型能力的跃升。V4.1-Flash 本身没变，变的只是它能看到的世界变大了。所以真正的价值取决于你把它接进什么工作流里——如果你只是把官网 Demo 跑一遍改个皮，那这套 API 对你和之前没有任何区别。</p>
+<h2 id="参考来源">参考来源</h2>
+<ul>
+<li><a href="https://api-docs.deepseek.com/zh-cn/news/news261113/" rel="noopener noreferrer" target="_blank">DeepSeek 官方《DeepSeek 发布全家桶应用 API》</a></li>
+<li><a href="https://api-docs.deepseek.com/zh-cn/updates" rel="noopener noreferrer" target="_blank">DeepSeek API 更新日志（2026-11-13 发布全家桶应用 API）</a></li>
+<li><a href="http://news.qq.com/rain/a/20261114A04NGC00" rel="noopener noreferrer" target="_blank">爱范儿《DeepSeek 开放全家桶 API，人人都能打造自己的超级 App》</a></li>
+<li><a href="http://m.163.com/dy/article/LBMKO33B0519DFFO.html" rel="noopener noreferrer" target="_blank">北京商报《DeepSeek 开放全家桶应用 API》（网易转载）</a></li>
+</ul>
+<h2 id="开发者快讯">开发者快讯</h2>
+<ul>
+<li>Cloudflare 开源专为 AI 智能体打造的浏览器 Kitesurf，跑在 Workers 上、不依赖 Chromium 容器，支持 CDP 协议——<a href="http://news.qq.com/rain/a/20261114A0CIL700" rel="noopener noreferrer" target="_blank">IT 之家（腾讯新闻转载）</a></li>
+<li>谷歌发布 Gemini 4 Hydrogen，定位日常编程与多步智能体任务，Cargo / Argon 面向长推理——<a href="https://finance.eastmoney.com/a/202611133930641952.html" rel="noopener noreferrer" target="_blank">科创板日报（东方财富网）</a></li>
+<li>Storybook 11 beta 发布，主打 agent-ready 设计系统：官方 skills、headless CLI、包体缩小 25%——<a href="https://storybook.js.org/blog/storybook-11-beta/" rel="noopener noreferrer" target="_blank">Storybook 官方博客</a></li>
+</ul> </div> <div class="article-tags" data-astro-cid-egg7nqdx> <a href="/tags/DeepSeek" data-astro-cid-egg7nqdx>DeepSeek</a><a href="/tags/API" data-astro-cid-egg7nqdx>API</a><a href="/tags/AI%E5%BA%94%E7%94%A8" data-astro-cid-egg7nqdx>AI应用</a><a href="/tags/Agent" data-astro-cid-egg7nqdx>Agent</a><a href="/tags/%E5%BC%80%E6%BA%90" data-astro-cid-egg7nqdx>开源</a> </div> <div class="author-box" data-astro-cid-egg7nqdx> <img src="/img/avatar.webp" alt="豆芽" class="author-avatar" data-astro-cid-egg7nqdx> <div class="author-info" data-astro-cid-egg7nqdx> <div class="author-name" data-astro-cid-egg7nqdx>豆芽</div> <div class="author-bio" data-astro-cid-egg7nqdx>写代码，也写代码背后的世界。技术圈的每一场变局都逃不过这个终端。</div> <a href="/about" class="author-link" data-astro-cid-egg7nqdx>更多关于我 →</a> </div> </div> <div class="share-bar" data-astro-cid-egg7nqdx> <span class="share-label" data-astro-cid-egg7nqdx>分享：</span> <a href="https://twitter.com/intent/tweet?text=DeepSeek%20%E6%8A%8A%E8%87%AA%E5%AE%B6%20App%20%E6%8B%86%E5%BC%80%E5%8D%96%EF%BC%9A%E5%85%A8%E5%AE%B6%E6%A1%B6%20API%20%E5%BC%80%E6%94%BE%EF%BC%8C%E5%BC%80%E5%8F%91%E8%80%85%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%201%3A1%20%E5%A4%8D%E5%88%BB%E5%AE%98%E6%96%B9%E5%BA%94%E7%94%A8&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fdeepseek-fullstack-api" target="_blank" rel="noopener" class="share-btn" title="分享到 X" data-astro-cid-egg7nqdx>x</a> <a href="https://service.weibo.com/share/share.php?title=DeepSeek%20%E6%8A%8A%E8%87%AA%E5%AE%B6%20App%20%E6%8B%86%E5%BC%80%E5%8D%96%EF%BC%9A%E5%85%A8%E5%AE%B6%E6%A1%B6%20API%20%E5%BC%80%E6%94%BE%EF%BC%8C%E5%BC%80%E5%8F%91%E8%80%85%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%201%3A1%20%E5%A4%8D%E5%88%BB%E5%AE%98%E6%96%B9%E5%BA%94%E7%94%A8&url=https%3A%2F%2Fzhaojiale001016.github.io%2Fposts%2Fdeepseek-fullstack-api" target="_blank" rel="noopener" class="share-btn" title="分享到微博" data-astro-cid-egg7nqdx>weibo</a> <button class="share-btn copy-link" data-url="https://zhaojiale001016.github.io/posts/deepseek-fullstack-api" title="复制链接" data-astro-cid-egg7nqdx>copy</button> </div> <div class="edit-link" data-astro-cid-egg7nqdx> <a href="https://github.com/zhaojiale001016/zhaojiale001016.github.io/edit/source/src/content/blog/deepseek-fullstack-api.md" target="_blank" rel="noopener" data-astro-cid-egg7nqdx>$ git edit ./posts/deepseek-fullstack-api.md → 在 GitHub 上编辑此页</a> </div> <nav class="post-nav" data-astro-cid-egg7nqdx> <a class="pn" href="/posts/ev-battery-fullchain-shift" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>← 上一篇</span> <span class="t" data-astro-cid-egg7nqdx>车企不想再当「采购方」了：小米理想扎堆入股欣旺达，动力电池进入全链路负责时代</span> </a> <a class="pn right" href="/posts/storybook11-agent-skills" data-astro-cid-egg7nqdx> <span class="dir" data-astro-cid-egg7nqdx>下一篇 →</span> <span class="t" data-astro-cid-egg7nqdx>Storybook 11 beta 把组件文档改造成了 AI 编程的燃料</span> </a> </nav> <section class="related" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 16px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>相关阅读</h2> </div> <div class="related-grid" data-astro-cid-egg7nqdx> <a class="rel" href="/posts/llm-agent-shift-deepseek-longcat" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>DeepSeek 开源 Super-agent，美团掏出 1.6 万亿参数的 LongCat-2.5：这届大模型不聊天，只干活</span> <time data-astro-cid-egg7nqdx>2026-11-05</time> </a><a class="rel" href="/posts/vercel-ui-sdk" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>Vercel 把界面拆成「行为」：UI SDK beta 让 Agent 不只会造 UI，还能反过来操作 UI</span> <time data-astro-cid-egg7nqdx>2026-11-22</time> </a><a class="rel" href="/posts/gpt62-qwen4max-launch" data-astro-cid-egg7nqdx> <span class="cat" data-astro-cid-egg7nqdx>技术资讯</span> <span class="t" data-astro-cid-egg7nqdx>GPT-6.2 降价 20%，Qwen4-Max 单任务成本砍掉 58%：这周大模型比的其实不是谁最强</span> <time data-astro-cid-egg7nqdx>2026-11-21</time> </a> </div> </section> <section class="评论" data-astro-cid-egg7nqdx> <div class="section-head" style="margin: 0 0 18px;" data-astro-cid-egg7nqdx> <h2 data-astro-cid-egg7nqdx>评论</h2> </div> <script src="https://giscus.app/client.js" data-repo="zhaojiale001016/zhaojiale001016.github.io" data-repo-id="R_kgDOVjsqow" data-category="General" data-category-id="DIC_kwDOVjsqo84DKcIg" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="light" data-lang="zh-CN" crossorigin="anonymous" async></script> </section> </article> <aside class="toc" data-astro-cid-egg7nqdx> <div class="toc-title" data-astro-cid-egg7nqdx>$ 目录</div> <nav id="toc-nav" data-astro-cid-egg7nqdx> <a href="#到底开放了什么" class data-slug="到底开放了什么" data-astro-cid-egg7nqdx>到底开放了什么</a><a href="#价格表比功能表更值得看" class data-slug="价格表比功能表更值得看" data-astro-cid-egg7nqdx>价格表比功能表更值得看</a><a href="#还顺手送了个开源-demo" class data-slug="还顺手送了个开源-demo" data-astro-cid-egg7nqdx>还顺手送了个开源 Demo</a><a href="#我怎么看这件事" class data-slug="我怎么看这件事" data-astro-cid-egg7nqdx>我怎么看这件事</a><a href="#参考来源" class data-slug="参考来源" data-astro-cid-egg7nqdx>参考来源</a><a href="#开发者快讯" class data-slug="开发者快讯" data-astro-cid-egg7nqdx>开发者快讯</a> </nav> </aside> </div> <div class="progress" id="progress" data-astro-cid-egg7nqdx></div> <button class="to-top" id="to-top" title="回到顶部" data-astro-cid-egg7nqdx>↑ top</button>  </main> <footer class="site-footer"> <div class="wrap"> <div class="copy">© 2026 豆芽 · exit 0 · build 9da65da <span id="busuanzi_container_site_pv" style="display:none"> · pv <span id="busuanzi_value_site_pv"></span></span> <span id="busuanzi_container_site_uv" style="display:none"> · uv <span id="busuanzi_value_site_uv"></span></span> </div> <div class="links"> <a href="https://github.com/zhaojiale001016" target="_blank" rel="noopener">github</a> <span class="dot">·</span> <a href="#" id="random-post">随机</a> <span class="dot">·</span> <a href="/rss.xml">rss</a> <span class="dot">·</span> <a href="/uses">工具</a> <span class="dot">·</span> <a href="/friends">友链</a> <span class="dot">·</span> <a href="/now">now</a> <span class="dot">·</span> <a href="/guestbook">留言板</a> </div> </div> </footer> <aside class="buddy" id="buddy"> <div class="buddy-bar"> <i></i><i></i><i></i> <span>sprout@blog</span> <button type="button" id="buddy-fold" aria-label="收起豆芽">_</button> </div> <div class="buddy-body"> <pre class="buddy-art" aria-hidden="true">   .
+  \|/
+ --*--
+   |
+  / \</pre> <p class="buddy-line"><span class="prompt">➜</span> status: active<span class="buddy-caret"></span></p> </div> </aside> <pagefind-config bundle-path="/pagefind/" lang="zh-cn" highlight-param="highlight"></pagefind-config> <pagefind-modal></pagefind-modal> <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> <script type="module" src="/_astro/Base.astro_astro_type_script_index_0_lang.5DIOVgcp.js"></script> <script>(function(){const postHrefs = ["/posts/huawei-mate-x8-launch","/posts/nba-cup-mavs-nuggets-flagg","/posts/battery-cylinder-lfp-shift","/posts/byd-tang-gen3-launch","/posts/jensen-huang-nvidia-return","/posts/nba-nov24-blazers-76ers","/posts/game-industry-nov23","/posts/nba-nov23-jokic-gidde","/posts/week47-new-cars-launch","/posts/nba-nov22-wemby-herro-50","/posts/nvidia-crash-gpu-price","/posts/vercel-ui-sdk","/posts/byd-tai9-folding-cockpit","/posts/nba-nov21-cup-harden51","/posts/gpt62-qwen4max-launch","/posts/gta6-first-day-2458w","/posts/nba-nov20-lillard-milwaukee","/posts/osta-o1-pro-launch","/posts/xiangjie-v8-launch","/posts/gemini4-neon-anthropic-ipo","/posts/guangzhou-autoshow-2026-preview","/posts/nba-nov19-grizzlies-sixers-bulls","/posts/gta6-launch-day","/posts/huawei-mate90-air-thin","/posts/nba-streaks-break","/posts/gpu-bom-cost-hike-nov","/posts/mh-wilds-switch2-launch","/posts/nba-nov16-knicks-sixers","/posts/week46-new-cars-launch","/posts/storybook11-agent-skills","/posts/deepseek-fullstack-api","/posts/ev-battery-fullchain-shift","/posts/nba-nov14-record-night","/posts/baidu-world-2026","/posts/china-auto-export-global-car","/posts/nba-spurs-warriors-curry","/posts/codebuddy-fde-certification","/posts/nba-nov13-cunningham-52","/posts/valorant-mobile-xinpin","/posts/wenjie-new-m8-launch","/posts/anthropic-ipo-roadshow","/posts/huawei-osta-xingmang-debut","/posts/nba-nov12-lakers-warriors-spurs","/posts/china-auto-oct-sales","/posts/hsr-4-7-aha","/posts/kimi-k26-code-preview","/posts/nba-nov11-george-bucks","/posts/ai-job-policy-buffer","/posts/nba-nov10-wemby-warriors-mavericks","/posts/oppo-reno17-debut","/posts/codex-for-almost-everything","/posts/gpu-huaqiangbei-overseas-buyers","/posts/nba-bucks-worst-start","/posts/yangwang-dingyao-debut","/posts/byd-seal07-gen2-yunnian-m","/posts/meta-conductor-ai-coding-war","/posts/switch2-third-party-lineup-2027","/posts/llm-agent-shift-deepseek-longcat","/posts/rtx50-price-crash-analysis","/posts/programmer-job-market-2026","/posts/zelda-ocarina-remake-nintendo-report","/posts/github-universe-2026-recap","/posts/openai-acquires-pierre","/posts/ai-coding-review-cost"];
+
+      const randomPost = () => {
+        if (!postHrefs.length) return;
+        location.href = postHrefs[Math.floor(Math.random() * postHrefs.length)];
+      };
+      document.getElementById('random-post')?.addEventListener('click', (e) => { e.preventDefault(); randomPost(); });
+      document.addEventListener('keydown', (e) => {
+        const tag = document.activeElement?.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || e.metaKey || e.ctrlKey || e.altKey) return;
+        if (e.key === 'r') randomPost();
+        else if (e.key === 'ArrowLeft') document.querySelector('.post-nav .pn:not(.right)')?.click();
+        else if (e.key === 'ArrowRight') document.querySelector('.post-nav .pn.right')?.click();
+      });
+
+      const buddy = document.getElementById('buddy');
+      const foldBuddy = (folded, persist) => {
+        buddy?.classList.toggle('folded', folded);
+        const btn = document.getElementById('buddy-fold');
+        if (btn) btn.textContent = folded ? '+' : '_';
+        if (persist) {
+          try { localStorage.setItem('buddy-folded', folded ? '1' : '0'); } catch {}
+        }
+      };
+      let savedFold = null;
+      try { savedFold = localStorage.getItem('buddy-folded'); } catch {}
+      const roomy = matchMedia('(min-width: 1440px)').matches;
+      foldBuddy(savedFold === null ? !roomy : savedFold === '1', false);
+      document.getElementById('buddy-fold')?.addEventListener('click', () => {
+        if (!buddy) return;
+        foldBuddy(!buddy.classList.contains('folded'), true);
+      });
+    })();</script> <script>
+      // 不蒜子加载完成后显示统计数字
+      const t = setInterval(() => {
+        if (document.getElementById('busuanzi_value_site_pv')?.innerText) {
+          document.getElementById('busuanzi_container_site_pv')?.style.removeProperty('display');
+          document.getElementById('busuanzi_container_site_uv')?.style.removeProperty('display');
+          clearInterval(t);
+        }
+      }, 500);
+      setTimeout(() => clearInterval(t), 8000);
+
+
+    </script>  </body></html>  <script type="module" src="/_astro/_...slug_.astro_astro_type_script_index_0_lang.BYmNNy1y.js"></script> <script type="module">const i=document.querySelectorAll("#toc-nav a");if(i.length){const t=new Map;i.forEach(o=>{const c=document.getElementById(o.dataset.slug);c&&t.set(c,o)});const n=new IntersectionObserver(o=>{o.forEach(c=>{c.isIntersecting&&(i.forEach(s=>s.classList.remove("active")),t.get(c.target)?.classList.add("active"))})},{rootMargin:"-80px 0px -70% 0px"});t.forEach((o,c)=>n.observe(c))}const l=document.getElementById("progress"),a=document.getElementById("to-top"),d=()=>{const t=document.documentElement,n=t.scrollHeight-t.clientHeight;l&&(l.style.width=(n>0?t.scrollTop/n*100:0)+"%"),a?.classList.toggle("show",t.scrollTop>600)};document.addEventListener("scroll",d,{passive:!0});d();a?.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));let e;const m=()=>{e&&(e.hidden=!0)};document.addEventListener("mousedown",t=>{(!(t.target instanceof Element)||!t.target.closest(".quote-btn"))&&m()});document.addEventListener("mouseup",()=>{const t=window.getSelection();if(!t||t.isCollapsed||!t.toString().trim())return;const n=t.getRangeAt(0),o=n.commonAncestorContainer;if(!(o instanceof Element?o:o.parentElement)?.closest(".prose"))return;const s=t.toString().trim();if(s.length<10)return;const r=n.getBoundingClientRect();e||(e=document.createElement("button"),e.type="button",e.className="quote-btn",e.textContent="复制引用",document.body.appendChild(e)),e.hidden=!1,e.textContent="复制引用",e.style.top=Math.min(r.bottom+8,innerHeight-40)+"px",e.style.left=Math.max(12,Math.min(r.left,innerWidth-96))+"px",e.onclick=()=>{const u=`「${s}」
+
+—— 摘自《${document.title.replace(" · 豆芽的技术博客","")}》
+${location.href}`;navigator.clipboard?.writeText(u).then(()=>{e.textContent="已复制",setTimeout(m,800)})}});document.querySelector(".copy-link")?.addEventListener("click",t=>{const n=t.target.dataset.url;navigator.clipboard?.writeText(n).then(()=>{t.target.textContent="✓",setTimeout(()=>t.target.textContent="copy",1500)})});</script>
